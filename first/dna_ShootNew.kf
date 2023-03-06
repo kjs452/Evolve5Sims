@@ -1,0 +1,281 @@
+; Strain 0: ShootNew
+; Protected Code Blocks: 11
+; Protected Instructions: MAKE-BARRIER BROADCAST SAY SPAWN 
+; Instruction Modes: EAM=640 MSE=100 GE=100 GS=20 SPM=45 
+;    BM=2 SAM=32 
+; MaxApply=10 MaxCB=100 StrandLen=4 
+main:
+{
+      11  call 
+}
+
+row1:
+{
+      1  BROADCAST  7  NEAREST  EAT  HALT 
+}
+
+row2:
+{
+      HALT 
+}
+
+row3:
+{
+     
+}
+
+row4:
+{
+     
+}
+
+row5:
+{
+     
+}
+
+row6:
+{
+     
+}
+
+row7:
+{
+     
+}
+
+row8:
+{
+      DSLEN  58  >  ?exit  DSLEN  2  <  ?exit
+      2dup  1  5  10  SPAWN  -rot  2pop 
+}
+
+row9:
+{
+     
+}
+
+row10:
+{
+      2dup  OMOVE  ?loop  2dup  EAT  pop  2dup
+      OMOVE  pop  2dup  EAT  pop  2dup  OMOVE
+      pop  2dup  EAT  pop  2negate  ENERGY  -rot
+      SEND-ENERGY  pop 
+}
+
+row11:
+{
+      OMOVE  ?loop  26  --R4  MAX_INT  GROW  ROTATE
+      -34  -67  GROW  2pop  --R5  PEEK  17  call
+      -17  -40  MOOD  -20  -16  -26  TRAP4  nop
+      R7  -1  -4 
+}
+
+row12:
+{
+     
+}
+
+row13:
+{
+      95  74  --R7  73  81  -27  -39  18  G0!
+      NUMBER  -28  -27  41  NEAREST  -65  EAT
+      13  GROW 
+}
+
+row14:
+{
+      -40  -40  1+  -73  GPS  3  -53  RND  -40 
+}
+
+row15:
+{
+      2dup  OMOVE  ?loop  EAT  EAT  EAT  GROW 
+}
+
+row16:
+{
+      -33  HOTTEST  TRAP8  20  ENERGY  4  /  R0!
+      pop  ?loop  ?exit  -1  0  R0  MAKE-SPORE
+      -40  50  -1  0  R0  MAKE-SPORE  NUMBER!
+      R5!  31  -24  ?exit  CBLEN  23  -10  33
+      ?exit  S0  0  ?exit  SEND  TRAP3  ?dup  xor
+      if  23  pop  ?loop  -25  NUMBER! 
+}
+
+row17:
+{
+      24  -70  GROW  11  -1  13  call  R5!  15
+      call  CMOVE  OMOVE  16  call  -5  HOTTEST
+      TRAP8  18  ?loop  50  /mod  TRAP9  2swap
+      OPCODE  41  29  -84  -69  OMOVE  ?loop 
+}
+
+row18:
+{
+      MOUSE-POS  R3!  -3  2over  over  --R7  -33 
+}
+
+row19:
+{
+      2/  -85  DIST  -30  mod  TRAP7  mod 
+}
+
+row20:
+{
+     
+}
+
+row21:
+{
+      ?loop  -50  /mod  OPCODE  SIZE 
+}
+
+row22:
+{
+      R7++  HOTTEST  -72  CHOOSE  FARTHEST  87
+      unpack2 
+}
+
+row23:
+{
+      2dup 
+}
+
+row24:
+{
+      -15  MOOD  FARTHEST  4  -58  -  -14  14
+      84  -7  EAT  2-  13 
+}
+
+row25:
+{
+      2over  66  93  73  78  + 
+}
+
+row26:
+{
+     
+}
+
+row27:
+{
+      -67  -28 
+}
+
+row28:
+{
+      16  >>  51  rot  -43  GROW 
+}
+
+row29:
+{
+      34  RND  103  99  34  RND  58  7 
+}
+
+row30:
+{
+      TRAP4  nop  ?loop  EAT  EAT  EAT  GROW 
+}
+
+row31:
+{
+     
+}
+
+row32:
+{
+      24  not 
+}
+
+row33:
+{
+      -43  -99  58  61 
+}
+
+row34:
+{
+      82  -7  EAT  2- 
+}
+
+row35:
+{
+      2over  93  82  and 
+}
+
+row36:
+{
+     
+}
+
+row37:
+{
+     
+}
+
+row38:
+{
+      -40  -45  CSLEN  -80  -56  -88  -54  49
+      call  --R5 
+}
+
+row39:
+{
+     
+}
+
+row40:
+{
+      0  R0 
+}
+
+row41:
+{
+      2over  62 
+}
+
+row42:
+{
+      >= 
+}
+
+row43:
+{
+      negate  -39  TRAP3  TRAP9 
+}
+
+row44:
+{
+      36 
+}
+
+row45:
+{
+      38 
+}
+
+row46:
+{
+      -53  MOOD!  59  2+ 
+}
+
+row47:
+{
+      -40  -42  CSLEN  67  2-  94  25 
+}
+
+row48:
+{
+      POKE  EAT  -32 
+}
+
+row49:
+{
+     
+}
+
+row50:
+{
+      -40  -40  50  /mod  OPCODE 
+}
+

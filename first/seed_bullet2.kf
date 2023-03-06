@@ -1,0 +1,8 @@
+; Strain 5: bullet2
+; Protected Code Blocks: 0
+; Protected Instructions: MAKE-BARRIER SPAWN 
+; Instruction Modes: LM=1 EAM=520 ROM=1 SEM=1024 
+; MaxApply=10 MaxCB=100 StrandLen=4 
+main:
+{
+}

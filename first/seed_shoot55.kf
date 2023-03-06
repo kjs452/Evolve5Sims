@@ -1,0 +1,177 @@
+;
+; Added: Bullet does an 'EAT' before halting.
+;
+; Shooter 5
+; A shooter using SAY + BROADCAST + Interrupts
+;
+; When shot, the organism broadcasts a message
+; to all cells. Then all cells HALT. Killing the
+; entire organism as soon as it is shot.
+;
+; * The Bullet triggered by trap8	"x y trap8"
+; * the Bullet spawns as a special uneatable strain (strain '5')
+; * the Bullet does a SAY on the target cell.
+; * target cells BROADCASTs to all its cells.
+; * target cell and organism HALT.
+;
+; Setup this strain as follows:
+;
+; Strain 0: ShootNew
+; Protected Code Blocks: 11
+; Protected Instructions: MAKE-BARRIER BROADCAST SAY SPAWN 
+; Instruction Modes: LM=1 EAM=640 MSE=100 GE=100 GS=20 
+;    SPM=45 BM=2 SAM=32 
+; MaxApply=10 MaxCB=100 StrandLen=4 
+;
+
+main:
+{
+	evolve call
+}
+
+; SAY interrupt
+_trap1: {
+	1 BROADCAST
+	7 NEAREST EAT
+	HALT
+}
+
+; BROADCAST interrupt
+_trap2: {
+	HALT
+}
+
+_trap3: { }
+_trap4: { }
+_trap5: { }
+_trap6: { }
+_trap7: { }
+
+; shoot
+; (x y -- rc)
+_trap8: {
+	DSLEN 58 > ?exit
+	DSLEN 2 < ?exit
+	2dup 1 5 shoot SPAWN -rot 2pop
+}
+
+_trap9: { }
+
+;
+; Spawn point for bullet
+; Data stack will hold 2 items.
+;
+shoot:
+{
+	2dup OMOVE ?loop
+	2 -rot SAY
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; seed.kf
+; a good seed organism
+;
+; BEHAVIOR:
+; This creature forever moves in various directions until
+; its forward movement is blocked. As it moves it eats.
+; Before moving in a new direction it will try to reproduce.
+;
+
+evolve:
+{
+	-1 1 trap8 pop
+	reproduce call
+	reproduce call
+
+	;
+	; go SOUTH-EAST until blocked (eat along the way)
+	;
+	{ 1 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go WEST until blocked (eat along the way)
+	;
+	{ -1 0 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go SOUTH-WEST until blocked (eat along the way)
+	;
+	{ -1 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go EAST until blocked (eat along the way)
+	;
+	{ 1 0 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH-EAST until blocked (eat along the way)
+	;
+	{ 1 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go SOUTH until blocked (eat along the way)
+	;
+	{ 0 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH until blocked (eat along the way)
+	;
+	{ 0 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH-WEST until blocked (eat along the way)
+	;
+	{ -1 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; do it all over again
+	;
+	1 ?loop
+}
+
+reproduce:
+{
+	;
+	; compute 1/4 of our energy, and store in R0
+	;
+	energy 4 / R0!
+
+	;
+	; Make 1st spore to the square on our left.
+	;
+	-1 0 R0 make-spore pop
+
+	;
+	; Put 2nd spore at the same spot (fertilizing it)
+	;
+	-1 0 R0 make-spore pop
+
+	;
+	; get the hell out of the way so we don't eat our own
+	; babies, or they don't eat us.
+	;
+	1 1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+}
+
