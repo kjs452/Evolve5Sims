@@ -9,6 +9,10 @@ evolving over night. The organism was from the
 
 	mar37cm.txt			is a starting simulation file.
 
-Just load the file and run it.
+	mar38.txt			is a starting simulation file.
+						has 4 creatures transplantes from
+						another long term simulation.
+
+Just load the files and run them.
 
 ```
