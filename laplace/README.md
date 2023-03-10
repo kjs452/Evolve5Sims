@@ -5,6 +5,8 @@ The creatures
 	brownian2i.kf		move randomly respond to interrupts
 	gatekeeper.kf		SAY's a message downard when space key pressed.
 
+	maxwell.kf			Moves around randomly. When space key pressed converges to a specific point
+
 	laplace1.txt		simulation showing a laplace's deamon kind of experiment
 	laplace2.txt		simulation showing a laplace's deamon kind of experiment
 
