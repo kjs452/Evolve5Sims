@@ -1,0 +1,15 @@
+;
+; Brownian motion - does not evolve
+;
+main:
+{
+	ENERGY 4 / R2!
+	RND R0! RND R1!
+	R0 R1 R2 MAKE-SPORE pop
+	R0 R1 0 MAKE-SPORE pop
+
+	RND R0! RND R1!
+	{ R0 R1 OMOVE ?loop } call
+
+	1 ?loop
+}

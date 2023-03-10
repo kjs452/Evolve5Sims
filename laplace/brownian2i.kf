@@ -1,0 +1,44 @@
+;
+; brownian2i.kf
+;
+; Brownian motion - does not evolve, uses SAY interrupt
+; 
+;
+main:
+{
+	do_main call
+}
+
+_trap1: { }
+_trap2: { }
+_trap3: { }
+
+;
+; SAY interrupt
+;
+_trap4: {
+;	RND R0!
+;	RND R1!
+
+	R0 negate R0!
+	R1 negate R1!
+}
+
+_trap5: { }
+_trap6: { }
+_trap7: { }
+_trap8: { }
+_trap9: { }
+
+do_main:
+{
+	ENERGY 4 / R2!
+	RND R0! RND R1!
+	R0 R1 R2 MAKE-SPORE pop
+	R0 R1 0 MAKE-SPORE pop
+
+	RND R0! RND R1!
+	{ R0 R1 OMOVE ?loop } call
+
+	1 ?loop
+}
