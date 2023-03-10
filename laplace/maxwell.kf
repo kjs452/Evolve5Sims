@@ -1,0 +1,27 @@
+;
+; maxwell - when space key pressed all molecules will head toward (222,150)
+;
+;	R0 - x direction
+;	R1 - y direction
+;	R2 - energy
+;
+;	R4 - x direction if following space key
+;	R5 - y direction if following space key
+;
+main:
+{
+	ENERGY 4 / R2!
+	RND R0! RND R1!
+	R0 R1 R2 MAKE-SPORE pop
+	R0 R1 0 MAKE-SPORE pop
+
+	RND R0! RND R1!
+	{
+		GPS 150 swap - R5!		; y coord = 150
+		222 swap - R4!			; x coord = 222
+ 		KEY-PRESS 32 <> { R0 R1 OMOVE } { R4 R5 OMOVE } ifelse
+		?loop
+	} call
+
+	1 ?loop
+}
