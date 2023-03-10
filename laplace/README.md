@@ -1,5 +1,9 @@
 ```
 Description: laplace
+	* Explore Entropy
+	* Brownian motion
+	* First attempts at a maxwell's daemon simulaton
+
 The creatures
 	brownian.kf			move randomly
 	brownian2i.kf		move randomly respond to interrupts
