@@ -14,6 +14,9 @@ The creatures
 							location when space key pressed. Like gas molecules
 							organizing themselves into the corner of the room.
 
+	bigbang.txt			same as statue_maxwell.txt, except i got all the blocks clumped together
+						by the creative use of space key.
+
 Press SPACE key to trigger the gate keeper
 
 Just load the files and run them.
