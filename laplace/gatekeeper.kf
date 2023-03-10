@@ -1,0 +1,27 @@
+;
+; gatekeeper.kf
+; when space key pressed, "SAY the number 420 in down direction (0, -1).
+; setup this strain to be interrupted on trap4 for the KEY-PRESS instructions.
+;
+main:
+{
+	1 ?loop
+}
+
+_trap1: { }
+_trap2: { }
+_trap3: { }
+
+;
+; KEY-PRESS interrupt KEY-PRESS MODE: 
+;
+_trap4: {
+	KEY-PRESS 32 <> ?exit
+	420 0 -1 SAY pop
+}
+
+_trap5: { }
+_trap6: { }
+_trap7: { }
+_trap8: { }
+_trap9: { }

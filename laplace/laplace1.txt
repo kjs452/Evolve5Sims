@@ -1,0 +1,11359 @@
+# PHOTON ASCII
+
+struct ORGANIC[N] {
+	X
+	Y
+	ENERGY
+}
+
+struct BARRIER[N] {
+	X
+	Y
+}
+
+struct ER {
+	FIDX
+	RIDX
+	STATE[N] {
+		VALUE
+	}
+}
+
+struct SIMULATION_OPTIONS {
+	MODE
+}
+
+struct STRAIN_OPTIONS[N] {
+	ENABLED
+	NAME
+	LOOK_MODE
+	EAT_MODE
+	MAKE_SPORE_MODE
+	MAKE_SPORE_ENERGY
+	CMOVE_MODE
+	OMOVE_MODE
+	GROW_MODE
+	GROW_ENERGY
+	GROW_SIZE
+	ROTATE_MODE
+	CSHIFT_MODE
+	MAKE_ORGANIC_MODE
+	MAKE_BARRIER_MODE
+	EXUDE_MODE
+	SHOUT_MODE
+	SPAWN_MODE
+	LISTEN_MODE
+	BROADCAST_MODE
+	SAY_MODE
+	READ_MODE
+	WRITE_MODE
+	KEY_PRESS_MODE
+	SEND_MODE
+	SEND_ENERGY_MODE
+}
+
+struct KFMO[N] {
+	MAX_APPLY
+	PROB_MUTATE_CODEBLOCK
+	PROB_DUPLICATE
+	PROB_DELETE
+	PROB_INSERT
+	PROB_TRANSPOSE
+	PROB_MODIFY
+	MERGE_MODE
+	XLEN
+	PROTECTED_CODEBLOCKS
+	MAX_CODE_BLOCKS
+}
+
+struct STRAIN_OPCODES[N] {
+	NPROTECTED
+	TABLE[M] {
+		NAME
+	}
+}
+
+struct SPORE {
+	X
+	Y
+	ENERGY
+	PARENT
+	STRAIN
+	SFLAGS
+	PROGRAM[N] {
+		TEXT_LINE
+	}
+}
+
+struct CELL {
+	ORGANISM_ID
+	X
+	Y
+	MOOD
+	MESSAGE
+
+	MACHINE {
+		TERMINATED
+		CB
+		PC
+		R[N] {
+			VALUE
+		}
+
+		CALL_STACK[N] {
+			CB
+			PC
+		}
+
+		DATA_STACK[N] {
+			VALUE
+		}
+	}
+}
+
+struct ORGANISM {
+	ORGANISM_ID
+	STRAIN
+	SIM_COUNT
+	OFLAGS
+	PARENT1
+	PARENT2
+	GENERATION
+	ENERGY
+	AGE
+	PROGRAM[N] {
+		TEXT_LINE
+	}
+}
+
+struct UNIVERSE {
+	SEED
+	STEP
+	AGE
+	CURRENT_CELL { X Y }    # -1 -1 means NULL
+	NEXT_ID
+	NBORN
+	NDIE
+	WIDTH
+	HEIGHT
+	G0
+	KEY
+	MOUSE_X
+	MOUSE_Y
+	S0[N] { V }}
+
+struct CELL_LIST[N] {
+	X Y 
+}
+
+struct ODOR_MAP[N] {
+	X Y LEN VALUE
+}
+
+UNIVERSE 497064876             # seed
+         0           # step
+         0           # age
+         238 282          # current cell location (x,y)
+         2           # next id
+         0 0      # number births, deaths
+         600 500          # dimensions: width x height
+         0             # global register G0
+         0             # key
+         298             # mouse_x
+         299             # mouse_y
+       { 0 0 0 0 0 0 0 0 }  # S0's for each strain
+
+ER 1 0 63
+	595800656	1106842160	3129836363	460007363
+	3389208901	3520409360	3654006586	3025072726
+	2721376079	2133618142	584311033	2555579547
+	2961870143	1033634128	1682032323	1600343710
+	1240926092	846082031	1582623955	2945601164
+	3477245685	748012665	242721174	1718808530
+	849327235	1278757013	3214946971	1004504411
+	1060452996	3250672100	2936498294	3763119879
+	2270103367	1924757156	2608119675	1400946520
+	2967521790	2411352530	4191557248	4205960222
+	3996283880	833471030	3801512454	1136952666
+	3552858561	1559082813	2244645058	265633915
+	411115109	3170262766	2449671720	3550032913
+	1175198109	2975274573	3798641236	1772943707
+	1464604935	1375961206	4120903404	2457814795
+	2847108788	4017769656	1176026697
+
+SIMULATION_OPTIONS 0   # mode
+
+
+STRAIN_OPTIONS {
+	# Strain 0
+	1        # enabled
+	"brownian2i"        # strain name these settings were based on
+	1        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	10        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	10        # GROW energy
+	20        # GROW size
+	1        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	4        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 1
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 2
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 3
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 4
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 5
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 6
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+	# Strain 7
+	0        # enabled
+	""        # strain name these settings were based on
+	0        # LOOK mode
+	0        # EAT mode
+	0        # MAKE-SPORE mode
+	0        # MAKE-SPORE energy
+	0        # CMOVE mode
+	0        # OMOVE mode
+	0        # GROW mode
+	0        # GROW energy
+	0        # GROW size
+	0        # ROTATE mode
+	0        # CSHIFT mode
+	0        # MAKE-ORGANIC mode
+	0        # MAKE-BARRIER mode
+	0        # EXUDE mode
+	0        # SHOUT mode
+	0        # SPAWN mode
+	0        # LISTEN mode
+	0        # BROADCAST mode
+	0        # SAY mode
+	0        # READ mode
+	0        # WRITE mode
+	0        # KEY-PRESS mode
+	0        # SEND mode
+	0        # SEND-ENERGY mode
+
+}
+
+
+KFMO {
+	# Strain 0
+	0		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 1
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 2
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 3
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 4
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 5
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 6
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+	# Strain 7
+	10		# max apply
+	2500		# prob. mutate codeblock
+	200		# prob_duplicate
+	400		# prob_delete
+	200		# prob_insert
+	200		# prob_transpose
+	200		# prob_modify
+	0		# merge_mode
+	4		# xlen 
+	0		# protected_codeblocks 
+	100		# max_code_blocks 
+
+}
+
+
+STRAIN_OPCODES {
+
+	2  # number of protected instructions at start of table
+	# instruction table for strain 0
+	{
+		"MAKE-BARRIER"      			# opcode 0
+		"SPAWN"             			# opcode 1
+		"call"              			# opcode 2
+		"if"                			# opcode 3
+		"ifelse"            			# opcode 4
+		"?loop"             			# opcode 5
+		"?exit"             			# opcode 6
+		"pop"               			# opcode 7
+		"dup"               			# opcode 8
+		"swap"              			# opcode 9
+		"over"              			# opcode 10
+		"rot"               			# opcode 11
+		"?dup"              			# opcode 12
+		"-rot"              			# opcode 13
+		"2swap"             			# opcode 14
+		"2over"             			# opcode 15
+		"2dup"              			# opcode 16
+		"2pop"              			# opcode 17
+		"nip"               			# opcode 18
+		"tuck"              			# opcode 19
+		"1+"                			# opcode 20
+		"1-"                			# opcode 21
+		"2+"                			# opcode 22
+		"2-"                			# opcode 23
+		"2/"                			# opcode 24
+		"2*"                			# opcode 25
+		"abs"               			# opcode 26
+		"sqrt"              			# opcode 27
+		"+"                 			# opcode 28
+		"-"                 			# opcode 29
+		"*"                 			# opcode 30
+		"/"                 			# opcode 31
+		"mod"               			# opcode 32
+		"/mod"              			# opcode 33
+		"negate"            			# opcode 34
+		"2negate"           			# opcode 35
+		"<<"                			# opcode 36
+		">>"                			# opcode 37
+		"="                 			# opcode 38
+		"<>"                			# opcode 39
+		"<"                 			# opcode 40
+		">"                 			# opcode 41
+		"<="                			# opcode 42
+		">="                			# opcode 43
+		"0="                			# opcode 44
+		"or"                			# opcode 45
+		"and"               			# opcode 46
+		"not"               			# opcode 47
+		"invert"            			# opcode 48
+		"xor"               			# opcode 49
+		"min"               			# opcode 50
+		"max"               			# opcode 51
+		"CB"                			# opcode 52
+		"CBLEN"             			# opcode 53
+		"CSLEN"             			# opcode 54
+		"DSLEN"             			# opcode 55
+		"R0"                			# opcode 56
+		"R1"                			# opcode 57
+		"R2"                			# opcode 58
+		"R3"                			# opcode 59
+		"R4"                			# opcode 60
+		"R5"                			# opcode 61
+		"R6"                			# opcode 62
+		"R7"                			# opcode 63
+		"R8"                			# opcode 64
+		"R9"                			# opcode 65
+		"R0!"               			# opcode 66
+		"R1!"               			# opcode 67
+		"R2!"               			# opcode 68
+		"R3!"               			# opcode 69
+		"R4!"               			# opcode 70
+		"R5!"               			# opcode 71
+		"R6!"               			# opcode 72
+		"R7!"               			# opcode 73
+		"R8!"               			# opcode 74
+		"R9!"               			# opcode 75
+		"R0++"              			# opcode 76
+		"R1++"              			# opcode 77
+		"R2++"              			# opcode 78
+		"R3++"              			# opcode 79
+		"R4++"              			# opcode 80
+		"R5++"              			# opcode 81
+		"R6++"              			# opcode 82
+		"R7++"              			# opcode 83
+		"R8++"              			# opcode 84
+		"R9++"              			# opcode 85
+		"--R0"              			# opcode 86
+		"--R1"              			# opcode 87
+		"--R2"              			# opcode 88
+		"--R3"              			# opcode 89
+		"--R4"              			# opcode 90
+		"--R5"              			# opcode 91
+		"--R6"              			# opcode 92
+		"--R7"              			# opcode 93
+		"--R8"              			# opcode 94
+		"--R9"              			# opcode 95
+		"PEEK"              			# opcode 96
+		"POKE"              			# opcode 97
+		"NUMBER"            			# opcode 98
+		"NUMBER!"           			# opcode 99
+		"?NUMBER!"          			# opcode 100
+		"OPCODE"            			# opcode 101
+		"OPCODE!"           			# opcode 102
+		"OPCODE'"           			# opcode 103
+		"TRAP1"             			# opcode 104
+		"TRAP2"             			# opcode 105
+		"TRAP3"             			# opcode 106
+		"TRAP4"             			# opcode 107
+		"TRAP5"             			# opcode 108
+		"TRAP6"             			# opcode 109
+		"TRAP7"             			# opcode 110
+		"TRAP8"             			# opcode 111
+		"TRAP9"             			# opcode 112
+		"sign"              			# opcode 113
+		"pack2"             			# opcode 114
+		"unpack2"           			# opcode 115
+		"MAX_INT"           			# opcode 116
+		"MIN_INT"           			# opcode 117
+		"HALT"              			# opcode 118
+		"nop"               			# opcode 119
+		"CMOVE"             			# opcode 120
+		"OMOVE"             			# opcode 121
+		"ROTATE"            			# opcode 122
+		"EAT"               			# opcode 123
+		"MAKE-SPORE"        			# opcode 124
+		"MAKE-ORGANIC"      			# opcode 125
+		"GROW"              			# opcode 126
+		"GROW.CB"           			# opcode 127
+		"CSHIFT"            			# opcode 128
+		"EXUDE"             			# opcode 129
+		"LOOK"              			# opcode 130
+		"NEAREST"           			# opcode 131
+		"FARTHEST"          			# opcode 132
+		"SIZE"              			# opcode 133
+		"BIGGEST"           			# opcode 134
+		"SMALLEST"          			# opcode 135
+		"TEMPERATURE"       			# opcode 136
+		"HOTTEST"           			# opcode 137
+		"COLDEST"           			# opcode 138
+		"SMELL"             			# opcode 139
+		"MOOD"              			# opcode 140
+		"MOOD!"             			# opcode 141
+		"BROADCAST"         			# opcode 142
+		"SEND"              			# opcode 143
+		"RECV"              			# opcode 144
+		"ENERGY"            			# opcode 145
+		"AGE"               			# opcode 146
+		"NUM-CELLS"         			# opcode 147
+		"HAS-NEIGHBOR"      			# opcode 148
+		"DIST"              			# opcode 149
+		"CHOOSE"            			# opcode 150
+		"RND"               			# opcode 151
+		"SEND-ENERGY"       			# opcode 152
+		"POPULATION"        			# opcode 153
+		"POPULATION.S"      			# opcode 154
+		"GPS"               			# opcode 155
+		"NEIGHBORS"         			# opcode 156
+		"SHOUT"             			# opcode 157
+		"LISTEN"            			# opcode 158
+		"SAY"               			# opcode 159
+		"READ"              			# opcode 160
+		"WRITE"             			# opcode 161
+		"KEY-PRESS"         			# opcode 162
+		"MOUSE-POS"         			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 1
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 2
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 3
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 4
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 5
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 6
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+
+	0  # number of protected instructions at start of table
+	# instruction table for strain 7
+	{
+		"call"              			# opcode 0
+		"if"                			# opcode 1
+		"ifelse"            			# opcode 2
+		"?loop"             			# opcode 3
+		"?exit"             			# opcode 4
+		"pop"               			# opcode 5
+		"dup"               			# opcode 6
+		"swap"              			# opcode 7
+		"over"              			# opcode 8
+		"rot"               			# opcode 9
+		"?dup"              			# opcode 10
+		"-rot"              			# opcode 11
+		"2swap"             			# opcode 12
+		"2over"             			# opcode 13
+		"2dup"              			# opcode 14
+		"2pop"              			# opcode 15
+		"nip"               			# opcode 16
+		"tuck"              			# opcode 17
+		"1+"                			# opcode 18
+		"1-"                			# opcode 19
+		"2+"                			# opcode 20
+		"2-"                			# opcode 21
+		"2/"                			# opcode 22
+		"2*"                			# opcode 23
+		"abs"               			# opcode 24
+		"sqrt"              			# opcode 25
+		"+"                 			# opcode 26
+		"-"                 			# opcode 27
+		"*"                 			# opcode 28
+		"/"                 			# opcode 29
+		"mod"               			# opcode 30
+		"/mod"              			# opcode 31
+		"negate"            			# opcode 32
+		"2negate"           			# opcode 33
+		"<<"                			# opcode 34
+		">>"                			# opcode 35
+		"="                 			# opcode 36
+		"<>"                			# opcode 37
+		"<"                 			# opcode 38
+		">"                 			# opcode 39
+		"<="                			# opcode 40
+		">="                			# opcode 41
+		"0="                			# opcode 42
+		"or"                			# opcode 43
+		"and"               			# opcode 44
+		"not"               			# opcode 45
+		"invert"            			# opcode 46
+		"xor"               			# opcode 47
+		"min"               			# opcode 48
+		"max"               			# opcode 49
+		"CB"                			# opcode 50
+		"CBLEN"             			# opcode 51
+		"CSLEN"             			# opcode 52
+		"DSLEN"             			# opcode 53
+		"R0"                			# opcode 54
+		"R1"                			# opcode 55
+		"R2"                			# opcode 56
+		"R3"                			# opcode 57
+		"R4"                			# opcode 58
+		"R5"                			# opcode 59
+		"R6"                			# opcode 60
+		"R7"                			# opcode 61
+		"R8"                			# opcode 62
+		"R9"                			# opcode 63
+		"R0!"               			# opcode 64
+		"R1!"               			# opcode 65
+		"R2!"               			# opcode 66
+		"R3!"               			# opcode 67
+		"R4!"               			# opcode 68
+		"R5!"               			# opcode 69
+		"R6!"               			# opcode 70
+		"R7!"               			# opcode 71
+		"R8!"               			# opcode 72
+		"R9!"               			# opcode 73
+		"R0++"              			# opcode 74
+		"R1++"              			# opcode 75
+		"R2++"              			# opcode 76
+		"R3++"              			# opcode 77
+		"R4++"              			# opcode 78
+		"R5++"              			# opcode 79
+		"R6++"              			# opcode 80
+		"R7++"              			# opcode 81
+		"R8++"              			# opcode 82
+		"R9++"              			# opcode 83
+		"--R0"              			# opcode 84
+		"--R1"              			# opcode 85
+		"--R2"              			# opcode 86
+		"--R3"              			# opcode 87
+		"--R4"              			# opcode 88
+		"--R5"              			# opcode 89
+		"--R6"              			# opcode 90
+		"--R7"              			# opcode 91
+		"--R8"              			# opcode 92
+		"--R9"              			# opcode 93
+		"PEEK"              			# opcode 94
+		"POKE"              			# opcode 95
+		"NUMBER"            			# opcode 96
+		"NUMBER!"           			# opcode 97
+		"?NUMBER!"          			# opcode 98
+		"OPCODE"            			# opcode 99
+		"OPCODE!"           			# opcode 100
+		"OPCODE'"           			# opcode 101
+		"TRAP1"             			# opcode 102
+		"TRAP2"             			# opcode 103
+		"TRAP3"             			# opcode 104
+		"TRAP4"             			# opcode 105
+		"TRAP5"             			# opcode 106
+		"TRAP6"             			# opcode 107
+		"TRAP7"             			# opcode 108
+		"TRAP8"             			# opcode 109
+		"TRAP9"             			# opcode 110
+		"sign"              			# opcode 111
+		"pack2"             			# opcode 112
+		"unpack2"           			# opcode 113
+		"MAX_INT"           			# opcode 114
+		"MIN_INT"           			# opcode 115
+		"HALT"              			# opcode 116
+		"nop"               			# opcode 117
+		"CMOVE"             			# opcode 118
+		"OMOVE"             			# opcode 119
+		"ROTATE"            			# opcode 120
+		"EAT"               			# opcode 121
+		"MAKE-SPORE"        			# opcode 122
+		"MAKE-ORGANIC"      			# opcode 123
+		"MAKE-BARRIER"      			# opcode 124
+		"GROW"              			# opcode 125
+		"GROW.CB"           			# opcode 126
+		"CSHIFT"            			# opcode 127
+		"EXUDE"             			# opcode 128
+		"LOOK"              			# opcode 129
+		"NEAREST"           			# opcode 130
+		"FARTHEST"          			# opcode 131
+		"SIZE"              			# opcode 132
+		"BIGGEST"           			# opcode 133
+		"SMALLEST"          			# opcode 134
+		"TEMPERATURE"       			# opcode 135
+		"HOTTEST"           			# opcode 136
+		"COLDEST"           			# opcode 137
+		"SMELL"             			# opcode 138
+		"MOOD"              			# opcode 139
+		"MOOD!"             			# opcode 140
+		"BROADCAST"         			# opcode 141
+		"SEND"              			# opcode 142
+		"RECV"              			# opcode 143
+		"ENERGY"            			# opcode 144
+		"AGE"               			# opcode 145
+		"NUM-CELLS"         			# opcode 146
+		"HAS-NEIGHBOR"      			# opcode 147
+		"DIST"              			# opcode 148
+		"CHOOSE"            			# opcode 149
+		"RND"               			# opcode 150
+		"SEND-ENERGY"       			# opcode 151
+		"POPULATION"        			# opcode 152
+		"POPULATION.S"      			# opcode 153
+		"GPS"               			# opcode 154
+		"NEIGHBORS"         			# opcode 155
+		"SHOUT"             			# opcode 156
+		"LISTEN"            			# opcode 157
+		"SAY"               			# opcode 158
+		"READ"              			# opcode 159
+		"WRITE"             			# opcode 160
+		"KEY-PRESS"         			# opcode 161
+		"MOUSE-POS"         			# opcode 162
+		"SPAWN"             			# opcode 163
+		"S0"                			# opcode 164
+		"S0!"               			# opcode 165
+		"G0"                			# opcode 166
+		"G0!"               			# opcode 167
+	}
+}
+
+
+# BARRIER_BEGIN
+BARRIER {
+	0	219
+	0	220
+	0	221
+	0	222
+	0	223
+	0	224
+	0	225
+	0	226
+	0	227
+	0	228
+	0	229
+	0	230
+	0	231
+	0	232
+	0	233
+	0	234
+	0	235
+	0	236
+	0	237
+	0	238
+	0	239
+	0	240
+	0	241
+	0	242
+	0	243
+	0	244
+	0	245
+	0	246
+	0	247
+	0	248
+	0	249
+	0	250
+	0	251
+	0	252
+	0	253
+	0	254
+	0	255
+	0	256
+	0	257
+	0	258
+	0	259
+	0	260
+	0	261
+	0	262
+	0	263
+	0	264
+	0	265
+	0	266
+	0	267
+	0	268
+	0	269
+	0	270
+	0	271
+	0	272
+	0	273
+	0	274
+	0	275
+	0	276
+	0	277
+	0	278
+	0	279
+	0	280
+	1	214
+	1	215
+	1	216
+	1	217
+	1	218
+	1	219
+	1	220
+	1	221
+	1	222
+	1	223
+	1	224
+	1	225
+	1	226
+	1	227
+	1	228
+	1	229
+	1	230
+	1	231
+	1	232
+	1	233
+	1	234
+	1	235
+	1	236
+	1	237
+	1	238
+	1	239
+	1	240
+	1	241
+	1	242
+	1	243
+	1	244
+	1	245
+	1	246
+	1	247
+	1	248
+	1	249
+	1	250
+	1	251
+	1	252
+	1	253
+	1	254
+	1	255
+	1	256
+	1	257
+	1	258
+	1	259
+	1	260
+	1	261
+	1	262
+	1	263
+	1	264
+	1	265
+	1	266
+	1	267
+	1	268
+	1	269
+	1	270
+	1	271
+	1	272
+	1	273
+	1	274
+	1	275
+	1	276
+	1	277
+	1	278
+	1	279
+	1	280
+	1	281
+	1	282
+	1	283
+	1	284
+	1	285
+	2	209
+	2	210
+	2	211
+	2	212
+	2	213
+	2	214
+	2	215
+	2	216
+	2	217
+	2	218
+	2	219
+	2	220
+	2	221
+	2	222
+	2	223
+	2	224
+	2	225
+	2	226
+	2	227
+	2	228
+	2	229
+	2	270
+	2	271
+	2	272
+	2	273
+	2	274
+	2	275
+	2	276
+	2	277
+	2	278
+	2	279
+	2	280
+	2	281
+	2	282
+	2	283
+	2	284
+	2	285
+	2	286
+	2	287
+	2	288
+	2	289
+	2	290
+	3	204
+	3	205
+	3	206
+	3	207
+	3	208
+	3	209
+	3	210
+	3	211
+	3	212
+	3	213
+	3	214
+	3	215
+	3	216
+	3	217
+	3	218
+	3	281
+	3	282
+	3	283
+	3	284
+	3	285
+	3	286
+	3	287
+	3	288
+	3	289
+	3	290
+	3	291
+	3	292
+	3	293
+	3	294
+	3	295
+	4	199
+	4	200
+	4	201
+	4	202
+	4	203
+	4	204
+	4	205
+	4	206
+	4	207
+	4	208
+	4	209
+	4	210
+	4	211
+	4	212
+	4	213
+	4	286
+	4	287
+	4	288
+	4	289
+	4	290
+	4	291
+	4	292
+	4	293
+	4	294
+	4	295
+	4	296
+	4	297
+	4	298
+	4	299
+	4	300
+	5	194
+	5	195
+	5	196
+	5	197
+	5	198
+	5	199
+	5	200
+	5	201
+	5	202
+	5	203
+	5	204
+	5	205
+	5	206
+	5	207
+	5	208
+	5	291
+	5	292
+	5	293
+	5	294
+	5	295
+	5	296
+	5	297
+	5	298
+	5	299
+	5	300
+	5	301
+	5	302
+	5	303
+	5	304
+	5	305
+	6	191
+	6	192
+	6	193
+	6	194
+	6	195
+	6	196
+	6	197
+	6	198
+	6	199
+	6	200
+	6	201
+	6	202
+	6	203
+	6	296
+	6	297
+	6	298
+	6	299
+	6	300
+	6	301
+	6	302
+	6	303
+	6	304
+	6	305
+	6	306
+	6	307
+	6	308
+	7	189
+	7	190
+	7	191
+	7	192
+	7	193
+	7	194
+	7	195
+	7	196
+	7	197
+	7	198
+	7	301
+	7	302
+	7	303
+	7	304
+	7	305
+	7	306
+	7	307
+	7	308
+	7	309
+	7	310
+	8	184
+	8	185
+	8	186
+	8	187
+	8	188
+	8	189
+	8	190
+	8	191
+	8	192
+	8	193
+	8	306
+	8	307
+	8	308
+	8	309
+	8	310
+	8	311
+	8	312
+	8	313
+	8	314
+	8	315
+	9	181
+	9	182
+	9	183
+	9	184
+	9	185
+	9	186
+	9	187
+	9	188
+	9	189
+	9	190
+	9	309
+	9	310
+	9	311
+	9	312
+	9	313
+	9	314
+	9	315
+	9	316
+	9	317
+	9	318
+	10	179
+	10	180
+	10	181
+	10	182
+	10	183
+	10	184
+	10	185
+	10	186
+	10	187
+	10	188
+	10	311
+	10	312
+	10	313
+	10	314
+	10	315
+	10	316
+	10	317
+	10	318
+	10	319
+	10	320
+	11	176
+	11	177
+	11	178
+	11	179
+	11	180
+	11	181
+	11	182
+	11	183
+	11	316
+	11	317
+	11	318
+	11	319
+	11	320
+	11	321
+	11	322
+	11	323
+	12	174
+	12	175
+	12	176
+	12	177
+	12	178
+	12	179
+	12	180
+	12	319
+	12	320
+	12	321
+	12	322
+	12	323
+	12	324
+	12	325
+	13	171
+	13	172
+	13	173
+	13	174
+	13	175
+	13	176
+	13	177
+	13	178
+	13	321
+	13	322
+	13	323
+	13	324
+	13	325
+	13	326
+	13	327
+	13	328
+	14	169
+	14	170
+	14	171
+	14	172
+	14	173
+	14	174
+	14	175
+	14	324
+	14	325
+	14	326
+	14	327
+	14	328
+	14	329
+	14	330
+	15	166
+	15	167
+	15	168
+	15	169
+	15	170
+	15	171
+	15	172
+	15	173
+	15	326
+	15	327
+	15	328
+	15	329
+	15	330
+	15	331
+	15	332
+	15	333
+	16	164
+	16	165
+	16	166
+	16	167
+	16	168
+	16	169
+	16	170
+	16	329
+	16	330
+	16	331
+	16	332
+	16	333
+	16	334
+	16	335
+	17	162
+	17	163
+	17	164
+	17	165
+	17	166
+	17	167
+	17	168
+	17	331
+	17	332
+	17	333
+	17	334
+	17	335
+	17	336
+	17	337
+	18	160
+	18	161
+	18	162
+	18	163
+	18	164
+	18	165
+	18	334
+	18	335
+	18	336
+	18	337
+	18	338
+	18	339
+	19	157
+	19	158
+	19	159
+	19	160
+	19	161
+	19	162
+	19	163
+	19	336
+	19	337
+	19	338
+	19	339
+	19	340
+}
+BARRIER {
+	19	341
+	19	342
+	20	155
+	20	156
+	20	157
+	20	158
+	20	159
+	20	160
+	20	161
+	20	338
+	20	339
+	20	340
+	20	341
+	20	342
+	20	343
+	20	344
+	21	153
+	21	154
+	21	155
+	21	156
+	21	157
+	21	158
+	21	159
+	21	340
+	21	341
+	21	342
+	21	343
+	21	344
+	21	345
+	21	346
+	22	151
+	22	152
+	22	153
+	22	154
+	22	155
+	22	156
+	22	343
+	22	344
+	22	345
+	22	346
+	22	347
+	22	348
+	23	150
+	23	151
+	23	152
+	23	153
+	23	154
+	23	345
+	23	346
+	23	347
+	23	348
+	23	349
+	24	148
+	24	149
+	24	150
+	24	151
+	24	152
+	24	347
+	24	348
+	24	349
+	24	350
+	24	351
+	25	146
+	25	147
+	25	148
+	25	149
+	25	150
+	25	349
+	25	350
+	25	351
+	25	352
+	25	353
+	26	144
+	26	145
+	26	146
+	26	147
+	26	148
+	26	149
+	26	350
+	26	351
+	26	352
+	26	353
+	26	354
+	26	355
+	27	142
+	27	143
+	27	144
+	27	145
+	27	146
+	27	147
+	27	352
+	27	353
+	27	354
+	27	355
+	27	356
+	27	357
+	28	141
+	28	142
+	28	143
+	28	144
+	28	145
+	28	354
+	28	355
+	28	356
+	28	357
+	28	358
+	29	139
+	29	140
+	29	141
+	29	142
+	29	143
+	29	356
+	29	357
+	29	358
+	29	359
+	29	360
+	30	136
+	30	137
+	30	138
+	30	139
+	30	140
+	30	141
+	30	358
+	30	359
+	30	360
+	30	361
+	30	362
+	31	135
+	31	136
+	31	137
+	31	138
+	31	139
+	31	140
+	31	359
+	31	360
+	31	361
+	31	362
+	31	363
+	31	364
+	32	134
+	32	135
+	32	136
+	32	137
+	32	138
+	32	361
+	32	362
+	32	363
+	32	364
+	32	365
+	33	133
+	33	134
+	33	135
+	33	363
+	33	364
+	33	365
+	33	366
+	34	131
+	34	132
+	34	133
+	34	134
+	34	365
+	34	366
+	34	367
+	34	368
+	35	129
+	35	130
+	35	131
+	35	132
+	35	133
+	35	366
+	35	367
+	35	368
+	35	369
+	35	370
+	36	127
+	36	128
+	36	129
+	36	130
+	36	131
+	36	132
+	36	367
+	36	368
+	36	369
+	36	370
+	36	371
+	36	372
+	37	126
+	37	127
+	37	128
+	37	129
+	37	130
+	37	369
+	37	370
+	37	371
+	37	372
+	37	373
+	38	125
+	38	126
+	38	127
+	38	128
+	38	371
+	38	372
+	38	373
+	38	374
+	39	123
+	39	124
+	39	125
+	39	126
+	39	373
+	39	374
+	39	375
+	40	122
+	40	123
+	40	124
+	40	125
+	40	374
+	40	375
+	40	376
+	40	377
+	41	121
+	41	122
+	41	123
+	41	124
+	41	375
+	41	376
+	41	377
+	41	378
+	42	119
+	42	120
+	42	121
+	42	122
+	42	376
+	42	377
+	42	378
+	42	379
+	43	118
+	43	119
+	43	120
+	43	121
+	43	378
+	43	379
+	43	380
+	43	381
+	44	117
+	44	118
+	44	119
+	44	120
+	44	379
+	44	380
+	44	381
+	44	382
+	45	115
+	45	116
+	45	117
+	45	118
+	45	380
+	45	381
+	45	382
+	45	383
+	46	114
+	46	115
+	46	116
+	46	117
+	46	382
+	46	383
+	46	384
+	46	385
+	47	113
+	47	114
+	47	115
+	47	116
+	47	383
+	47	384
+	47	385
+	47	386
+	48	111
+	48	112
+	48	113
+	48	114
+	48	384
+	48	385
+	48	386
+	48	387
+	48	388
+	49	110
+	49	111
+	49	112
+	49	113
+	49	386
+	49	387
+	49	388
+	49	389
+	50	109
+	50	110
+	50	111
+	50	112
+	50	387
+	50	388
+	50	389
+	50	390
+	51	107
+	51	108
+	51	109
+	51	110
+	51	389
+	51	390
+	51	391
+	51	392
+	52	106
+	52	107
+	52	108
+	52	109
+	52	390
+	52	391
+	52	392
+	52	393
+	53	105
+	53	106
+	53	107
+	53	108
+	53	391
+	53	392
+	53	393
+	53	394
+	54	104
+	54	105
+	54	106
+	54	393
+	54	394
+	54	395
+	54	396
+	55	103
+	55	104
+	55	105
+	55	106
+	55	393
+	55	394
+	55	395
+	55	396
+	55	397
+	56	102
+	56	103
+	56	104
+	56	395
+	56	396
+	56	397
+	57	101
+	57	102
+	57	103
+	57	396
+	57	397
+	57	398
+	58	100
+	58	101
+	58	102
+	58	397
+	58	398
+	58	399
+	59	99
+	59	100
+	59	101
+	59	398
+	59	399
+	59	400
+	60	98
+	60	99
+	60	100
+	60	399
+	60	400
+	60	401
+	61	97
+	61	98
+	61	99
+	61	400
+	61	401
+	61	402
+	62	95
+	62	96
+	62	97
+	62	98
+	62	401
+	62	402
+	62	403
+	62	404
+	63	94
+	63	95
+	63	96
+	63	97
+	63	402
+	63	403
+	63	404
+	63	405
+	64	93
+	64	94
+	64	95
+	64	96
+	64	403
+	64	404
+	64	405
+	64	406
+	65	92
+	65	93
+	65	94
+	65	405
+	65	406
+	65	407
+	66	91
+	66	92
+	66	93
+	66	406
+	66	407
+	66	408
+	67	90
+	67	91
+	67	92
+	67	406
+	67	407
+	67	408
+	68	89
+	68	90
+	68	91
+	68	407
+	68	408
+	68	409
+	69	88
+	69	89
+	69	90
+	69	408
+	69	409
+	69	410
+	69	411
+	70	87
+	70	88
+	70	89
+	70	409
+	70	410
+	70	411
+	70	412
+	71	86
+	71	87
+	71	88
+	71	410
+	71	411
+	71	412
+	71	413
+	71	414
+	72	85
+	72	86
+	72	87
+	72	412
+	72	413
+	72	414
+	72	415
+	73	84
+	73	85
+	73	86
+	73	413
+	73	414
+	74	83
+	74	84
+	74	85
+	74	413
+	74	414
+	74	415
+	75	82
+	75	83
+	75	84
+	75	414
+	75	415
+	75	416
+	76	81
+	76	82
+	76	83
+	76	415
+	76	416
+	76	417
+	77	81
+	77	82
+	77	83
+	77	416
+	77	417
+	77	418
+	78	80
+	78	81
+	78	82
+	78	416
+	78	417
+	78	418
+	79	79
+	79	80
+	79	81
+	79	82
+	79	416
+	79	417
+	79	418
+	79	419
+	80	78
+	80	79
+	80	80
+	80	418
+}
+BARRIER {
+	80	419
+	80	420
+	80	421
+	81	77
+	81	78
+	81	79
+	81	80
+	81	419
+	81	420
+	81	421
+	81	422
+	82	76
+	82	77
+	82	78
+	82	79
+	82	420
+	82	421
+	82	422
+	82	423
+	83	75
+	83	76
+	83	77
+	83	422
+	83	423
+	83	424
+	84	74
+	84	75
+	84	76
+	84	423
+	84	424
+	84	425
+	85	73
+	85	74
+	85	75
+	85	423
+	85	424
+	85	425
+	86	72
+	86	73
+	86	74
+	86	424
+	86	425
+	86	426
+	87	71
+	87	72
+	87	73
+	87	425
+	87	426
+	87	427
+	88	71
+	88	72
+	88	73
+	88	426
+	88	427
+	88	428
+	89	70
+	89	71
+	89	72
+	89	426
+	89	427
+	89	428
+	90	69
+	90	70
+	90	71
+	90	427
+	90	428
+	90	429
+	91	68
+	91	69
+	91	70
+	91	428
+	91	429
+	91	430
+	92	68
+	92	69
+	92	70
+	92	429
+	92	430
+	92	431
+	93	67
+	93	68
+	93	69
+	93	429
+	93	430
+	93	431
+	94	66
+	94	67
+	94	68
+	94	430
+	94	431
+	94	432
+	95	65
+	95	66
+	95	67
+	95	431
+	95	432
+	95	433
+	96	65
+	96	66
+	96	67
+	96	432
+	96	433
+	96	434
+	97	64
+	97	65
+	97	66
+	97	67
+	97	432
+	97	433
+	97	434
+	98	63
+	98	64
+	98	65
+	98	433
+	98	434
+	98	435
+	99	62
+	99	63
+	99	64
+	99	434
+	99	435
+	99	436
+	100	62
+	100	63
+	100	64
+	100	435
+	100	436
+	100	437
+	101	61
+	101	62
+	101	63
+	101	435
+	101	436
+	101	437
+	102	60
+	102	61
+	102	62
+	102	436
+	102	437
+	102	438
+	103	59
+	103	60
+	103	61
+	103	437
+	103	438
+	103	439
+	104	59
+	104	60
+	104	61
+	104	438
+	104	439
+	104	440
+	105	58
+	105	59
+	105	60
+	105	439
+	105	440
+	105	441
+	106	57
+	106	58
+	106	59
+	106	440
+	106	441
+	106	442
+	107	56
+	107	57
+	107	58
+	107	441
+	107	442
+	107	443
+	108	55
+	108	56
+	108	57
+	108	441
+	108	442
+	108	443
+	109	55
+	109	56
+	109	57
+	109	442
+	109	443
+	109	444
+	110	54
+	110	55
+	110	56
+	110	57
+	110	442
+	110	443
+	110	444
+	111	54
+	111	55
+	111	56
+	111	443
+	111	444
+	111	445
+	112	53
+	112	54
+	112	55
+	112	443
+	112	444
+	112	445
+	113	52
+	113	53
+	113	54
+	113	444
+	113	445
+	113	446
+	114	51
+	114	52
+	114	53
+	114	445
+	114	446
+	114	447
+	115	51
+	115	52
+	115	53
+	115	446
+	115	447
+	115	448
+	116	50
+	116	51
+	116	52
+	116	446
+	116	447
+	116	448
+	117	50
+	117	51
+	117	52
+	117	447
+	117	448
+	117	449
+	118	49
+	118	50
+	118	51
+	118	447
+	118	448
+	118	449
+	119	49
+	119	50
+	119	51
+	119	448
+	119	449
+	119	450
+	120	48
+	120	49
+	120	50
+	120	448
+	120	449
+	120	450
+	121	47
+	121	48
+	121	49
+	121	449
+	121	450
+	121	451
+	122	47
+	122	48
+	122	49
+	122	449
+	122	450
+	122	451
+	123	46
+	123	47
+	123	48
+	123	49
+	123	449
+	123	450
+	123	451
+	123	452
+	124	46
+	124	47
+	124	48
+	124	451
+	124	452
+	124	453
+	125	45
+	125	46
+	125	47
+	125	451
+	125	452
+	125	453
+	126	45
+	126	46
+	126	47
+	126	452
+	126	453
+	126	454
+	127	44
+	127	45
+	127	46
+	127	452
+	127	453
+	127	454
+	128	44
+	128	45
+	128	46
+	128	453
+	128	454
+	128	455
+	129	43
+	129	44
+	129	45
+	129	453
+	129	454
+	129	455
+	130	42
+	130	43
+	130	44
+	130	454
+	130	455
+	130	456
+	131	41
+	131	42
+	131	43
+	131	455
+	131	456
+	131	457
+	132	41
+	132	42
+	132	43
+	132	456
+	132	457
+	132	458
+	133	40
+	133	41
+	133	42
+	133	456
+	133	457
+	133	458
+	134	40
+	134	41
+	134	42
+	134	457
+	134	458
+	134	459
+	135	39
+	135	40
+	135	41
+	135	457
+	135	458
+	135	459
+	136	39
+	136	40
+	136	41
+	136	458
+	136	459
+	136	460
+	137	38
+	137	39
+	137	40
+	137	458
+	137	459
+	137	460
+	138	38
+	138	39
+	138	40
+	138	459
+	138	460
+	138	461
+	139	37
+	139	38
+	139	39
+	139	459
+	139	460
+	139	461
+	140	37
+	140	38
+	140	39
+	140	460
+	140	461
+	140	462
+	141	36
+	141	37
+	141	38
+	141	460
+	141	461
+	141	462
+	142	36
+	142	37
+	142	38
+	142	461
+	142	462
+	142	463
+	143	35
+	143	36
+	143	37
+	143	461
+	143	462
+	143	463
+	144	35
+	144	36
+	144	37
+	144	462
+	144	463
+	144	464
+	145	34
+	145	35
+	145	36
+	145	462
+	145	463
+	145	464
+	146	34
+	146	35
+	146	36
+	146	463
+	146	464
+	146	465
+	147	33
+	147	34
+	147	35
+	147	463
+	147	464
+	147	465
+	148	33
+	148	34
+	148	35
+	148	464
+	148	465
+	148	466
+	149	32
+	149	33
+	149	34
+	149	464
+	149	465
+	149	466
+	150	32
+	150	33
+	150	34
+	150	464
+	150	465
+	150	466
+	151	31
+	151	32
+	151	33
+	151	465
+	151	466
+	151	467
+	152	31
+	152	32
+	152	33
+	152	465
+	152	466
+	152	467
+	153	31
+	153	32
+	153	33
+	153	466
+	153	467
+	153	468
+	154	30
+	154	31
+	154	32
+	154	466
+	154	467
+	154	468
+	155	30
+	155	31
+	155	32
+	155	467
+	155	468
+	155	469
+	156	29
+	156	30
+	156	31
+	156	467
+	156	468
+	156	469
+	157	29
+	157	30
+	157	31
+	157	468
+	157	469
+	157	470
+	158	28
+	158	29
+	158	30
+	158	31
+	158	468
+	158	469
+	158	470
+	159	28
+	159	29
+	159	30
+	159	469
+	159	470
+	159	471
+	160	27
+	160	28
+	160	29
+	160	469
+	160	470
+	160	471
+	161	27
+	161	28
+	161	29
+	161	470
+	161	471
+	161	472
+	162	26
+	162	27
+}
+BARRIER {
+	162	28
+	162	470
+	162	471
+	162	472
+	163	26
+	163	27
+	163	28
+	163	471
+	163	472
+	163	473
+	164	25
+	164	26
+	164	27
+	164	471
+	164	472
+	164	473
+	165	25
+	165	26
+	165	27
+	165	472
+	165	473
+	165	474
+	166	24
+	166	25
+	166	26
+	166	472
+	166	473
+	166	474
+	167	24
+	167	25
+	167	26
+	167	473
+	167	474
+	167	475
+	168	23
+	168	24
+	168	25
+	168	473
+	168	474
+	168	475
+	169	23
+	169	24
+	169	25
+	169	474
+	169	475
+	169	476
+	170	22
+	170	23
+	170	24
+	170	474
+	170	475
+	170	476
+	171	22
+	171	23
+	171	24
+	171	474
+	171	475
+	171	476
+	172	22
+	172	23
+	172	24
+	172	474
+	172	475
+	172	476
+	173	22
+	173	23
+	173	24
+	173	474
+	173	475
+	173	476
+	174	22
+	174	23
+	174	24
+	174	475
+	174	476
+	174	477
+	175	21
+	175	22
+	175	23
+	175	475
+	175	476
+	175	477
+	176	21
+	176	22
+	176	23
+	176	476
+	176	477
+	176	478
+	177	20
+	177	21
+	177	22
+	177	476
+	177	477
+	177	478
+	178	20
+	178	21
+	178	22
+	178	477
+	178	478
+	178	479
+	179	19
+	179	20
+	179	21
+	179	477
+	179	478
+	179	479
+	180	19
+	180	20
+	180	21
+	180	478
+	180	479
+	180	480
+	181	18
+	181	19
+	181	20
+	181	478
+	181	479
+	181	480
+	182	18
+	182	19
+	182	20
+	182	479
+	182	480
+	182	481
+	183	17
+	183	18
+	183	19
+	183	479
+	183	480
+	183	481
+	184	17
+	184	18
+	184	19
+	184	479
+	184	480
+	184	481
+	185	17
+	185	18
+	185	19
+	185	479
+	185	480
+	185	481
+	186	17
+	186	18
+	186	19
+	186	479
+	186	480
+	186	481
+	187	17
+	187	18
+	187	19
+	187	480
+	187	481
+	187	482
+	188	16
+	188	17
+	188	18
+	188	480
+	188	481
+	188	482
+	189	16
+	189	17
+	189	18
+	189	481
+	189	482
+	189	483
+	190	15
+	190	16
+	190	17
+	190	481
+	190	482
+	190	483
+	191	15
+	191	16
+	191	17
+	191	482
+	191	483
+	191	484
+	192	14
+	192	15
+	192	16
+	192	482
+	192	483
+	192	484
+	193	14
+	193	15
+	193	16
+	193	482
+	193	483
+	193	484
+	194	14
+	194	15
+	194	16
+	194	482
+	194	483
+	194	484
+	195	14
+	195	15
+	195	16
+	195	483
+	195	484
+	195	485
+	196	13
+	196	14
+	196	15
+	196	483
+	196	484
+	196	485
+	197	13
+	197	14
+	197	15
+	197	483
+	197	484
+	197	485
+	198	13
+	198	14
+	198	15
+	198	483
+	198	484
+	198	485
+	199	13
+	199	14
+	199	15
+	199	484
+	199	485
+	199	486
+	200	12
+	200	13
+	200	14
+	200	484
+	200	485
+	200	486
+	201	12
+	201	13
+	201	14
+	201	484
+	201	485
+	201	486
+	202	12
+	202	13
+	202	14
+	202	484
+	202	485
+	202	486
+	203	12
+	203	13
+	203	14
+	203	484
+	203	485
+	203	486
+	204	12
+	204	13
+	204	14
+	204	485
+	204	486
+	204	487
+	205	11
+	205	12
+	205	13
+	205	485
+	205	486
+	205	487
+	206	11
+	206	12
+	206	13
+	206	486
+	206	487
+	206	488
+	207	10
+	207	11
+	207	12
+	207	13
+	207	486
+	207	487
+	207	488
+	208	10
+	208	11
+	208	12
+	208	487
+	208	488
+	208	489
+	209	9
+	209	10
+	209	11
+	209	487
+	209	488
+	209	489
+	210	9
+	210	10
+	210	11
+	210	487
+	210	488
+	210	489
+	211	9
+	211	10
+	211	11
+	211	487
+	211	488
+	211	489
+	212	9
+	212	10
+	212	11
+	212	488
+	212	489
+	212	490
+	213	8
+	213	9
+	213	10
+	213	488
+	213	489
+	213	490
+	214	8
+	214	9
+	214	10
+	214	488
+	214	489
+	214	490
+	215	8
+	215	9
+	215	10
+	215	488
+	215	489
+	215	490
+	216	8
+	216	9
+	216	10
+	216	488
+	216	489
+	216	490
+	217	8
+	217	9
+	217	10
+	217	489
+	217	490
+	217	491
+	218	7
+	218	8
+	218	9
+	218	489
+	218	490
+	218	491
+	219	7
+	219	8
+	219	9
+	219	489
+	219	490
+	219	491
+	220	7
+	220	8
+	220	9
+	220	489
+	220	490
+	220	491
+	221	7
+	221	8
+	221	9
+	221	490
+	221	491
+	221	492
+	222	6
+	222	7
+	222	8
+	222	490
+	222	491
+	222	492
+	223	6
+	223	7
+	223	8
+	223	490
+	223	491
+	223	492
+	224	6
+	224	7
+	224	8
+	224	490
+	224	491
+	224	492
+	225	6
+	225	7
+	225	8
+	225	491
+	225	492
+	225	493
+	226	5
+	226	6
+	226	7
+	226	491
+	226	492
+	226	493
+	227	5
+	227	6
+	227	7
+	227	491
+	227	492
+	227	493
+	228	5
+	228	6
+	228	7
+	228	491
+	228	492
+	228	493
+	229	5
+	229	6
+	229	7
+	229	491
+	229	492
+	229	493
+	230	5
+	230	6
+	230	7
+	230	492
+	230	493
+	230	494
+	231	5
+	231	6
+	231	7
+	231	492
+	231	493
+	231	494
+	232	5
+	232	6
+	232	7
+	232	492
+	232	493
+	232	494
+	233	5
+	233	6
+	233	7
+	233	492
+	233	493
+	233	494
+	234	5
+	234	6
+	234	7
+	234	492
+	234	493
+	234	494
+	235	4
+	235	5
+	235	6
+	235	492
+	235	493
+	235	494
+	236	4
+	236	5
+	236	6
+	236	492
+	236	493
+	236	494
+	237	4
+	237	5
+	237	6
+	237	492
+	237	493
+	237	494
+	238	4
+	238	5
+	238	6
+	238	493
+	238	494
+	238	495
+	239	3
+	239	4
+	239	5
+	239	493
+	239	494
+	239	495
+	240	3
+	240	4
+	240	5
+	240	493
+	240	494
+	240	495
+	241	3
+	241	4
+	241	5
+	241	493
+	241	494
+	241	495
+	242	3
+	242	4
+	242	5
+	242	493
+	242	494
+	242	495
+	243	3
+	243	4
+	243	5
+	243	494
+	243	495
+	243	496
+	244	2
+	244	3
+	244	4
+	244	494
+	244	495
+	244	496
+	245	2
+	245	3
+	245	4
+}
+BARRIER {
+	245	494
+	245	495
+	245	496
+	246	2
+	246	3
+	246	4
+	246	494
+	246	495
+	246	496
+	247	2
+	247	3
+	247	4
+	247	495
+	247	496
+	247	497
+	248	2
+	248	3
+	248	4
+	248	495
+	248	496
+	248	497
+	249	2
+	249	3
+	249	4
+	249	495
+	249	496
+	249	497
+	250	2
+	250	3
+	250	4
+	250	495
+	250	496
+	250	497
+	251	2
+	251	3
+	251	4
+	251	495
+	251	496
+	251	497
+	252	2
+	252	3
+	252	4
+	252	495
+	252	496
+	252	497
+	253	1
+	253	2
+	253	3
+	253	495
+	253	496
+	253	497
+	254	1
+	254	2
+	254	3
+	254	495
+	254	496
+	254	497
+	255	1
+	255	2
+	255	3
+	255	495
+	255	496
+	255	497
+	256	1
+	256	2
+	256	3
+	256	496
+	256	497
+	256	498
+	257	1
+	257	2
+	257	3
+	257	496
+	257	497
+	257	498
+	258	1
+	258	2
+	258	3
+	258	496
+	258	497
+	258	498
+	259	1
+	259	2
+	259	3
+	259	496
+	259	497
+	259	498
+	260	1
+	260	2
+	260	3
+	260	496
+	260	497
+	260	498
+	261	0
+	261	1
+	261	2
+	261	496
+	261	497
+	261	498
+	262	0
+	262	1
+	262	2
+	262	496
+	262	497
+	262	498
+	263	0
+	263	1
+	263	2
+	263	496
+	263	497
+	263	498
+	264	0
+	264	1
+	264	2
+	264	496
+	264	497
+	264	498
+	265	0
+	265	1
+	265	2
+	265	497
+	265	498
+	265	499
+	266	0
+	266	1
+	266	2
+	266	497
+	266	498
+	266	499
+	267	0
+	267	1
+	267	2
+	267	497
+	267	498
+	267	499
+	268	0
+	268	1
+	268	2
+	268	497
+	268	498
+	268	499
+	269	0
+	269	1
+	269	2
+	269	497
+	269	498
+	269	499
+	270	0
+	270	1
+	270	497
+	270	498
+	270	499
+	271	0
+	271	1
+	271	319
+	271	320
+	271	321
+	271	322
+	271	323
+	271	324
+	271	325
+	271	326
+	271	327
+	271	328
+	271	329
+	271	330
+	271	331
+	271	332
+	271	333
+	271	334
+	271	335
+	271	336
+	271	337
+	271	338
+	271	339
+	271	340
+	271	375
+	271	376
+	271	377
+	271	378
+	271	379
+	271	380
+	271	381
+	271	382
+	271	497
+	271	498
+	271	499
+	272	0
+	272	1
+	272	305
+	272	306
+	272	307
+	272	308
+	272	309
+	272	310
+	272	311
+	272	312
+	272	313
+	272	314
+	272	315
+	272	316
+	272	317
+	272	318
+	272	319
+	272	320
+	272	321
+	272	322
+	272	323
+	272	324
+	272	325
+	272	326
+	272	327
+	272	328
+	272	329
+	272	330
+	272	331
+	272	332
+	272	333
+	272	334
+	272	335
+	272	336
+	272	337
+	272	338
+	272	339
+	272	340
+	272	341
+	272	342
+	272	343
+	272	344
+	272	345
+	272	346
+	272	347
+	272	348
+	272	349
+	272	350
+	272	351
+	272	352
+	272	353
+	272	354
+	272	355
+	272	356
+	272	357
+	272	358
+	272	359
+	272	360
+	272	361
+	272	362
+	272	363
+	272	364
+	272	365
+	272	366
+	272	367
+	272	368
+	272	369
+	272	370
+	272	371
+	272	372
+	272	373
+	272	374
+	272	375
+	272	376
+	272	377
+	272	378
+	272	379
+	272	380
+	272	381
+	272	382
+	272	383
+	272	384
+	272	385
+	272	386
+	272	387
+	272	388
+	272	389
+	272	497
+	272	498
+	272	499
+	273	0
+	273	1
+	273	304
+	273	305
+	273	306
+	273	307
+	273	308
+	273	309
+	273	310
+	273	311
+	273	312
+	273	313
+	273	314
+	273	315
+	273	316
+	273	317
+	273	318
+	273	319
+	273	320
+	273	321
+	273	322
+	273	323
+	273	324
+	273	325
+	273	326
+	273	327
+	273	328
+	273	329
+	273	330
+	273	331
+	273	332
+	273	333
+	273	334
+	273	335
+	273	336
+	273	337
+	273	338
+	273	339
+	273	340
+	273	341
+	273	342
+	273	343
+	273	344
+	273	345
+	273	346
+	273	347
+	273	348
+	273	349
+	273	350
+	273	351
+	273	352
+	273	353
+	273	354
+	273	355
+	273	356
+	273	357
+	273	358
+	273	359
+	273	360
+	273	361
+	273	362
+	273	363
+	273	364
+	273	365
+	273	366
+	273	367
+	273	368
+	273	369
+	273	370
+	273	371
+	273	372
+	273	373
+	273	374
+	273	375
+	273	376
+	273	377
+	273	378
+	273	379
+	273	380
+	273	381
+	273	382
+	273	383
+	273	384
+	273	385
+	273	386
+	273	387
+	273	388
+	273	389
+	273	390
+	273	391
+	273	392
+	273	393
+	273	394
+	273	498
+	273	499
+	274	0
+	274	1
+	274	303
+	274	304
+	274	305
+	274	306
+	274	307
+	274	308
+	274	309
+	274	310
+	274	311
+	274	312
+	274	313
+	274	314
+	274	315
+	274	316
+	274	317
+	274	318
+	274	341
+	274	342
+	274	343
+	274	344
+	274	345
+	274	346
+	274	347
+	274	348
+	274	349
+	274	350
+	274	351
+	274	352
+	274	353
+	274	354
+	274	355
+	274	356
+	274	357
+	274	358
+	274	359
+	274	360
+	274	361
+	274	362
+	274	363
+	274	364
+	274	365
+	274	366
+	274	367
+	274	368
+	274	369
+	274	370
+	274	371
+	274	372
+	274	373
+	274	374
+	274	383
+	274	384
+	274	385
+	274	386
+	274	387
+	274	388
+	274	389
+	274	390
+	274	391
+	274	392
+	274	393
+	274	394
+	274	395
+	274	396
+	274	397
+	274	398
+	274	399
+	274	400
+	274	401
+	274	402
+	274	403
+	274	404
+	274	405
+	274	406
+	274	407
+	274	408
+	274	498
+	274	499
+	275	0
+	275	1
+	275	303
+	275	304
+	275	305
+	275	390
+	275	391
+	275	392
+	275	393
+	275	394
+	275	395
+	275	396
+	275	397
+	275	398
+	275	399
+	275	400
+	275	401
+	275	402
+	275	403
+	275	404
+	275	405
+	275	406
+	275	407
+	275	408
+	275	409
+	275	410
+	275	411
+	275	412
+	275	413
+	275	414
+	275	415
+	275	416
+	275	417
+	275	418
+	275	419
+	275	420
+	275	421
+	275	422
+	275	498
+	275	499
+	276	0
+	276	1
+	276	303
+	276	304
+	276	305
+	276	395
+	276	396
+	276	397
+}
+BARRIER {
+	276	398
+	276	399
+	276	400
+	276	401
+	276	402
+	276	403
+	276	404
+	276	405
+	276	406
+	276	407
+	276	408
+	276	409
+	276	410
+	276	411
+	276	412
+	276	413
+	276	414
+	276	415
+	276	416
+	276	417
+	276	418
+	276	419
+	276	420
+	276	421
+	276	422
+	276	423
+	276	424
+	276	425
+	276	426
+	276	427
+	276	498
+	276	499
+	277	0
+	277	1
+	277	303
+	277	304
+	277	305
+	277	409
+	277	410
+	277	411
+	277	412
+	277	413
+	277	414
+	277	415
+	277	416
+	277	417
+	277	418
+	277	419
+	277	420
+	277	421
+	277	422
+	277	423
+	277	424
+	277	425
+	277	426
+	277	427
+	277	428
+	277	429
+	277	430
+	277	431
+	277	432
+	277	433
+	277	434
+	277	498
+	277	499
+	278	0
+	278	1
+	278	304
+	278	305
+	278	306
+	278	423
+	278	424
+	278	425
+	278	426
+	278	427
+	278	428
+	278	429
+	278	430
+	278	431
+	278	432
+	278	433
+	278	434
+	278	435
+	278	436
+	278	437
+	278	438
+	278	439
+	278	440
+	278	495
+	278	496
+	278	497
+	278	498
+	278	499
+	279	0
+	279	1
+	279	304
+	279	305
+	279	306
+	279	307
+	279	428
+	279	429
+	279	430
+	279	431
+	279	432
+	279	433
+	279	434
+	279	435
+	279	436
+	279	437
+	279	438
+	279	439
+	279	440
+	279	441
+	279	442
+	279	443
+	279	444
+	279	445
+	279	446
+	279	447
+	279	493
+	279	494
+	279	495
+	279	496
+	279	497
+	279	498
+	279	499
+	280	0
+	280	1
+	280	304
+	280	305
+	280	306
+	280	307
+	280	308
+	280	435
+	280	436
+	280	437
+	280	438
+	280	439
+	280	440
+	280	441
+	280	442
+	280	443
+	280	444
+	280	445
+	280	446
+	280	447
+	280	448
+	280	449
+	280	450
+	280	451
+	280	452
+	280	453
+	280	491
+	280	492
+	280	493
+	280	494
+	280	495
+	280	496
+	280	497
+	280	498
+	280	499
+	281	0
+	281	1
+	281	304
+	281	305
+	281	306
+	281	307
+	281	308
+	281	441
+	281	442
+	281	443
+	281	444
+	281	445
+	281	446
+	281	447
+	281	448
+	281	449
+	281	450
+	281	451
+	281	452
+	281	453
+	281	454
+	281	455
+	281	456
+	281	457
+	281	458
+	281	459
+	281	489
+	281	490
+	281	491
+	281	492
+	281	493
+	281	494
+	281	498
+	281	499
+	282	0
+	282	1
+	282	169
+	282	170
+	282	171
+	282	172
+	282	173
+	282	174
+	282	175
+	282	176
+	282	177
+	282	178
+	282	179
+	282	180
+	282	181
+	282	182
+	282	183
+	282	184
+	282	185
+	282	186
+	282	187
+	282	188
+	282	189
+	282	190
+	282	223
+	282	224
+	282	225
+	282	226
+	282	227
+	282	228
+	282	229
+	282	230
+	282	231
+	282	232
+	282	233
+	282	234
+	282	235
+	282	236
+	282	237
+	282	238
+	282	239
+	282	240
+	282	241
+	282	242
+	282	243
+	282	254
+	282	255
+	282	305
+	282	306
+	282	307
+	282	308
+	282	448
+	282	449
+	282	450
+	282	451
+	282	452
+	282	453
+	282	454
+	282	455
+	282	456
+	282	457
+	282	458
+	282	459
+	282	460
+	282	461
+	282	462
+	282	463
+	282	464
+	282	465
+	282	485
+	282	486
+	282	487
+	282	488
+	282	489
+	282	490
+	282	491
+	282	492
+	282	498
+	282	499
+	283	0
+	283	1
+	283	161
+	283	162
+	283	163
+	283	164
+	283	165
+	283	166
+	283	167
+	283	168
+	283	169
+	283	170
+	283	171
+	283	172
+	283	173
+	283	174
+	283	175
+	283	176
+	283	177
+	283	178
+	283	179
+	283	180
+	283	181
+	283	182
+	283	183
+	283	184
+	283	185
+	283	186
+	283	187
+	283	188
+	283	189
+	283	190
+	283	191
+	283	192
+	283	193
+	283	194
+	283	217
+	283	218
+	283	219
+	283	220
+	283	221
+	283	222
+	283	223
+	283	224
+	283	225
+	283	226
+	283	227
+	283	228
+	283	229
+	283	230
+	283	231
+	283	232
+	283	233
+	283	234
+	283	235
+	283	236
+	283	237
+	283	238
+	283	239
+	283	240
+	283	241
+	283	242
+	283	243
+	283	244
+	283	245
+	283	246
+	283	247
+	283	248
+	283	249
+	283	250
+	283	251
+	283	252
+	283	253
+	283	254
+	283	255
+	283	256
+	283	257
+	283	305
+	283	306
+	283	307
+	283	308
+	283	454
+	283	455
+	283	456
+	283	457
+	283	458
+	283	459
+	283	460
+	283	461
+	283	462
+	283	463
+	283	464
+	283	465
+	283	466
+	283	467
+	283	468
+	283	469
+	283	470
+	283	481
+	283	482
+	283	483
+	283	484
+	283	485
+	283	486
+	283	487
+	283	488
+	283	489
+	283	490
+	283	491
+	283	498
+	283	499
+	284	0
+	284	1
+	284	4
+	284	5
+	284	6
+	284	7
+	284	8
+	284	9
+	284	10
+	284	11
+	284	12
+	284	153
+	284	154
+	284	155
+	284	156
+	284	157
+	284	158
+	284	159
+	284	160
+	284	161
+	284	162
+	284	163
+	284	164
+	284	165
+	284	166
+	284	167
+	284	168
+	284	169
+	284	170
+	284	171
+	284	172
+	284	173
+	284	174
+	284	175
+	284	176
+	284	177
+	284	178
+	284	179
+	284	180
+	284	181
+	284	182
+	284	183
+	284	184
+	284	185
+	284	186
+	284	187
+	284	188
+	284	189
+	284	190
+	284	191
+	284	192
+	284	193
+	284	194
+	284	195
+	284	196
+	284	197
+	284	198
+	284	199
+	284	200
+	284	212
+	284	213
+	284	214
+	284	215
+	284	216
+	284	217
+	284	218
+	284	219
+	284	220
+	284	221
+	284	222
+	284	223
+	284	224
+	284	225
+	284	226
+	284	227
+	284	228
+	284	229
+	284	230
+	284	231
+	284	232
+	284	233
+	284	234
+	284	235
+	284	236
+	284	237
+	284	238
+	284	239
+	284	240
+	284	241
+	284	242
+	284	243
+	284	244
+	284	245
+	284	246
+	284	247
+	284	248
+	284	249
+	284	250
+	284	251
+	284	252
+	284	253
+	284	254
+	284	255
+	284	256
+	284	257
+	284	258
+	284	305
+	284	306
+	284	307
+	284	308
+	284	460
+	284	461
+	284	462
+	284	463
+	284	464
+}
+BARRIER {
+	284	465
+	284	466
+	284	467
+	284	468
+	284	469
+	284	470
+	284	471
+	284	472
+	284	473
+	284	474
+	284	475
+	284	476
+	284	477
+	284	478
+	284	479
+	284	480
+	284	481
+	284	482
+	284	483
+	284	484
+	284	485
+	284	486
+	284	487
+	284	488
+	284	498
+	284	499
+	285	0
+	285	1
+	285	2
+	285	3
+	285	4
+	285	5
+	285	6
+	285	7
+	285	8
+	285	9
+	285	10
+	285	11
+	285	12
+	285	13
+	285	14
+	285	15
+	285	16
+	285	17
+	285	18
+	285	19
+	285	20
+	285	21
+	285	78
+	285	79
+	285	80
+	285	81
+	285	82
+	285	83
+	285	84
+	285	85
+	285	86
+	285	87
+	285	88
+	285	89
+	285	90
+	285	91
+	285	92
+	285	93
+	285	94
+	285	95
+	285	111
+	285	112
+	285	113
+	285	114
+	285	115
+	285	116
+	285	117
+	285	118
+	285	119
+	285	120
+	285	121
+	285	122
+	285	123
+	285	124
+	285	125
+	285	126
+	285	127
+	285	128
+	285	129
+	285	130
+	285	131
+	285	132
+	285	133
+	285	134
+	285	135
+	285	136
+	285	137
+	285	138
+	285	139
+	285	140
+	285	141
+	285	142
+	285	143
+	285	144
+	285	145
+	285	146
+	285	147
+	285	148
+	285	149
+	285	150
+	285	151
+	285	152
+	285	153
+	285	154
+	285	155
+	285	156
+	285	157
+	285	158
+	285	159
+	285	160
+	285	161
+	285	162
+	285	163
+	285	164
+	285	165
+	285	166
+	285	167
+	285	168
+	285	191
+	285	192
+	285	193
+	285	194
+	285	195
+	285	196
+	285	197
+	285	198
+	285	199
+	285	200
+	285	201
+	285	202
+	285	203
+	285	204
+	285	205
+	285	206
+	285	207
+	285	208
+	285	209
+	285	210
+	285	211
+	285	212
+	285	213
+	285	214
+	285	215
+	285	216
+	285	217
+	285	218
+	285	219
+	285	220
+	285	221
+	285	222
+	285	223
+	285	243
+	285	244
+	285	245
+	285	246
+	285	247
+	285	248
+	285	249
+	285	250
+	285	251
+	285	252
+	285	253
+	285	254
+	285	255
+	285	256
+	285	257
+	285	258
+	285	305
+	285	306
+	285	307
+	285	308
+	285	466
+	285	467
+	285	468
+	285	469
+	285	470
+	285	471
+	285	472
+	285	473
+	285	474
+	285	475
+	285	476
+	285	477
+	285	478
+	285	479
+	285	480
+	285	481
+	285	482
+	285	483
+	285	484
+	285	485
+	285	498
+	285	499
+	286	0
+	286	1
+	286	2
+	286	3
+	286	4
+	286	5
+	286	6
+	286	7
+	286	8
+	286	9
+	286	10
+	286	11
+	286	12
+	286	13
+	286	14
+	286	15
+	286	16
+	286	17
+	286	18
+	286	19
+	286	20
+	286	21
+	286	22
+	286	23
+	286	24
+	286	25
+	286	26
+	286	27
+	286	28
+	286	29
+	286	30
+	286	72
+	286	73
+	286	74
+	286	75
+	286	76
+	286	77
+	286	78
+	286	79
+	286	80
+	286	81
+	286	82
+	286	83
+	286	84
+	286	85
+	286	86
+	286	87
+	286	88
+	286	89
+	286	90
+	286	91
+	286	92
+	286	93
+	286	94
+	286	95
+	286	96
+	286	97
+	286	98
+	286	99
+	286	100
+	286	101
+	286	102
+	286	103
+	286	104
+	286	105
+	286	106
+	286	107
+	286	108
+	286	109
+	286	110
+	286	111
+	286	112
+	286	113
+	286	114
+	286	115
+	286	116
+	286	117
+	286	118
+	286	119
+	286	120
+	286	121
+	286	122
+	286	123
+	286	124
+	286	125
+	286	126
+	286	127
+	286	128
+	286	129
+	286	130
+	286	131
+	286	132
+	286	133
+	286	134
+	286	135
+	286	136
+	286	137
+	286	138
+	286	139
+	286	140
+	286	141
+	286	142
+	286	143
+	286	144
+	286	145
+	286	146
+	286	147
+	286	148
+	286	149
+	286	150
+	286	151
+	286	152
+	286	153
+	286	154
+	286	155
+	286	156
+	286	157
+	286	158
+	286	159
+	286	160
+	286	195
+	286	196
+	286	197
+	286	198
+	286	199
+	286	200
+	286	201
+	286	202
+	286	203
+	286	204
+	286	205
+	286	206
+	286	207
+	286	208
+	286	209
+	286	210
+	286	211
+	286	212
+	286	213
+	286	214
+	286	215
+	286	216
+	286	255
+	286	256
+	286	257
+	286	258
+	286	305
+	286	306
+	286	307
+	286	308
+	286	471
+	286	472
+	286	473
+	286	474
+	286	475
+	286	476
+	286	477
+	286	478
+	286	479
+	286	480
+	286	498
+	286	499
+	287	0
+	287	1
+	287	2
+	287	3
+	287	13
+	287	14
+	287	15
+	287	16
+	287	17
+	287	18
+	287	19
+	287	20
+	287	21
+	287	22
+	287	23
+	287	24
+	287	25
+	287	26
+	287	27
+	287	28
+	287	29
+	287	30
+	287	31
+	287	32
+	287	33
+	287	34
+	287	35
+	287	36
+	287	37
+	287	38
+	287	65
+	287	66
+	287	67
+	287	68
+	287	69
+	287	70
+	287	71
+	287	72
+	287	73
+	287	74
+	287	75
+	287	76
+	287	77
+	287	78
+	287	79
+	287	80
+	287	81
+	287	82
+	287	83
+	287	84
+	287	85
+	287	86
+	287	87
+	287	88
+	287	89
+	287	90
+	287	91
+	287	92
+	287	93
+	287	94
+	287	95
+	287	96
+	287	97
+	287	98
+	287	99
+	287	100
+	287	101
+	287	102
+	287	103
+	287	104
+	287	105
+	287	106
+	287	107
+	287	108
+	287	109
+	287	110
+	287	111
+	287	112
+	287	113
+	287	114
+	287	115
+	287	116
+	287	117
+	287	118
+	287	119
+	287	120
+	287	121
+	287	122
+	287	123
+	287	124
+	287	125
+	287	126
+	287	127
+	287	128
+	287	129
+	287	130
+	287	131
+	287	132
+	287	133
+	287	134
+	287	135
+	287	136
+	287	137
+	287	138
+	287	139
+	287	140
+	287	141
+	287	142
+	287	143
+	287	144
+	287	145
+	287	146
+	287	147
+	287	148
+	287	149
+	287	150
+	287	151
+	287	152
+	287	201
+	287	202
+	287	203
+	287	204
+	287	205
+	287	206
+	287	207
+	287	208
+	287	209
+	287	210
+	287	211
+	287	212
+	287	255
+	287	256
+	287	257
+	287	258
+	287	305
+	287	306
+	287	307
+	287	308
+	287	498
+}
+BARRIER {
+	287	499
+	288	0
+	288	1
+	288	22
+	288	23
+	288	24
+	288	25
+	288	26
+	288	27
+	288	28
+	288	29
+	288	30
+	288	31
+	288	32
+	288	33
+	288	34
+	288	35
+	288	36
+	288	37
+	288	38
+	288	39
+	288	40
+	288	41
+	288	42
+	288	43
+	288	44
+	288	45
+	288	46
+	288	47
+	288	48
+	288	49
+	288	50
+	288	51
+	288	52
+	288	53
+	288	54
+	288	55
+	288	56
+	288	57
+	288	58
+	288	59
+	288	60
+	288	61
+	288	62
+	288	63
+	288	64
+	288	65
+	288	66
+	288	67
+	288	68
+	288	69
+	288	70
+	288	71
+	288	72
+	288	73
+	288	74
+	288	75
+	288	76
+	288	77
+	288	96
+	288	97
+	288	98
+	288	99
+	288	100
+	288	101
+	288	102
+	288	103
+	288	104
+	288	105
+	288	106
+	288	107
+	288	108
+	288	109
+	288	110
+	288	254
+	288	255
+	288	256
+	288	257
+	288	258
+	288	305
+	288	306
+	288	307
+	288	308
+	288	498
+	288	499
+	289	0
+	289	1
+	289	31
+	289	32
+	289	33
+	289	34
+	289	35
+	289	36
+	289	37
+	289	38
+	289	39
+	289	40
+	289	41
+	289	42
+	289	43
+	289	44
+	289	45
+	289	46
+	289	47
+	289	48
+	289	49
+	289	50
+	289	51
+	289	52
+	289	53
+	289	54
+	289	55
+	289	56
+	289	57
+	289	58
+	289	59
+	289	60
+	289	61
+	289	62
+	289	63
+	289	64
+	289	65
+	289	66
+	289	67
+	289	68
+	289	69
+	289	70
+	289	71
+	289	254
+	289	255
+	289	256
+	289	257
+	289	258
+	289	305
+	289	306
+	289	307
+	289	308
+	289	309
+	289	498
+	289	499
+	290	0
+	290	1
+	290	39
+	290	40
+	290	41
+	290	42
+	290	43
+	290	44
+	290	45
+	290	46
+	290	47
+	290	48
+	290	49
+	290	50
+	290	51
+	290	52
+	290	53
+	290	54
+	290	55
+	290	56
+	290	57
+	290	58
+	290	59
+	290	60
+	290	61
+	290	62
+	290	63
+	290	64
+	290	254
+	290	255
+	290	256
+	290	257
+	290	258
+	290	305
+	290	306
+	290	307
+	290	308
+	290	309
+	290	498
+	290	499
+	291	0
+	291	1
+	291	254
+	291	255
+	291	256
+	291	257
+	291	258
+	291	305
+	291	306
+	291	307
+	291	308
+	291	309
+	291	310
+	291	498
+	291	499
+	292	0
+	292	1
+	292	254
+	292	255
+	292	256
+	292	257
+	292	258
+	292	259
+	292	305
+	292	306
+	292	307
+	292	308
+	292	309
+	292	310
+	292	498
+	292	499
+	293	0
+	293	1
+	293	254
+	293	255
+	293	256
+	293	257
+	293	258
+	293	259
+	293	260
+	293	305
+	293	306
+	293	307
+	293	308
+	293	309
+	293	310
+	293	498
+	293	499
+	294	0
+	294	1
+	294	254
+	294	255
+	294	256
+	294	257
+	294	258
+	294	259
+	294	260
+	294	305
+	294	306
+	294	307
+	294	308
+	294	309
+	294	320
+	294	321
+	294	322
+	294	323
+	294	324
+	294	325
+	294	326
+	294	327
+	294	328
+	294	329
+	294	330
+	294	331
+	294	332
+	294	498
+	294	499
+	295	0
+	295	1
+	295	254
+	295	255
+	295	256
+	295	257
+	295	258
+	295	259
+	295	260
+	295	305
+	295	306
+	295	307
+	295	308
+	295	309
+	295	314
+	295	315
+	295	316
+	295	317
+	295	318
+	295	319
+	295	320
+	295	321
+	295	322
+	295	323
+	295	324
+	295	325
+	295	326
+	295	327
+	295	328
+	295	329
+	295	330
+	295	331
+	295	332
+	295	333
+	295	334
+	295	335
+	295	336
+	295	337
+	295	498
+	295	499
+	296	0
+	296	1
+	296	254
+	296	255
+	296	256
+	296	257
+	296	258
+	296	259
+	296	260
+	296	305
+	296	306
+	296	307
+	296	308
+	296	309
+	296	310
+	296	311
+	296	312
+	296	313
+	296	314
+	296	315
+	296	316
+	296	317
+	296	318
+	296	319
+	296	320
+	296	321
+	296	322
+	296	323
+	296	324
+	296	325
+	296	326
+	296	327
+	296	328
+	296	329
+	296	330
+	296	331
+	296	332
+	296	333
+	296	334
+	296	335
+	296	336
+	296	337
+	296	338
+	296	339
+	296	340
+	296	498
+	296	499
+	297	0
+	297	1
+	297	254
+	297	255
+	297	256
+	297	257
+	297	258
+	297	259
+	297	260
+	297	261
+	297	262
+	297	263
+	297	301
+	297	302
+	297	303
+	297	304
+	297	305
+	297	306
+	297	307
+	297	308
+	297	309
+	297	310
+	297	311
+	297	312
+	297	313
+	297	314
+	297	315
+	297	316
+	297	317
+	297	318
+	297	319
+	297	332
+	297	333
+	297	334
+	297	335
+	297	336
+	297	337
+	297	338
+	297	339
+	297	340
+	297	341
+	297	342
+	297	343
+	297	344
+	297	345
+	297	498
+	297	499
+	298	0
+	298	1
+	298	254
+	298	255
+	298	256
+	298	257
+	298	258
+	298	259
+	298	260
+	298	261
+	298	262
+	298	263
+	298	264
+	298	265
+	298	299
+	298	300
+	298	301
+	298	302
+	298	303
+	298	304
+	298	305
+	298	306
+	298	307
+	298	308
+	298	309
+	298	310
+	298	311
+	298	312
+	298	313
+	298	338
+	298	339
+	298	340
+	298	341
+	298	342
+	298	343
+	298	344
+	298	345
+	298	346
+	298	347
+	298	348
+	298	349
+	298	482
+	298	483
+	298	484
+	298	485
+	298	486
+	298	487
+	298	488
+	298	489
+	298	490
+	298	491
+	298	492
+	298	493
+	298	494
+	298	495
+	298	496
+	298	498
+	298	499
+	299	0
+	299	1
+	299	254
+	299	255
+	299	256
+	299	257
+	299	258
+	299	259
+	299	260
+	299	261
+	299	262
+	299	263
+	299	301
+	299	302
+	299	303
+	299	304
+	299	305
+	299	306
+	299	307
+	299	308
+	299	309
+	299	310
+	299	311
+	299	312
+	299	313
+	299	314
+	299	341
+	299	342
+	299	343
+	299	344
+	299	345
+	299	346
+	299	347
+	299	348
+	299	349
+	299	350
+	299	351
+	299	352
+	299	353
+	299	466
+	299	467
+	299	468
+	299	469
+	299	470
+	299	471
+	299	472
+	299	473
+	299	474
+	299	475
+	299	476
+	299	477
+}
+BARRIER {
+	299	478
+	299	479
+	299	480
+	299	481
+	299	482
+	299	483
+	299	484
+	299	485
+	299	486
+	299	487
+	299	488
+	299	489
+	299	490
+	299	491
+	299	492
+	299	493
+	299	494
+	299	495
+	299	496
+	299	497
+	299	498
+	299	499
+	300	0
+	300	1
+	300	254
+	300	255
+	300	256
+	300	257
+	300	258
+	300	259
+	300	260
+	300	304
+	300	305
+	300	306
+	300	307
+	300	308
+	300	309
+	300	312
+	300	313
+	300	346
+	300	347
+	300	348
+	300	349
+	300	350
+	300	351
+	300	352
+	300	353
+	300	354
+	300	355
+	300	356
+	300	357
+	300	457
+	300	458
+	300	459
+	300	460
+	300	461
+	300	462
+	300	463
+	300	464
+	300	465
+	300	466
+	300	467
+	300	468
+	300	469
+	300	470
+	300	471
+	300	472
+	300	473
+	300	474
+	300	475
+	300	476
+	300	477
+	300	478
+	300	479
+	300	480
+	300	481
+	300	482
+	300	483
+	300	484
+	300	485
+	300	486
+	300	487
+	300	488
+	300	489
+	300	490
+	300	491
+	300	492
+	300	493
+	300	494
+	300	495
+	300	496
+	300	499
+	301	0
+	301	1
+	301	254
+	301	255
+	301	256
+	301	257
+	301	258
+	301	259
+	301	260
+	301	304
+	301	305
+	301	306
+	301	307
+	301	308
+	301	309
+	301	350
+	301	351
+	301	352
+	301	353
+	301	354
+	301	355
+	301	356
+	301	357
+	301	358
+	301	359
+	301	360
+	301	361
+	301	439
+	301	440
+	301	441
+	301	442
+	301	443
+	301	444
+	301	445
+	301	446
+	301	447
+	301	448
+	301	449
+	301	450
+	301	451
+	301	452
+	301	453
+	301	454
+	301	455
+	301	456
+	301	457
+	301	458
+	301	459
+	301	460
+	301	461
+	301	462
+	301	463
+	301	464
+	301	465
+	301	466
+	301	467
+	301	468
+	301	469
+	301	470
+	301	471
+	301	472
+	301	473
+	301	474
+	301	475
+	301	476
+	301	477
+	301	478
+	301	479
+	301	480
+	301	481
+	301	498
+	301	499
+	302	0
+	302	1
+	302	255
+	302	256
+	302	257
+	302	258
+	302	259
+	302	260
+	302	304
+	302	305
+	302	306
+	302	307
+	302	308
+	302	309
+	302	354
+	302	355
+	302	356
+	302	357
+	302	358
+	302	359
+	302	360
+	302	361
+	302	362
+	302	363
+	302	364
+	302	365
+	302	433
+	302	434
+	302	435
+	302	436
+	302	437
+	302	438
+	302	439
+	302	440
+	302	441
+	302	442
+	302	443
+	302	444
+	302	445
+	302	446
+	302	447
+	302	448
+	302	449
+	302	450
+	302	451
+	302	452
+	302	453
+	302	454
+	302	455
+	302	456
+	302	457
+	302	458
+	302	459
+	302	460
+	302	461
+	302	462
+	302	463
+	302	464
+	302	465
+	302	498
+	302	499
+	303	0
+	303	1
+	303	255
+	303	256
+	303	257
+	303	258
+	303	259
+	303	260
+	303	304
+	303	305
+	303	306
+	303	307
+	303	308
+	303	309
+	303	358
+	303	359
+	303	360
+	303	361
+	303	362
+	303	363
+	303	364
+	303	365
+	303	366
+	303	367
+	303	368
+	303	369
+	303	429
+	303	430
+	303	431
+	303	432
+	303	433
+	303	434
+	303	435
+	303	436
+	303	437
+	303	438
+	303	439
+	303	440
+	303	441
+	303	442
+	303	443
+	303	444
+	303	445
+	303	446
+	303	447
+	303	448
+	303	449
+	303	450
+	303	451
+	303	452
+	303	453
+	303	454
+	303	455
+	303	456
+	303	498
+	303	499
+	304	0
+	304	1
+	304	254
+	304	255
+	304	256
+	304	257
+	304	258
+	304	259
+	304	260
+	304	303
+	304	304
+	304	305
+	304	306
+	304	307
+	304	308
+	304	309
+	304	310
+	304	362
+	304	363
+	304	364
+	304	365
+	304	366
+	304	367
+	304	368
+	304	369
+	304	370
+	304	371
+	304	372
+	304	373
+	304	424
+	304	425
+	304	426
+	304	427
+	304	428
+	304	429
+	304	430
+	304	431
+	304	432
+	304	433
+	304	434
+	304	435
+	304	436
+	304	437
+	304	438
+	304	498
+	304	499
+	305	0
+	305	1
+	305	254
+	305	255
+	305	256
+	305	257
+	305	258
+	305	259
+	305	260
+	305	303
+	305	304
+	305	305
+	305	306
+	305	307
+	305	308
+	305	309
+	305	366
+	305	367
+	305	368
+	305	369
+	305	370
+	305	371
+	305	372
+	305	373
+	305	374
+	305	375
+	305	376
+	305	419
+	305	420
+	305	421
+	305	422
+	305	423
+	305	424
+	305	425
+	305	426
+	305	427
+	305	428
+	305	429
+	305	430
+	305	431
+	305	432
+	305	498
+	305	499
+	306	0
+	306	1
+	306	2
+	306	3
+	306	254
+	306	255
+	306	256
+	306	257
+	306	258
+	306	259
+	306	303
+	306	304
+	306	305
+	306	306
+	306	307
+	306	308
+	306	309
+	306	370
+	306	371
+	306	372
+	306	373
+	306	374
+	306	375
+	306	376
+	306	377
+	306	378
+	306	379
+	306	380
+	306	381
+	306	382
+	306	412
+	306	413
+	306	414
+	306	415
+	306	416
+	306	417
+	306	418
+	306	419
+	306	420
+	306	421
+	306	422
+	306	423
+	306	424
+	306	425
+	306	426
+	306	427
+	306	428
+	306	498
+	306	499
+	307	0
+	307	1
+	307	2
+	307	3
+	307	4
+	307	5
+	307	6
+	307	254
+	307	255
+	307	256
+	307	257
+	307	258
+	307	259
+	307	303
+	307	304
+	307	305
+	307	306
+	307	307
+	307	308
+	307	309
+	307	374
+	307	375
+	307	376
+	307	377
+	307	378
+	307	379
+	307	380
+	307	381
+	307	382
+	307	383
+	307	384
+	307	385
+	307	386
+	307	404
+	307	405
+	307	406
+	307	407
+	307	408
+	307	409
+	307	410
+	307	411
+	307	412
+	307	413
+	307	414
+	307	415
+	307	416
+	307	417
+	307	418
+	307	419
+	307	420
+	307	421
+	307	422
+	307	423
+	307	498
+	307	499
+	308	0
+	308	1
+	308	2
+	308	3
+	308	4
+	308	5
+	308	6
+	308	7
+	308	8
+	308	9
+	308	10
+	308	11
+	308	255
+	308	256
+	308	257
+	308	258
+	308	259
+	308	303
+	308	304
+	308	305
+	308	306
+	308	307
+	308	308
+	308	309
+	308	377
+	308	378
+}
+BARRIER {
+	308	379
+	308	380
+	308	381
+	308	382
+	308	383
+	308	384
+	308	385
+	308	386
+	308	387
+	308	388
+	308	389
+	308	390
+	308	397
+	308	398
+	308	399
+	308	400
+	308	401
+	308	402
+	308	403
+	308	404
+	308	405
+	308	406
+	308	407
+	308	408
+	308	409
+	308	410
+	308	411
+	308	412
+	308	413
+	308	414
+	308	415
+	308	416
+	308	417
+	308	418
+	308	498
+	308	499
+	309	0
+	309	1
+	309	2
+	309	3
+	309	4
+	309	5
+	309	6
+	309	7
+	309	8
+	309	9
+	309	10
+	309	11
+	309	12
+	309	13
+	309	14
+	309	15
+	309	16
+	309	17
+	309	255
+	309	256
+	309	257
+	309	258
+	309	259
+	309	303
+	309	304
+	309	305
+	309	306
+	309	307
+	309	308
+	309	309
+	309	383
+	309	384
+	309	385
+	309	386
+	309	387
+	309	388
+	309	389
+	309	390
+	309	391
+	309	392
+	309	393
+	309	394
+	309	395
+	309	396
+	309	397
+	309	398
+	309	399
+	309	400
+	309	401
+	309	402
+	309	403
+	309	404
+	309	405
+	309	406
+	309	407
+	309	408
+	309	409
+	309	410
+	309	411
+	309	498
+	309	499
+	310	0
+	310	1
+	310	3
+	310	4
+	310	6
+	310	7
+	310	8
+	310	9
+	310	10
+	310	11
+	310	12
+	310	13
+	310	14
+	310	15
+	310	16
+	310	17
+	310	18
+	310	19
+	310	20
+	310	21
+	310	22
+	310	255
+	310	256
+	310	257
+	310	258
+	310	259
+	310	303
+	310	304
+	310	305
+	310	306
+	310	307
+	310	308
+	310	309
+	310	386
+	310	387
+	310	388
+	310	389
+	310	390
+	310	391
+	310	392
+	310	393
+	310	394
+	310	395
+	310	396
+	310	397
+	310	398
+	310	399
+	310	400
+	310	401
+	310	402
+	310	403
+	310	498
+	310	499
+	311	0
+	311	1
+	311	12
+	311	13
+	311	14
+	311	15
+	311	16
+	311	17
+	311	18
+	311	19
+	311	20
+	311	21
+	311	22
+	311	23
+	311	24
+	311	25
+	311	26
+	311	27
+	311	28
+	311	29
+	311	30
+	311	31
+	311	32
+	311	33
+	311	34
+	311	35
+	311	36
+	311	255
+	311	256
+	311	257
+	311	258
+	311	259
+	311	303
+	311	304
+	311	305
+	311	306
+	311	307
+	311	308
+	311	309
+	311	390
+	311	391
+	311	392
+	311	393
+	311	394
+	311	395
+	311	396
+	311	498
+	311	499
+	312	0
+	312	1
+	312	18
+	312	19
+	312	20
+	312	21
+	312	22
+	312	23
+	312	24
+	312	25
+	312	26
+	312	27
+	312	28
+	312	29
+	312	30
+	312	31
+	312	32
+	312	33
+	312	34
+	312	35
+	312	36
+	312	37
+	312	38
+	312	39
+	312	40
+	312	41
+	312	255
+	312	256
+	312	257
+	312	258
+	312	259
+	312	303
+	312	304
+	312	305
+	312	306
+	312	307
+	312	308
+	312	309
+	312	498
+	312	499
+	313	0
+	313	1
+	313	18
+	313	19
+	313	20
+	313	21
+	313	22
+	313	23
+	313	24
+	313	25
+	313	26
+	313	27
+	313	28
+	313	29
+	313	30
+	313	31
+	313	32
+	313	33
+	313	34
+	313	35
+	313	36
+	313	37
+	313	38
+	313	39
+	313	40
+	313	41
+	313	255
+	313	256
+	313	257
+	313	258
+	313	259
+	313	303
+	313	304
+	313	305
+	313	306
+	313	307
+	313	308
+	313	309
+	313	498
+	313	499
+	314	0
+	314	1
+	314	37
+	314	38
+	314	39
+	314	40
+	314	41
+	314	42
+	314	43
+	314	44
+	314	45
+	314	46
+	314	47
+	314	48
+	314	49
+	314	50
+	314	51
+	314	65
+	314	66
+	314	67
+	314	68
+	314	69
+	314	70
+	314	71
+	314	72
+	314	73
+	314	74
+	314	75
+	314	76
+	314	77
+	314	78
+	314	79
+	314	80
+	314	81
+	314	82
+	314	83
+	314	84
+	314	85
+	314	86
+	314	87
+	314	88
+	314	89
+	314	255
+	314	256
+	314	257
+	314	258
+	314	259
+	314	304
+	314	305
+	314	306
+	314	307
+	314	308
+	314	309
+	314	498
+	314	499
+	315	0
+	315	1
+	315	42
+	315	43
+	315	44
+	315	45
+	315	46
+	315	47
+	315	48
+	315	49
+	315	50
+	315	51
+	315	52
+	315	53
+	315	54
+	315	55
+	315	56
+	315	57
+	315	58
+	315	59
+	315	60
+	315	61
+	315	62
+	315	63
+	315	64
+	315	65
+	315	66
+	315	67
+	315	68
+	315	69
+	315	70
+	315	71
+	315	72
+	315	73
+	315	74
+	315	75
+	315	76
+	315	77
+	315	78
+	315	79
+	315	80
+	315	81
+	315	82
+	315	83
+	315	84
+	315	85
+	315	86
+	315	87
+	315	88
+	315	89
+	315	90
+	315	91
+	315	92
+	315	93
+	315	94
+	315	95
+	315	96
+	315	97
+	315	98
+	315	255
+	315	256
+	315	257
+	315	258
+	315	259
+	315	304
+	315	305
+	315	306
+	315	307
+	315	308
+	315	309
+	315	498
+	315	499
+	316	0
+	316	1
+	316	42
+	316	43
+	316	44
+	316	45
+	316	46
+	316	47
+	316	48
+	316	49
+	316	50
+	316	51
+	316	52
+	316	53
+	316	54
+	316	55
+	316	56
+	316	57
+	316	58
+	316	59
+	316	60
+	316	61
+	316	62
+	316	63
+	316	64
+	316	65
+	316	66
+	316	67
+	316	68
+	316	69
+	316	70
+	316	71
+	316	72
+	316	73
+	316	74
+	316	75
+	316	76
+	316	77
+	316	78
+	316	79
+	316	80
+	316	81
+	316	82
+	316	83
+	316	84
+	316	85
+	316	86
+	316	87
+	316	88
+	316	89
+	316	90
+	316	91
+	316	92
+	316	93
+	316	94
+	316	95
+	316	96
+	316	97
+	316	98
+	316	255
+	316	256
+	316	257
+	316	258
+	316	259
+	316	304
+	316	305
+	316	306
+	316	307
+	316	308
+	316	309
+	316	498
+	316	499
+	317	0
+	317	1
+	317	52
+	317	53
+	317	54
+	317	55
+	317	56
+	317	57
+	317	58
+	317	59
+	317	60
+	317	61
+	317	62
+	317	63
+	317	64
+	317	65
+	317	90
+	317	91
+	317	92
+	317	93
+	317	94
+	317	95
+	317	96
+}
+BARRIER {
+	317	97
+	317	98
+	317	99
+	317	100
+	317	101
+	317	102
+	317	103
+	317	104
+	317	105
+	317	106
+	317	107
+	317	108
+	317	109
+	317	110
+	317	111
+	317	112
+	317	113
+	317	114
+	317	115
+	317	116
+	317	117
+	317	118
+	317	253
+	317	254
+	317	255
+	317	256
+	317	257
+	317	258
+	317	259
+	317	304
+	317	305
+	317	306
+	317	307
+	317	308
+	317	498
+	317	499
+	318	0
+	318	1
+	318	99
+	318	100
+	318	101
+	318	102
+	318	103
+	318	104
+	318	105
+	318	106
+	318	107
+	318	108
+	318	109
+	318	110
+	318	111
+	318	112
+	318	113
+	318	114
+	318	115
+	318	116
+	318	117
+	318	118
+	318	119
+	318	120
+	318	121
+	318	251
+	318	252
+	318	253
+	318	254
+	318	255
+	318	256
+	318	257
+	318	258
+	318	259
+	318	304
+	318	305
+	318	306
+	318	307
+	318	446
+	318	447
+	318	448
+	318	449
+	318	450
+	318	451
+	318	452
+	318	453
+	318	454
+	318	455
+	318	456
+	318	457
+	318	458
+	318	459
+	318	470
+	318	471
+	318	472
+	318	498
+	318	499
+	319	0
+	319	1
+	319	114
+	319	115
+	319	116
+	319	117
+	319	118
+	319	119
+	319	120
+	319	121
+	319	122
+	319	123
+	319	250
+	319	251
+	319	252
+	319	253
+	319	254
+	319	255
+	319	256
+	319	257
+	319	258
+	319	259
+	319	304
+	319	305
+	319	306
+	319	307
+	319	439
+	319	440
+	319	441
+	319	442
+	319	443
+	319	444
+	319	445
+	319	446
+	319	447
+	319	448
+	319	449
+	319	450
+	319	451
+	319	452
+	319	453
+	319	454
+	319	455
+	319	456
+	319	457
+	319	458
+	319	459
+	319	460
+	319	461
+	319	462
+	319	463
+	319	464
+	319	465
+	319	466
+	319	467
+	319	468
+	319	469
+	319	470
+	319	471
+	319	472
+	319	473
+	319	474
+	319	498
+	319	499
+	320	0
+	320	1
+	320	119
+	320	120
+	320	121
+	320	122
+	320	123
+	320	124
+	320	125
+	320	126
+	320	127
+	320	128
+	320	129
+	320	248
+	320	249
+	320	250
+	320	251
+	320	252
+	320	254
+	320	255
+	320	256
+	320	257
+	320	258
+	320	259
+	320	304
+	320	305
+	320	306
+	320	307
+	320	435
+	320	436
+	320	437
+	320	438
+	320	439
+	320	440
+	320	441
+	320	442
+	320	443
+	320	444
+	320	445
+	320	446
+	320	447
+	320	448
+	320	449
+	320	450
+	320	451
+	320	452
+	320	453
+	320	454
+	320	455
+	320	456
+	320	457
+	320	458
+	320	459
+	320	460
+	320	461
+	320	462
+	320	463
+	320	464
+	320	465
+	320	466
+	320	467
+	320	468
+	320	469
+	320	470
+	320	471
+	320	472
+	320	473
+	320	474
+	320	475
+	320	476
+	320	477
+	320	478
+	320	479
+	320	498
+	320	499
+	321	0
+	321	1
+	321	122
+	321	123
+	321	124
+	321	125
+	321	126
+	321	127
+	321	128
+	321	129
+	321	130
+	321	131
+	321	132
+	321	247
+	321	248
+	321	249
+	321	250
+	321	254
+	321	255
+	321	256
+	321	257
+	321	258
+	321	259
+	321	304
+	321	305
+	321	306
+	321	307
+	321	358
+	321	359
+	321	360
+	321	361
+	321	362
+	321	363
+	321	364
+	321	365
+	321	366
+	321	367
+	321	368
+	321	369
+	321	370
+	321	371
+	321	372
+	321	373
+	321	374
+	321	428
+	321	429
+	321	430
+	321	431
+	321	432
+	321	433
+	321	434
+	321	435
+	321	436
+	321	437
+	321	438
+	321	439
+	321	440
+	321	441
+	321	442
+	321	443
+	321	444
+	321	445
+	321	460
+	321	461
+	321	462
+	321	463
+	321	464
+	321	465
+	321	466
+	321	467
+	321	468
+	321	469
+	321	470
+	321	472
+	321	473
+	321	474
+	321	475
+	321	476
+	321	477
+	321	478
+	321	479
+	321	480
+	321	481
+	321	498
+	321	499
+	322	0
+	322	1
+	322	124
+	322	125
+	322	126
+	322	127
+	322	128
+	322	129
+	322	130
+	322	131
+	322	132
+	322	133
+	322	134
+	322	135
+	322	136
+	322	245
+	322	246
+	322	247
+	322	248
+	322	249
+	322	254
+	322	255
+	322	256
+	322	257
+	322	258
+	322	259
+	322	304
+	322	305
+	322	306
+	322	307
+	322	308
+	322	309
+	322	310
+	322	311
+	322	312
+	322	313
+	322	314
+	322	315
+	322	352
+	322	353
+	322	354
+	322	355
+	322	356
+	322	357
+	322	358
+	322	359
+	322	360
+	322	361
+	322	362
+	322	363
+	322	364
+	322	365
+	322	366
+	322	367
+	322	368
+	322	369
+	322	370
+	322	371
+	322	372
+	322	373
+	322	374
+	322	375
+	322	376
+	322	377
+	322	378
+	322	379
+	322	420
+	322	421
+	322	422
+	322	423
+	322	424
+	322	425
+	322	426
+	322	427
+	322	428
+	322	429
+	322	430
+	322	431
+	322	432
+	322	433
+	322	434
+	322	435
+	322	436
+	322	437
+	322	438
+	322	475
+	322	476
+	322	477
+	322	478
+	322	479
+	322	480
+	322	481
+	322	482
+	322	483
+	322	484
+	322	485
+	322	486
+	322	498
+	322	499
+	323	0
+	323	1
+	323	130
+	323	131
+	323	132
+	323	133
+	323	134
+	323	135
+	323	136
+	323	137
+	323	138
+	323	139
+	323	243
+	323	244
+	323	245
+	323	246
+	323	247
+	323	248
+	323	249
+	323	250
+	323	251
+	323	252
+	323	253
+	323	254
+	323	255
+	323	256
+	323	257
+	323	258
+	323	259
+	323	304
+	323	305
+	323	306
+	323	307
+	323	308
+	323	309
+	323	310
+	323	311
+	323	312
+	323	313
+	323	314
+	323	315
+	323	316
+	323	317
+	323	318
+	323	319
+	323	320
+	323	321
+	323	322
+	323	343
+	323	344
+	323	345
+	323	346
+	323	347
+	323	348
+	323	349
+	323	350
+	323	351
+	323	352
+	323	353
+	323	354
+	323	355
+	323	356
+	323	357
+	323	358
+	323	359
+	323	360
+	323	361
+	323	362
+	323	363
+	323	364
+	323	365
+	323	366
+	323	367
+	323	368
+	323	369
+	323	370
+	323	371
+	323	372
+	323	373
+	323	374
+	323	375
+	323	376
+	323	377
+	323	378
+}
+BARRIER {
+	323	379
+	323	380
+	323	381
+	323	382
+	323	383
+	323	384
+	323	411
+	323	412
+	323	413
+	323	414
+	323	415
+	323	416
+	323	417
+	323	418
+	323	419
+	323	420
+	323	421
+	323	422
+	323	423
+	323	424
+	323	425
+	323	426
+	323	427
+	323	428
+	323	429
+	323	430
+	323	431
+	323	432
+	323	433
+	323	434
+	323	479
+	323	480
+	323	481
+	323	482
+	323	483
+	323	484
+	323	485
+	323	486
+	323	487
+	323	488
+	323	498
+	323	499
+	324	0
+	324	1
+	324	133
+	324	134
+	324	135
+	324	136
+	324	137
+	324	138
+	324	139
+	324	140
+	324	141
+	324	142
+	324	143
+	324	144
+	324	241
+	324	242
+	324	243
+	324	244
+	324	245
+	324	246
+	324	247
+	324	248
+	324	249
+	324	250
+	324	251
+	324	252
+	324	253
+	324	254
+	324	255
+	324	258
+	324	305
+	324	306
+	324	307
+	324	308
+	324	309
+	324	310
+	324	311
+	324	312
+	324	313
+	324	314
+	324	315
+	324	316
+	324	317
+	324	318
+	324	319
+	324	320
+	324	321
+	324	322
+	324	323
+	324	324
+	324	325
+	324	326
+	324	327
+	324	328
+	324	329
+	324	330
+	324	331
+	324	332
+	324	333
+	324	334
+	324	335
+	324	336
+	324	337
+	324	338
+	324	339
+	324	340
+	324	341
+	324	342
+	324	343
+	324	344
+	324	345
+	324	346
+	324	347
+	324	348
+	324	349
+	324	350
+	324	351
+	324	352
+	324	353
+	324	354
+	324	355
+	324	356
+	324	357
+	324	374
+	324	375
+	324	376
+	324	377
+	324	378
+	324	379
+	324	380
+	324	381
+	324	382
+	324	383
+	324	384
+	324	385
+	324	386
+	324	387
+	324	388
+	324	389
+	324	390
+	324	391
+	324	392
+	324	393
+	324	394
+	324	395
+	324	396
+	324	397
+	324	398
+	324	399
+	324	400
+	324	401
+	324	402
+	324	403
+	324	404
+	324	405
+	324	406
+	324	407
+	324	408
+	324	409
+	324	410
+	324	411
+	324	412
+	324	413
+	324	414
+	324	415
+	324	416
+	324	417
+	324	418
+	324	419
+	324	420
+	324	421
+	324	422
+	324	423
+	324	424
+	324	425
+	324	426
+	324	427
+	324	482
+	324	483
+	324	484
+	324	485
+	324	486
+	324	487
+	324	488
+	324	489
+	324	490
+	324	491
+	324	498
+	324	499
+	325	0
+	325	1
+	325	2
+	325	137
+	325	138
+	325	139
+	325	140
+	325	141
+	325	142
+	325	143
+	325	144
+	325	145
+	325	146
+	325	147
+	325	148
+	325	149
+	325	150
+	325	239
+	325	240
+	325	241
+	325	242
+	325	243
+	325	244
+	325	245
+	325	246
+	325	247
+	325	248
+	325	249
+	325	250
+	325	251
+	325	252
+	325	253
+	325	306
+	325	307
+	325	315
+	325	316
+	325	317
+	325	318
+	325	319
+	325	320
+	325	321
+	325	322
+	325	323
+	325	324
+	325	325
+	325	326
+	325	327
+	325	328
+	325	329
+	325	330
+	325	331
+	325	332
+	325	333
+	325	334
+	325	335
+	325	336
+	325	337
+	325	338
+	325	339
+	325	340
+	325	341
+	325	342
+	325	343
+	325	344
+	325	345
+	325	346
+	325	347
+	325	348
+	325	349
+	325	350
+	325	351
+	325	379
+	325	380
+	325	381
+	325	382
+	325	383
+	325	384
+	325	385
+	325	386
+	325	387
+	325	388
+	325	389
+	325	390
+	325	391
+	325	392
+	325	393
+	325	394
+	325	395
+	325	396
+	325	397
+	325	398
+	325	399
+	325	400
+	325	401
+	325	402
+	325	403
+	325	404
+	325	405
+	325	406
+	325	407
+	325	408
+	325	409
+	325	410
+	325	411
+	325	412
+	325	413
+	325	414
+	325	415
+	325	416
+	325	417
+	325	418
+	325	419
+	325	487
+	325	488
+	325	489
+	325	490
+	325	491
+	325	492
+	325	493
+	325	494
+	325	495
+	325	498
+	325	499
+	326	0
+	326	1
+	326	2
+	326	3
+	326	4
+	326	5
+	326	6
+	326	7
+	326	140
+	326	141
+	326	142
+	326	143
+	326	144
+	326	145
+	326	146
+	326	147
+	326	148
+	326	149
+	326	150
+	326	151
+	326	152
+	326	153
+	326	154
+	326	237
+	326	238
+	326	239
+	326	240
+	326	241
+	326	242
+	326	323
+	326	324
+	326	325
+	326	326
+	326	327
+	326	328
+	326	329
+	326	330
+	326	331
+	326	332
+	326	333
+	326	334
+	326	335
+	326	336
+	326	337
+	326	338
+	326	339
+	326	340
+	326	341
+	326	342
+	326	385
+	326	386
+	326	387
+	326	388
+	326	389
+	326	390
+	326	391
+	326	392
+	326	393
+	326	394
+	326	395
+	326	396
+	326	397
+	326	398
+	326	399
+	326	400
+	326	401
+	326	402
+	326	403
+	326	404
+	326	405
+	326	406
+	326	407
+	326	408
+	326	409
+	326	410
+	326	411
+	326	488
+	326	489
+	326	490
+	326	491
+	326	492
+	326	493
+	326	494
+	326	495
+	326	496
+	326	497
+	326	498
+	326	499
+	327	0
+	327	1
+	327	2
+	327	3
+	327	4
+	327	5
+	327	6
+	327	7
+	327	8
+	327	9
+	327	10
+	327	11
+	327	12
+	327	144
+	327	145
+	327	146
+	327	147
+	327	148
+	327	149
+	327	150
+	327	151
+	327	152
+	327	153
+	327	154
+	327	155
+	327	156
+	327	157
+	327	158
+	327	235
+	327	236
+	327	237
+	327	238
+	327	239
+	327	240
+	327	491
+	327	492
+	327	493
+	327	494
+	327	495
+	327	496
+	327	497
+	327	498
+	327	499
+	328	0
+	328	1
+	328	2
+	328	3
+	328	4
+	328	5
+	328	6
+	328	7
+	328	8
+	328	9
+	328	10
+	328	11
+	328	12
+	328	13
+	328	14
+	328	15
+	328	16
+	328	17
+	328	139
+	328	140
+	328	141
+	328	142
+	328	143
+	328	144
+	328	145
+	328	146
+	328	147
+	328	148
+	328	149
+	328	151
+	328	152
+	328	153
+	328	154
+	328	155
+	328	156
+	328	157
+	328	158
+	328	159
+	328	160
+	328	161
+	328	162
+	328	233
+	328	234
+	328	235
+	328	236
+	328	237
+	328	238
+	328	495
+	328	496
+	328	497
+	328	498
+	328	499
+	329	0
+	329	1
+	329	7
+}
+BARRIER {
+	329	8
+	329	9
+	329	10
+	329	11
+	329	12
+	329	13
+	329	14
+	329	15
+	329	16
+	329	17
+	329	18
+	329	19
+	329	20
+	329	131
+	329	132
+	329	133
+	329	134
+	329	135
+	329	136
+	329	137
+	329	138
+	329	139
+	329	140
+	329	141
+	329	142
+	329	143
+	329	144
+	329	145
+	329	146
+	329	147
+	329	148
+	329	149
+	329	150
+	329	151
+	329	152
+	329	153
+	329	154
+	329	155
+	329	156
+	329	157
+	329	158
+	329	159
+	329	160
+	329	161
+	329	162
+	329	163
+	329	164
+	329	165
+	329	166
+	329	167
+	329	168
+	329	169
+	329	170
+	329	171
+	329	172
+	329	173
+	329	231
+	329	232
+	329	233
+	329	234
+	329	235
+	329	236
+	329	497
+	329	498
+	329	499
+	330	0
+	330	1
+	330	2
+	330	13
+	330	14
+	330	15
+	330	16
+	330	17
+	330	18
+	330	19
+	330	20
+	330	21
+	330	22
+	330	23
+	330	24
+	330	124
+	330	125
+	330	126
+	330	127
+	330	128
+	330	129
+	330	130
+	330	131
+	330	132
+	330	133
+	330	134
+	330	135
+	330	136
+	330	137
+	330	138
+	330	139
+	330	140
+	330	141
+	330	142
+	330	143
+	330	144
+	330	145
+	330	146
+	330	147
+	330	148
+	330	149
+	330	150
+	330	151
+	330	152
+	330	153
+	330	154
+	330	155
+	330	156
+	330	159
+	330	160
+	330	161
+	330	162
+	330	163
+	330	164
+	330	165
+	330	166
+	330	167
+	330	168
+	330	169
+	330	170
+	330	171
+	330	172
+	330	173
+	330	174
+	330	175
+	330	176
+	330	177
+	330	178
+	330	179
+	330	180
+	330	181
+	330	182
+	330	229
+	330	230
+	330	231
+	330	232
+	330	233
+	330	234
+	330	497
+	330	498
+	330	499
+	331	0
+	331	1
+	331	2
+	331	17
+	331	18
+	331	19
+	331	20
+	331	21
+	331	22
+	331	23
+	331	24
+	331	25
+	331	26
+	331	27
+	331	28
+	331	117
+	331	118
+	331	119
+	331	120
+	331	121
+	331	122
+	331	123
+	331	124
+	331	125
+	331	126
+	331	127
+	331	128
+	331	129
+	331	130
+	331	131
+	331	132
+	331	133
+	331	134
+	331	135
+	331	136
+	331	137
+	331	138
+	331	150
+	331	151
+	331	163
+	331	164
+	331	165
+	331	166
+	331	167
+	331	168
+	331	169
+	331	170
+	331	171
+	331	172
+	331	173
+	331	174
+	331	175
+	331	176
+	331	177
+	331	178
+	331	179
+	331	180
+	331	181
+	331	182
+	331	183
+	331	184
+	331	185
+	331	186
+	331	187
+	331	188
+	331	189
+	331	190
+	331	191
+	331	192
+	331	193
+	331	194
+	331	195
+	331	196
+	331	197
+	331	198
+	331	199
+	331	200
+	331	201
+	331	202
+	331	203
+	331	204
+	331	205
+	331	206
+	331	207
+	331	208
+	331	209
+	331	210
+	331	211
+	331	212
+	331	213
+	331	214
+	331	215
+	331	216
+	331	217
+	331	218
+	331	219
+	331	220
+	331	221
+	331	222
+	331	223
+	331	224
+	331	225
+	331	226
+	331	227
+	331	228
+	331	229
+	331	230
+	331	231
+	331	232
+	331	497
+	331	498
+	331	499
+	332	0
+	332	1
+	332	2
+	332	21
+	332	22
+	332	23
+	332	24
+	332	25
+	332	26
+	332	27
+	332	28
+	332	29
+	332	30
+	332	31
+	332	32
+	332	112
+	332	113
+	332	114
+	332	115
+	332	116
+	332	117
+	332	118
+	332	119
+	332	120
+	332	121
+	332	122
+	332	123
+	332	124
+	332	125
+	332	126
+	332	127
+	332	128
+	332	129
+	332	130
+	332	174
+	332	175
+	332	176
+	332	177
+	332	178
+	332	179
+	332	180
+	332	181
+	332	182
+	332	183
+	332	184
+	332	185
+	332	186
+	332	187
+	332	188
+	332	189
+	332	190
+	332	191
+	332	192
+	332	193
+	332	194
+	332	195
+	332	196
+	332	197
+	332	198
+	332	199
+	332	200
+	332	201
+	332	202
+	332	203
+	332	204
+	332	205
+	332	206
+	332	207
+	332	208
+	332	209
+	332	210
+	332	211
+	332	212
+	332	213
+	332	214
+	332	215
+	332	216
+	332	217
+	332	218
+	332	219
+	332	220
+	332	221
+	332	222
+	332	223
+	332	224
+	332	225
+	332	226
+	332	227
+	332	228
+	332	229
+	332	230
+	332	497
+	332	498
+	332	499
+	333	0
+	333	1
+	333	2
+	333	25
+	333	26
+	333	27
+	333	28
+	333	29
+	333	30
+	333	31
+	333	32
+	333	33
+	333	34
+	333	35
+	333	36
+	333	37
+	333	38
+	333	108
+	333	109
+	333	110
+	333	111
+	333	112
+	333	113
+	333	114
+	333	115
+	333	116
+	333	117
+	333	118
+	333	119
+	333	120
+	333	121
+	333	122
+	333	123
+	333	183
+	333	184
+	333	185
+	333	186
+	333	187
+	333	188
+	333	189
+	333	190
+	333	191
+	333	192
+	333	193
+	333	194
+	333	195
+	333	196
+	333	197
+	333	198
+	333	199
+	333	200
+	333	201
+	333	202
+	333	203
+	333	204
+	333	205
+	333	206
+	333	207
+	333	208
+	333	209
+	333	210
+	333	211
+	333	212
+	333	213
+	333	214
+	333	215
+	333	216
+	333	217
+	333	218
+	333	219
+	333	220
+	333	221
+	333	222
+	333	223
+	333	224
+	333	225
+	333	226
+	333	227
+	333	228
+	333	229
+	333	497
+	333	498
+	333	499
+	334	0
+	334	1
+	334	2
+	334	29
+	334	30
+	334	31
+	334	32
+	334	33
+	334	34
+	334	35
+	334	36
+	334	37
+	334	38
+	334	39
+	334	40
+	334	41
+	334	42
+	334	43
+	334	44
+	334	99
+	334	100
+	334	101
+	334	102
+	334	103
+	334	104
+	334	105
+	334	106
+	334	107
+	334	108
+	334	109
+	334	110
+	334	111
+	334	112
+	334	113
+	334	114
+	334	115
+	334	116
+	334	497
+	334	498
+	334	499
+	335	0
+	335	1
+	335	2
+	335	32
+	335	33
+	335	34
+	335	35
+	335	36
+	335	37
+	335	38
+	335	39
+	335	40
+	335	41
+	335	42
+	335	43
+	335	44
+	335	45
+	335	46
+	335	47
+	335	48
+	335	49
+	335	50
+	335	51
+	335	52
+	335	53
+}
+BARRIER {
+	335	54
+	335	55
+	335	56
+	335	57
+	335	58
+	335	59
+	335	60
+	335	61
+	335	73
+	335	74
+	335	75
+	335	76
+	335	77
+	335	78
+	335	79
+	335	80
+	335	81
+	335	82
+	335	83
+	335	84
+	335	85
+	335	86
+	335	87
+	335	88
+	335	89
+	335	90
+	335	91
+	335	92
+	335	93
+	335	94
+	335	95
+	335	96
+	335	97
+	335	98
+	335	99
+	335	100
+	335	101
+	335	102
+	335	103
+	335	104
+	335	105
+	335	106
+	335	107
+	335	108
+	335	109
+	335	110
+	335	111
+	335	496
+	335	497
+	335	498
+	336	0
+	336	1
+	336	2
+	336	39
+	336	40
+	336	41
+	336	42
+	336	43
+	336	44
+	336	45
+	336	46
+	336	47
+	336	48
+	336	49
+	336	50
+	336	51
+	336	52
+	336	53
+	336	54
+	336	55
+	336	56
+	336	57
+	336	58
+	336	59
+	336	60
+	336	61
+	336	62
+	336	63
+	336	64
+	336	65
+	336	66
+	336	67
+	336	68
+	336	69
+	336	70
+	336	71
+	336	72
+	336	73
+	336	74
+	336	75
+	336	76
+	336	77
+	336	78
+	336	79
+	336	80
+	336	81
+	336	82
+	336	83
+	336	84
+	336	85
+	336	86
+	336	87
+	336	88
+	336	89
+	336	90
+	336	91
+	336	92
+	336	93
+	336	94
+	336	95
+	336	96
+	336	97
+	336	98
+	336	99
+	336	100
+	336	101
+	336	102
+	336	103
+	336	104
+	336	105
+	336	106
+	336	107
+	336	496
+	336	497
+	336	498
+	337	0
+	337	1
+	337	2
+	337	45
+	337	46
+	337	47
+	337	48
+	337	49
+	337	50
+	337	51
+	337	52
+	337	53
+	337	54
+	337	55
+	337	56
+	337	57
+	337	58
+	337	59
+	337	60
+	337	61
+	337	62
+	337	63
+	337	64
+	337	65
+	337	66
+	337	67
+	337	68
+	337	69
+	337	70
+	337	71
+	337	72
+	337	73
+	337	74
+	337	75
+	337	76
+	337	77
+	337	78
+	337	79
+	337	80
+	337	81
+	337	82
+	337	83
+	337	84
+	337	85
+	337	86
+	337	87
+	337	88
+	337	89
+	337	90
+	337	91
+	337	92
+	337	93
+	337	94
+	337	95
+	337	96
+	337	97
+	337	98
+	337	496
+	337	497
+	337	498
+	338	0
+	338	1
+	338	2
+	338	62
+	338	63
+	338	64
+	338	65
+	338	66
+	338	67
+	338	68
+	338	69
+	338	70
+	338	71
+	338	72
+	338	496
+	338	497
+	338	498
+	339	0
+	339	1
+	339	2
+	339	3
+	339	62
+	339	63
+	339	64
+	339	65
+	339	66
+	339	67
+	339	68
+	339	69
+	339	70
+	339	71
+	339	72
+	339	495
+	339	496
+	339	497
+	339	498
+	340	1
+	340	2
+	340	3
+	340	496
+	340	497
+	340	498
+	341	1
+	341	2
+	341	3
+	341	496
+	341	497
+	341	498
+	342	1
+	342	2
+	342	3
+	342	496
+	342	497
+	342	498
+	343	1
+	343	2
+	343	3
+	343	496
+	343	497
+	343	498
+	344	1
+	344	2
+	344	3
+	344	495
+	344	496
+	344	497
+	345	1
+	345	2
+	345	3
+	345	495
+	345	496
+	345	497
+	346	1
+	346	2
+	346	3
+	346	495
+	346	496
+	346	497
+	347	2
+	347	3
+	347	4
+	347	495
+	347	496
+	347	497
+	348	2
+	348	3
+	348	4
+	348	495
+	348	496
+	348	497
+	349	2
+	349	3
+	349	4
+	349	495
+	349	496
+	349	497
+	350	2
+	350	3
+	350	4
+	350	495
+	350	496
+	350	497
+	351	2
+	351	3
+	351	4
+	351	495
+	351	496
+	351	497
+	352	2
+	352	3
+	352	4
+	352	495
+	352	496
+	352	497
+	353	2
+	353	3
+	353	4
+	353	494
+	353	495
+	353	496
+	354	2
+	354	3
+	354	4
+	354	494
+	354	495
+	354	496
+	355	2
+	355	3
+	355	4
+	355	494
+	355	495
+	355	496
+	356	3
+	356	4
+	356	5
+	356	494
+	356	495
+	356	496
+	357	3
+	357	4
+	357	5
+	357	493
+	357	494
+	357	495
+	358	3
+	358	4
+	358	5
+	358	493
+	358	494
+	358	495
+	359	3
+	359	4
+	359	5
+	359	493
+	359	494
+	359	495
+	360	3
+	360	4
+	360	5
+	360	493
+	360	494
+	360	495
+	361	4
+	361	5
+	361	6
+	361	493
+	361	494
+	361	495
+	362	4
+	362	5
+	362	6
+	362	492
+	362	493
+	362	494
+	363	4
+	363	5
+	363	6
+	363	492
+	363	493
+	363	494
+	364	4
+	364	5
+	364	6
+	364	492
+	364	493
+	364	494
+	365	4
+	365	5
+	365	6
+	365	7
+	365	492
+	365	493
+	365	494
+	366	5
+	366	6
+	366	7
+	366	492
+	366	493
+	366	494
+	367	5
+	367	6
+	367	7
+	367	492
+	367	493
+	367	494
+	368	5
+	368	6
+	368	7
+	368	492
+	368	493
+	368	494
+	369	5
+	369	6
+	369	7
+	369	492
+	369	493
+	369	494
+	370	5
+	370	6
+	370	7
+	370	491
+	370	492
+	370	493
+	371	5
+	371	6
+	371	7
+	371	491
+	371	492
+	371	493
+	372	5
+	372	6
+	372	7
+	372	491
+	372	492
+	372	493
+	373	5
+	373	6
+	373	7
+	373	491
+	373	492
+	373	493
+	374	6
+	374	7
+	374	8
+	374	490
+	374	491
+	374	492
+	375	6
+	375	7
+	375	8
+	375	490
+	375	491
+	375	492
+	376	6
+	376	7
+	376	8
+	376	490
+	376	491
+	376	492
+	377	6
+	377	7
+	377	8
+	377	490
+	377	491
+	377	492
+	378	7
+	378	8
+	378	9
+	378	490
+	378	491
+	378	492
+	379	7
+	379	8
+	379	9
+	379	489
+	379	490
+	379	491
+	380	7
+	380	8
+	380	9
+	380	489
+	380	490
+	380	491
+	381	7
+	381	8
+	381	9
+	381	489
+	381	490
+	381	491
+	382	8
+	382	9
+	382	10
+	382	489
+	382	490
+	382	491
+	383	8
+	383	9
+	383	10
+	383	488
+	383	489
+	383	490
+	384	8
+	384	9
+	384	10
+	384	488
+	384	489
+	384	490
+	385	8
+	385	9
+	385	10
+	385	488
+	385	489
+	385	490
+	386	8
+	386	9
+}
+BARRIER {
+	386	10
+	386	488
+	386	489
+	386	490
+	387	9
+	387	10
+	387	11
+	387	488
+	387	489
+	387	490
+	388	9
+	388	10
+	388	11
+	388	487
+	388	488
+	388	489
+	388	490
+	389	9
+	389	10
+	389	11
+	389	487
+	389	488
+	389	489
+	390	9
+	390	10
+	390	11
+	390	487
+	390	488
+	390	489
+	391	9
+	391	10
+	391	11
+	391	12
+	391	487
+	391	488
+	391	489
+	392	10
+	392	11
+	392	12
+	392	486
+	392	487
+	392	488
+	393	11
+	393	12
+	393	13
+	393	486
+	393	487
+	393	488
+	394	11
+	394	12
+	394	13
+	394	485
+	394	486
+	394	487
+	395	12
+	395	13
+	395	14
+	395	485
+	395	486
+	395	487
+	396	12
+	396	13
+	396	14
+	396	484
+	396	485
+	396	486
+	397	12
+	397	13
+	397	14
+	397	484
+	397	485
+	397	486
+	398	12
+	398	13
+	398	14
+	398	484
+	398	485
+	398	486
+	399	12
+	399	13
+	399	14
+	399	484
+	399	485
+	399	486
+	400	13
+	400	14
+	400	15
+	400	484
+	400	485
+	400	486
+	401	13
+	401	14
+	401	15
+	401	483
+	401	484
+	401	485
+	402	13
+	402	14
+	402	15
+	402	483
+	402	484
+	402	485
+	403	13
+	403	14
+	403	15
+	403	483
+	403	484
+	403	485
+	404	14
+	404	15
+	404	16
+	404	483
+	404	484
+	404	485
+	405	14
+	405	15
+	405	16
+	405	482
+	405	483
+	405	484
+	406	14
+	406	15
+	406	16
+	406	482
+	406	483
+	406	484
+	407	14
+	407	15
+	407	16
+	407	482
+	407	483
+	407	484
+	408	15
+	408	16
+	408	17
+	408	482
+	408	483
+	408	484
+	409	15
+	409	16
+	409	17
+	409	481
+	409	482
+	409	483
+	410	16
+	410	17
+	410	18
+	410	481
+	410	482
+	410	483
+	411	16
+	411	17
+	411	18
+	411	480
+	411	481
+	411	482
+	412	17
+	412	18
+	412	19
+	412	480
+	412	481
+	412	482
+	413	17
+	413	18
+	413	19
+	413	479
+	413	480
+	413	481
+	414	17
+	414	18
+	414	19
+	414	479
+	414	480
+	414	481
+	415	17
+	415	18
+	415	19
+	415	479
+	415	480
+	415	481
+	416	17
+	416	18
+	416	19
+	416	479
+	416	480
+	416	481
+	417	17
+	417	18
+	417	19
+	417	20
+	417	479
+	417	480
+	417	481
+	418	18
+	418	19
+	418	20
+	418	478
+	418	479
+	418	480
+	419	19
+	419	20
+	419	21
+	419	478
+	419	479
+	419	480
+	420	19
+	420	20
+	420	21
+	420	477
+	420	478
+	420	479
+	421	20
+	421	21
+	421	22
+	421	477
+	421	478
+	421	479
+	422	20
+	422	21
+	422	22
+	422	476
+	422	477
+	422	478
+	423	21
+	423	22
+	423	23
+	423	476
+	423	477
+	423	478
+	424	21
+	424	22
+	424	23
+	424	475
+	424	476
+	424	477
+	425	22
+	425	23
+	425	24
+	425	475
+	425	476
+	425	477
+	426	22
+	426	23
+	426	24
+	426	474
+	426	475
+	426	476
+	427	22
+	427	23
+	427	24
+	427	474
+	427	475
+	427	476
+	428	22
+	428	23
+	428	24
+	428	474
+	428	475
+	428	476
+	429	22
+	429	23
+	429	24
+	429	474
+	429	475
+	429	476
+	430	23
+	430	24
+	430	25
+	430	474
+	430	475
+	430	476
+	431	23
+	431	24
+	431	25
+	431	473
+	431	474
+	431	475
+	432	24
+	432	25
+	432	26
+	432	473
+	432	474
+	432	475
+	433	24
+	433	25
+	433	26
+	433	472
+	433	473
+	433	474
+	434	25
+	434	26
+	434	27
+	434	472
+	434	473
+	434	474
+	435	25
+	435	26
+	435	27
+	435	471
+	435	472
+	435	473
+	436	26
+	436	27
+	436	28
+	436	471
+	436	472
+	436	473
+	437	26
+	437	27
+	437	28
+	437	470
+	437	471
+	437	472
+	438	27
+	438	28
+	438	29
+	438	470
+	438	471
+	438	472
+	439	27
+	439	28
+	439	29
+	439	469
+	439	470
+	439	471
+	440	27
+	440	28
+	440	29
+	440	30
+	440	469
+	440	470
+	440	471
+	441	28
+	441	29
+	441	30
+	441	468
+	441	469
+	441	470
+	442	29
+	442	30
+	442	31
+	442	468
+	442	469
+	442	470
+	443	29
+	443	30
+	443	31
+	443	467
+	443	468
+	443	469
+	444	30
+	444	31
+	444	32
+	444	467
+	444	468
+	444	469
+	445	30
+	445	31
+	445	32
+	445	466
+	445	467
+	445	468
+	446	31
+	446	32
+	446	33
+	446	466
+	446	467
+	446	468
+	447	31
+	447	32
+	447	33
+	447	465
+	447	466
+	447	467
+	448	31
+	448	32
+	448	33
+	448	465
+	448	466
+	448	467
+	449	32
+	449	33
+	449	34
+	449	464
+	449	465
+	449	466
+	450	32
+	450	33
+	450	34
+	450	464
+	450	465
+	450	466
+	451	33
+	451	34
+	451	35
+	451	464
+	451	465
+	451	466
+	452	33
+	452	34
+	452	35
+	452	463
+	452	464
+	452	465
+	453	34
+	453	35
+	453	36
+	453	463
+	453	464
+	453	465
+	454	34
+	454	35
+	454	36
+	454	462
+	454	463
+	454	464
+	455	35
+	455	36
+	455	37
+	455	462
+	455	463
+	455	464
+	456	35
+	456	36
+	456	37
+	456	461
+	456	462
+	456	463
+	457	36
+	457	37
+	457	38
+	457	461
+	457	462
+	457	463
+	458	36
+	458	37
+	458	38
+	458	460
+	458	461
+	458	462
+	459	37
+	459	38
+	459	39
+	459	460
+	459	461
+	459	462
+	460	37
+	460	38
+	460	39
+	460	459
+	460	460
+	460	461
+	461	38
+	461	39
+	461	40
+	461	459
+	461	460
+	461	461
+	462	38
+	462	39
+	462	40
+	462	458
+	462	459
+	462	460
+	463	38
+	463	39
+	463	40
+	463	41
+	463	458
+	463	459
+	463	460
+	464	39
+	464	40
+	464	41
+	464	457
+	464	458
+	464	459
+	465	40
+	465	41
+	465	42
+	465	457
+	465	458
+	465	459
+	466	40
+	466	41
+	466	42
+	466	456
+	466	457
+	466	458
+	466	459
+	467	41
+	467	42
+	467	43
+	467	456
+	467	457
+	467	458
+	468	41
+	468	42
+	468	43
+	468	455
+}
+BARRIER {
+	468	456
+	468	457
+	469	42
+	469	43
+	469	44
+	469	454
+	469	455
+	469	456
+	470	43
+	470	44
+	470	45
+	470	453
+	470	454
+	470	455
+	471	44
+	471	45
+	471	46
+	471	453
+	471	454
+	471	455
+	472	44
+	472	45
+	472	46
+	472	452
+	472	453
+	472	454
+	473	45
+	473	46
+	473	47
+	473	452
+	473	453
+	473	454
+	474	45
+	474	46
+	474	47
+	474	451
+	474	452
+	474	453
+	475	46
+	475	47
+	475	48
+	475	451
+	475	452
+	475	453
+	476	46
+	476	47
+	476	48
+	476	450
+	476	451
+	476	452
+	477	47
+	477	48
+	477	49
+	477	449
+	477	450
+	477	451
+	478	47
+	478	48
+	478	49
+	478	449
+	478	450
+	478	451
+	479	48
+	479	49
+	479	50
+	479	448
+	479	449
+	479	450
+	480	49
+	480	50
+	480	51
+	480	448
+	480	449
+	480	450
+	481	49
+	481	50
+	481	51
+	481	447
+	481	448
+	481	449
+	482	50
+	482	51
+	482	52
+	482	447
+	482	448
+	482	449
+	483	50
+	483	51
+	483	52
+	483	446
+	483	447
+	483	448
+	484	51
+	484	52
+	484	53
+	484	446
+	484	447
+	484	448
+	485	51
+	485	52
+	485	53
+	485	445
+	485	446
+	485	447
+	486	52
+	486	53
+	486	54
+	486	444
+	486	445
+	486	446
+	487	53
+	487	54
+	487	55
+	487	443
+	487	444
+	487	445
+	488	54
+	488	55
+	488	56
+	488	443
+	488	444
+	488	445
+	489	54
+	489	55
+	489	56
+	489	442
+	489	443
+	489	444
+	489	445
+	490	55
+	490	56
+	490	57
+	490	442
+	490	443
+	490	444
+	491	55
+	491	56
+	491	57
+	491	441
+	491	442
+	491	443
+	492	55
+	492	56
+	492	57
+	492	58
+	492	441
+	492	442
+	492	443
+	493	57
+	493	58
+	493	59
+	493	440
+	493	441
+	493	442
+	494	58
+	494	59
+	494	60
+	494	439
+	494	440
+	494	441
+	495	59
+	495	60
+	495	61
+	495	438
+	495	439
+	495	440
+	496	59
+	496	60
+	496	61
+	496	437
+	496	438
+	496	439
+	497	60
+	497	61
+	497	62
+	497	436
+	497	437
+	497	438
+	498	61
+	498	62
+	498	63
+	498	435
+	498	436
+	498	437
+	499	62
+	499	63
+	499	64
+	499	435
+	499	436
+	499	437
+	500	62
+	500	63
+	500	64
+	500	434
+	500	435
+	500	436
+	501	63
+	501	64
+	501	65
+	501	433
+	501	434
+	501	435
+	502	64
+	502	65
+	502	66
+	502	432
+	502	433
+	502	434
+	503	65
+	503	66
+	503	67
+	503	432
+	503	433
+	503	434
+	504	65
+	504	66
+	504	67
+	504	431
+	504	432
+	504	433
+	505	66
+	505	67
+	505	68
+	505	430
+	505	431
+	505	432
+	506	67
+	506	68
+	506	69
+	506	429
+	506	430
+	506	431
+	507	68
+	507	69
+	507	70
+	507	429
+	507	430
+	507	431
+	508	68
+	508	69
+	508	70
+	508	428
+	508	429
+	508	430
+	509	69
+	509	70
+	509	71
+	509	427
+	509	428
+	509	429
+	510	70
+	510	71
+	510	72
+	510	426
+	510	427
+	510	428
+	511	71
+	511	72
+	511	73
+	511	426
+	511	427
+	511	428
+	512	71
+	512	72
+	512	73
+	512	425
+	512	426
+	512	427
+	513	72
+	513	73
+	513	74
+	513	424
+	513	425
+	513	426
+	514	73
+	514	74
+	514	75
+	514	76
+	514	423
+	514	424
+	514	425
+	515	74
+	515	75
+	515	76
+	515	77
+	515	422
+	515	423
+	515	424
+	515	425
+	516	75
+	516	76
+	516	77
+	516	78
+	516	420
+	516	421
+	516	422
+	516	423
+	516	424
+	517	77
+	517	78
+	517	79
+	517	419
+	517	420
+	517	421
+	517	422
+	518	78
+	518	79
+	518	80
+	518	419
+	518	420
+	518	421
+	519	78
+	519	79
+	519	80
+	519	418
+	519	419
+	519	420
+	520	79
+	520	80
+	520	81
+	520	417
+	520	418
+	520	419
+	521	80
+	521	81
+	521	82
+	521	416
+	521	417
+	521	418
+	522	81
+	522	82
+	522	83
+	522	416
+	522	417
+	522	418
+	523	81
+	523	82
+	523	83
+	523	415
+	523	416
+	523	417
+	524	82
+	524	83
+	524	84
+	524	414
+	524	415
+	524	416
+	525	83
+	525	84
+	525	85
+	525	86
+	525	413
+	525	414
+	525	415
+	526	84
+	526	85
+	526	86
+	526	87
+	526	412
+	526	413
+	526	414
+	526	415
+	527	85
+	527	86
+	527	87
+	527	88
+	527	411
+	527	412
+	527	413
+	527	414
+	528	87
+	528	88
+	528	89
+	528	410
+	528	411
+	528	412
+	529	88
+	529	89
+	529	90
+	529	409
+	529	410
+	529	411
+	530	88
+	530	89
+	530	90
+	530	408
+	530	409
+	530	410
+	531	89
+	531	90
+	531	91
+	531	407
+	531	408
+	531	409
+	532	90
+	532	91
+	532	92
+	532	93
+	532	406
+	532	407
+	532	408
+	533	91
+	533	92
+	533	93
+	533	94
+	533	405
+	533	406
+	533	407
+	533	408
+	534	92
+	534	93
+	534	94
+	534	95
+	534	403
+	534	404
+	534	405
+	534	406
+	534	407
+	535	94
+	535	95
+	535	96
+	535	402
+	535	403
+	535	404
+	535	405
+	536	95
+	536	96
+	536	97
+	536	402
+	536	403
+	536	404
+	537	96
+	537	97
+	537	98
+	537	401
+	537	402
+	537	403
+	538	97
+	538	98
+	538	99
+	538	400
+	538	401
+	538	402
+	539	98
+	539	99
+	539	100
+	539	399
+	539	400
+	539	401
+	540	99
+	540	100
+	540	101
+	540	398
+	540	399
+	540	400
+	541	100
+	541	101
+	541	102
+	541	397
+	541	398
+	541	399
+	542	101
+	542	102
+	542	103
+	542	104
+	542	395
+	542	396
+	542	397
+	542	398
+	543	102
+	543	103
+	543	104
+	543	105
+	543	394
+	543	395
+	543	396
+	543	397
+	544	103
+	544	104
+	544	105
+	544	106
+	544	393
+	544	394
+	544	395
+	544	396
+	545	105
+	545	106
+	545	107
+	545	108
+	545	391
+	545	392
+	545	393
+	545	394
+	546	106
+	546	107
+	546	108
+	546	109
+	546	390
+	546	391
+	546	392
+}
+BARRIER {
+	546	393
+	547	107
+	547	108
+	547	109
+	547	110
+	547	389
+	547	390
+	547	391
+	547	392
+	548	109
+	548	110
+	548	111
+	548	112
+	548	387
+	548	388
+	548	389
+	548	390
+	549	110
+	549	111
+	549	112
+	549	113
+	549	386
+	549	387
+	549	388
+	549	389
+	550	111
+	550	112
+	550	113
+	550	114
+	550	385
+	550	386
+	550	387
+	550	388
+	551	113
+	551	114
+	551	115
+	551	116
+	551	383
+	551	384
+	551	385
+	551	386
+	552	114
+	552	115
+	552	116
+	552	117
+	552	382
+	552	383
+	552	384
+	552	385
+	553	115
+	553	116
+	553	117
+	553	118
+	553	381
+	553	382
+	553	383
+	553	384
+	554	117
+	554	118
+	554	119
+	554	120
+	554	379
+	554	380
+	554	381
+	554	382
+	555	118
+	555	119
+	555	120
+	555	121
+	555	378
+	555	379
+	555	380
+	555	381
+	556	119
+	556	120
+	556	121
+	556	122
+	556	377
+	556	378
+	556	379
+	556	380
+	557	121
+	557	122
+	557	123
+	557	124
+	557	375
+	557	376
+	557	377
+	557	378
+	558	122
+	558	123
+	558	124
+	558	125
+	558	374
+	558	375
+	558	376
+	558	377
+	559	123
+	559	124
+	559	125
+	559	126
+	559	373
+	559	374
+	559	375
+	559	376
+	560	125
+	560	126
+	560	127
+	560	128
+	560	371
+	560	372
+	560	373
+	560	374
+	561	126
+	561	127
+	561	128
+	561	129
+	561	130
+	561	369
+	561	370
+	561	371
+	561	372
+	561	373
+	562	127
+	562	128
+	562	129
+	562	130
+	562	131
+	562	368
+	562	369
+	562	370
+	562	371
+	562	372
+	563	129
+	563	130
+	563	131
+	563	132
+	563	133
+	563	366
+	563	367
+	563	368
+	563	369
+	563	370
+	564	131
+	564	132
+	564	133
+	564	134
+	564	365
+	564	366
+	564	367
+	564	368
+	565	132
+	565	133
+	565	134
+	565	135
+	565	364
+	565	365
+	565	366
+	565	367
+	566	134
+	566	135
+	566	136
+	566	137
+	566	362
+	566	363
+	566	364
+	566	365
+	567	135
+	567	136
+	567	137
+	567	138
+	567	139
+	567	360
+	567	361
+	567	362
+	567	363
+	567	364
+	568	136
+	568	137
+	568	138
+	568	139
+	568	140
+	568	141
+	568	358
+	568	359
+	568	360
+	568	361
+	568	362
+	568	363
+	569	138
+	569	139
+	569	140
+	569	141
+	569	142
+	569	143
+	569	356
+	569	357
+	569	358
+	569	359
+	569	360
+	569	361
+	570	140
+	570	141
+	570	142
+	570	143
+	570	144
+	570	355
+	570	356
+	570	357
+	570	358
+	570	359
+	571	142
+	571	143
+	571	144
+	571	145
+	571	146
+	571	353
+	571	354
+	571	355
+	571	356
+	571	357
+	572	144
+	572	145
+	572	146
+	572	147
+	572	148
+	572	351
+	572	352
+	572	353
+	572	354
+	572	355
+	573	145
+	573	146
+	573	147
+	573	148
+	573	149
+	573	150
+	573	349
+	573	350
+	573	351
+	573	352
+	573	353
+	573	354
+	574	147
+	574	148
+	574	149
+	574	150
+	574	151
+	574	152
+	574	347
+	574	348
+	574	349
+	574	350
+	574	351
+	574	352
+	575	149
+	575	150
+	575	151
+	575	152
+	575	153
+	575	346
+	575	347
+	575	348
+	575	349
+	575	350
+	576	151
+	576	152
+	576	153
+	576	154
+	576	155
+	576	156
+	576	343
+	576	344
+	576	345
+	576	346
+	576	347
+	576	348
+	577	153
+	577	154
+	577	155
+	577	156
+	577	157
+	577	158
+	577	341
+	577	342
+	577	343
+	577	344
+	577	345
+	577	346
+	578	154
+	578	155
+	578	156
+	578	157
+	578	158
+	578	159
+	578	160
+	578	339
+	578	340
+	578	341
+	578	342
+	578	343
+	578	344
+	578	345
+	579	157
+	579	158
+	579	159
+	579	160
+	579	161
+	579	162
+	579	337
+	579	338
+	579	339
+	579	340
+	579	341
+	579	342
+	580	159
+	580	160
+	580	161
+	580	162
+	580	163
+	580	164
+	580	165
+	580	334
+	580	335
+	580	336
+	580	337
+	580	338
+	580	339
+	580	340
+	581	161
+	581	162
+	581	163
+	581	164
+	581	165
+	581	166
+	581	167
+	581	332
+	581	333
+	581	334
+	581	335
+	581	336
+	581	337
+	581	338
+	582	163
+	582	164
+	582	165
+	582	166
+	582	167
+	582	168
+	582	169
+	582	170
+	582	329
+	582	330
+	582	331
+	582	332
+	582	333
+	582	334
+	582	335
+	582	336
+	583	166
+	583	167
+	583	168
+	583	169
+	583	170
+	583	171
+	583	172
+	583	327
+	583	328
+	583	329
+	583	330
+	583	331
+	583	332
+	583	333
+	584	168
+	584	169
+	584	170
+	584	171
+	584	172
+	584	173
+	584	174
+	584	175
+	584	324
+	584	325
+	584	326
+	584	327
+	584	328
+	584	329
+	584	330
+	584	331
+	585	171
+	585	172
+	585	173
+	585	174
+	585	175
+	585	176
+	585	177
+	585	322
+	585	323
+	585	324
+	585	325
+	585	326
+	585	327
+	585	328
+	586	173
+	586	174
+	586	175
+	586	176
+	586	177
+	586	178
+	586	179
+	586	180
+	586	319
+	586	320
+	586	321
+	586	322
+	586	323
+	586	324
+	586	325
+	586	326
+	587	176
+	587	177
+	587	178
+	587	179
+	587	180
+	587	181
+	587	182
+	587	317
+	587	318
+	587	319
+	587	320
+	587	321
+	587	322
+	587	323
+	588	178
+	588	179
+	588	180
+	588	181
+	588	182
+	588	183
+	588	184
+	588	185
+	588	186
+	588	187
+	588	312
+	588	313
+	588	314
+	588	315
+	588	316
+	588	317
+	588	318
+	588	319
+	588	320
+	588	321
+	589	181
+	589	182
+	589	183
+	589	184
+	589	185
+	589	186
+	589	187
+	589	188
+	589	189
+	589	190
+	589	309
+	589	310
+	589	311
+	589	312
+	589	313
+	589	314
+	589	315
+	589	316
+	589	317
+	589	318
+	590	183
+	590	184
+	590	185
+	590	186
+	590	187
+	590	188
+	590	189
+	590	190
+	590	191
+	590	192
+	590	307
+	590	308
+	590	309
+	590	310
+	590	311
+	590	312
+	590	313
+	590	314
+	590	315
+	590	316
+	591	188
+	591	189
+	591	190
+	591	191
+	591	192
+	591	193
+	591	194
+}
+BARRIER {
+	591	195
+	591	196
+	591	197
+	591	302
+	591	303
+	591	304
+	591	305
+	591	306
+	591	307
+	591	308
+	591	309
+	591	310
+	591	311
+	592	191
+	592	192
+	592	193
+	592	194
+	592	195
+	592	196
+	592	197
+	592	198
+	592	199
+	592	200
+	592	201
+	592	202
+	592	297
+	592	298
+	592	299
+	592	300
+	592	301
+	592	302
+	592	303
+	592	304
+	592	305
+	592	306
+	592	307
+	592	308
+	593	193
+	593	194
+	593	195
+	593	196
+	593	197
+	593	198
+	593	199
+	593	200
+	593	201
+	593	202
+	593	203
+	593	204
+	593	205
+	593	206
+	593	207
+	593	292
+	593	293
+	593	294
+	593	295
+	593	296
+	593	297
+	593	298
+	593	299
+	593	300
+	593	301
+	593	302
+	593	303
+	593	304
+	593	305
+	593	306
+	594	198
+	594	199
+	594	200
+	594	201
+	594	202
+	594	203
+	594	204
+	594	205
+	594	206
+	594	207
+	594	208
+	594	209
+	594	210
+	594	211
+	594	212
+	594	287
+	594	288
+	594	289
+	594	290
+	594	291
+	594	292
+	594	293
+	594	294
+	594	295
+	594	296
+	594	297
+	594	298
+	594	299
+	594	300
+	594	301
+	595	203
+	595	204
+	595	205
+	595	206
+	595	207
+	595	208
+	595	209
+	595	210
+	595	211
+	595	212
+	595	213
+	595	214
+	595	215
+	595	216
+	595	217
+	595	282
+	595	283
+	595	284
+	595	285
+	595	286
+	595	287
+	595	288
+	595	289
+	595	290
+	595	291
+	595	292
+	595	293
+	595	294
+	595	295
+	595	296
+	596	208
+	596	209
+	596	210
+	596	211
+	596	212
+	596	213
+	596	214
+	596	215
+	596	216
+	596	217
+	596	218
+	596	219
+	596	220
+	596	221
+	596	222
+	596	277
+	596	278
+	596	279
+	596	280
+	596	281
+	596	282
+	596	283
+	596	284
+	596	285
+	596	286
+	596	287
+	596	288
+	596	289
+	596	290
+	596	291
+	597	213
+	597	214
+	597	215
+	597	216
+	597	217
+	597	218
+	597	219
+	597	220
+	597	221
+	597	222
+	597	223
+	597	224
+	597	225
+	597	226
+	597	227
+	597	228
+	597	229
+	597	230
+	597	231
+	597	232
+	597	233
+	597	266
+	597	267
+	597	268
+	597	269
+	597	270
+	597	271
+	597	272
+	597	273
+	597	274
+	597	275
+	597	276
+	597	277
+	597	278
+	597	279
+	597	280
+	597	281
+	597	282
+	597	283
+	597	284
+	597	285
+	597	286
+	598	218
+	598	219
+	598	220
+	598	221
+	598	222
+	598	223
+	598	224
+	598	225
+	598	226
+	598	227
+	598	228
+	598	229
+	598	230
+	598	231
+	598	232
+	598	233
+	598	234
+	598	235
+	598	236
+	598	237
+	598	238
+	598	239
+	598	240
+	598	241
+	598	242
+	598	243
+	598	244
+	598	245
+	598	246
+	598	247
+	598	248
+	598	251
+	598	252
+	598	253
+	598	254
+	598	255
+	598	256
+	598	257
+	598	258
+	598	259
+	598	260
+	598	261
+	598	262
+	598	263
+	598	264
+	598	265
+	598	266
+	598	267
+	598	268
+	598	269
+	598	270
+	598	271
+	598	272
+	598	273
+	598	274
+	598	275
+	598	276
+	598	277
+	598	278
+	598	279
+	598	280
+	598	281
+	599	223
+	599	224
+	599	225
+	599	226
+	599	227
+	599	228
+	599	229
+	599	230
+	599	231
+	599	232
+	599	233
+	599	234
+	599	235
+	599	236
+	599	237
+	599	238
+	599	239
+	599	240
+	599	241
+	599	242
+	599	243
+	599	244
+	599	245
+	599	246
+	599	247
+	599	248
+	599	249
+	599	250
+	599	251
+	599	252
+	599	253
+	599	254
+	599	255
+	599	256
+	599	257
+	599	258
+	599	259
+	599	260
+	599	261
+	599	262
+	599	263
+	599	264
+	599	265
+	599	266
+	599	267
+	599	268
+	599	269
+	599	270
+	599	271
+	599	272
+	599	273
+	599	274
+	599	275
+	599	276
+}
+# BARRIER_END
+
+# ODOR BEGIN
+ODOR_MAP {
+	   0 0      600  0
+	   0 1      600  0
+	   0 2      600  0
+	   0 3      600  0
+	   0 4      600  0
+	   0 5      600  0
+	   0 6      600  0
+	   0 7      600  0
+	   0 8      600  0
+	   0 9      600  0
+	   0 10     600  0
+	   0 11     600  0
+	   0 12     600  0
+	   0 13     600  0
+	   0 14     600  0
+	   0 15     600  0
+	   0 16     600  0
+	   0 17     600  0
+	   0 18     600  0
+	   0 19     600  0
+	   0 20     600  0
+	   0 21     600  0
+	   0 22     600  0
+	   0 23     600  0
+	   0 24     600  0
+	   0 25     600  0
+	   0 26     600  0
+	   0 27     600  0
+	   0 28     600  0
+	   0 29     600  0
+	   0 30     600  0
+	   0 31     600  0
+	   0 32     600  0
+	   0 33     600  0
+	   0 34     600  0
+	   0 35     600  0
+	   0 36     600  0
+	   0 37     600  0
+	   0 38     600  0
+	   0 39     600  0
+	   0 40     600  0
+	   0 41     600  0
+	   0 42     600  0
+	   0 43     600  0
+	   0 44     600  0
+	   0 45     600  0
+	   0 46     600  0
+	   0 47     600  0
+	   0 48     600  0
+	   0 49     600  0
+	   0 50     600  0
+	   0 51     600  0
+	   0 52     600  0
+	   0 53     600  0
+	   0 54     600  0
+	   0 55     600  0
+	   0 56     600  0
+	   0 57     600  0
+	   0 58     600  0
+	   0 59     600  0
+	   0 60     600  0
+	   0 61     600  0
+	   0 62     600  0
+	   0 63     600  0
+	   0 64     600  0
+	   0 65     600  0
+	   0 66     600  0
+	   0 67     600  0
+	   0 68     600  0
+	   0 69     600  0
+	   0 70     600  0
+	   0 71     600  0
+	   0 72     600  0
+	   0 73     600  0
+	   0 74     600  0
+	   0 75     600  0
+	   0 76     600  0
+	   0 77     600  0
+	   0 78     600  0
+	   0 79     600  0
+	   0 80     600  0
+	   0 81     600  0
+	   0 82     600  0
+	   0 83     600  0
+	   0 84     600  0
+	   0 85     600  0
+	   0 86     600  0
+	   0 87     600  0
+	   0 88     600  0
+	   0 89     600  0
+	   0 90     600  0
+	   0 91     600  0
+	   0 92     600  0
+	   0 93     600  0
+	   0 94     600  0
+	   0 95     600  0
+	   0 96     600  0
+	   0 97     600  0
+	   0 98     600  0
+	   0 99     600  0
+	   0 100    600  0
+	   0 101    600  0
+	   0 102    600  0
+	   0 103    600  0
+	   0 104    600  0
+	   0 105    600  0
+	   0 106    600  0
+	   0 107    600  0
+	   0 108    600  0
+	   0 109    600  0
+	   0 110    600  0
+	   0 111    600  0
+	   0 112    600  0
+	   0 113    600  0
+	   0 114    600  0
+	   0 115    600  0
+	   0 116    600  0
+	   0 117    600  0
+	   0 118    600  0
+	   0 119    600  0
+	   0 120    600  0
+	   0 121    600  0
+	   0 122    600  0
+	   0 123    600  0
+	   0 124    600  0
+	   0 125    600  0
+	   0 126    600  0
+	   0 127    600  0
+	   0 128    600  0
+	   0 129    600  0
+	   0 130    600  0
+	   0 131    600  0
+	   0 132    600  0
+	   0 133    600  0
+	   0 134    600  0
+	   0 135    600  0
+	   0 136    600  0
+	   0 137    600  0
+	   0 138    600  0
+	   0 139    600  0
+	   0 140    600  0
+	   0 141    600  0
+	   0 142    600  0
+	   0 143    600  0
+	   0 144    600  0
+	   0 145    600  0
+	   0 146    600  0
+	   0 147    600  0
+	   0 148    600  0
+	   0 149    600  0
+	   0 150    600  0
+	   0 151    600  0
+	   0 152    600  0
+	   0 153    600  0
+	   0 154    600  0
+	   0 155    600  0
+	   0 156    600  0
+	   0 157    600  0
+	   0 158    600  0
+	   0 159    600  0
+	   0 160    600  0
+	   0 161    600  0
+	   0 162    600  0
+	   0 163    600  0
+	   0 164    600  0
+	   0 165    600  0
+	   0 166    600  0
+	   0 167    600  0
+	   0 168    600  0
+	   0 169    600  0
+	   0 170    600  0
+	   0 171    600  0
+	   0 172    600  0
+	   0 173    600  0
+	   0 174    600  0
+	   0 175    600  0
+	   0 176    600  0
+	   0 177    600  0
+	   0 178    600  0
+	   0 179    600  0
+	   0 180    600  0
+	   0 181    600  0
+	   0 182    600  0
+	   0 183    600  0
+	   0 184    600  0
+	   0 185    600  0
+	   0 186    600  0
+	   0 187    600  0
+	   0 188    600  0
+	   0 189    600  0
+	   0 190    600  0
+	   0 191    600  0
+	   0 192    600  0
+	   0 193    600  0
+	   0 194    600  0
+	   0 195    600  0
+	   0 196    600  0
+	   0 197    600  0
+	   0 198    600  0
+	   0 199    600  0
+	   0 200    600  0
+	   0 201    600  0
+	   0 202    600  0
+	   0 203    600  0
+	   0 204    600  0
+	   0 205    600  0
+	   0 206    600  0
+	   0 207    600  0
+	   0 208    600  0
+	   0 209    600  0
+	   0 210    600  0
+	   0 211    600  0
+	   0 212    600  0
+	   0 213    600  0
+	   0 214    600  0
+	   0 215    600  0
+	   0 216    600  0
+	   0 217    600  0
+	   0 218    600  0
+	   0 219    600  0
+	   0 220    600  0
+	   0 221    600  0
+	   0 222    600  0
+	   0 223    600  0
+	   0 224    600  0
+	   0 225    600  0
+	   0 226    600  0
+	   0 227    600  0
+	   0 228    600  0
+	   0 229    600  0
+	   0 230    600  0
+	   0 231    600  0
+	   0 232    600  0
+	   0 233    600  0
+	   0 234    600  0
+	   0 235    600  0
+	   0 236    600  0
+	   0 237    600  0
+	   0 238    600  0
+	   0 239    600  0
+	   0 240    600  0
+	   0 241    600  0
+	   0 242    600  0
+	   0 243    600  0
+	   0 244    600  0
+	   0 245    600  0
+	   0 246    600  0
+	   0 247    600  0
+	   0 248    600  0
+	   0 249    600  0
+	   0 250    600  0
+	   0 251    600  0
+	   0 252    600  0
+	   0 253    600  0
+	   0 254    600  0
+	   0 255    600  0
+	   0 256    600  0
+	   0 257    600  0
+	   0 258    600  0
+	   0 259    600  0
+	   0 260    600  0
+	   0 261    600  0
+	   0 262    600  0
+	   0 263    600  0
+	   0 264    600  0
+	   0 265    600  0
+	   0 266    600  0
+	   0 267    600  0
+	   0 268    600  0
+	   0 269    600  0
+	   0 270    600  0
+	   0 271    600  0
+	   0 272    600  0
+	   0 273    600  0
+	   0 274    600  0
+	   0 275    600  0
+	   0 276    600  0
+	   0 277    600  0
+	   0 278    600  0
+	   0 279    600  0
+	   0 280    600  0
+	   0 281    600  0
+	   0 282    600  0
+	   0 283    600  0
+	   0 284    600  0
+	   0 285    600  0
+	   0 286    600  0
+	   0 287    600  0
+	   0 288    600  0
+	   0 289    600  0
+	   0 290    600  0
+	   0 291    600  0
+	   0 292    600  0
+	   0 293    600  0
+	   0 294    600  0
+	   0 295    600  0
+	   0 296    600  0
+	   0 297    600  0
+	   0 298    600  0
+	   0 299    600  0
+	   0 300    600  0
+	   0 301    600  0
+	   0 302    600  0
+	   0 303    600  0
+	   0 304    600  0
+	   0 305    600  0
+	   0 306    600  0
+	   0 307    600  0
+	   0 308    600  0
+	   0 309    600  0
+	   0 310    600  0
+	   0 311    600  0
+	   0 312    600  0
+	   0 313    600  0
+	   0 314    600  0
+	   0 315    600  0
+	   0 316    600  0
+	   0 317    600  0
+	   0 318    600  0
+	   0 319    600  0
+	   0 320    600  0
+	   0 321    600  0
+	   0 322    600  0
+	   0 323    600  0
+	   0 324    600  0
+	   0 325    600  0
+	   0 326    600  0
+	   0 327    600  0
+	   0 328    600  0
+	   0 329    600  0
+	   0 330    600  0
+	   0 331    600  0
+	   0 332    600  0
+	   0 333    600  0
+	   0 334    600  0
+	   0 335    600  0
+	   0 336    600  0
+	   0 337    600  0
+	   0 338    600  0
+	   0 339    600  0
+	   0 340    600  0
+	   0 341    600  0
+	   0 342    600  0
+	   0 343    600  0
+	   0 344    600  0
+	   0 345    600  0
+	   0 346    600  0
+	   0 347    600  0
+	   0 348    600  0
+	   0 349    600  0
+	   0 350    600  0
+	   0 351    600  0
+	   0 352    600  0
+	   0 353    600  0
+	   0 354    600  0
+	   0 355    600  0
+	   0 356    600  0
+	   0 357    600  0
+	   0 358    600  0
+	   0 359    600  0
+	   0 360    600  0
+	   0 361    600  0
+	   0 362    600  0
+	   0 363    600  0
+	   0 364    600  0
+	   0 365    600  0
+	   0 366    600  0
+	   0 367    600  0
+	   0 368    600  0
+	   0 369    600  0
+	   0 370    600  0
+	   0 371    600  0
+	   0 372    600  0
+	   0 373    600  0
+	   0 374    600  0
+	   0 375    600  0
+	   0 376    600  0
+	   0 377    600  0
+	   0 378    600  0
+	   0 379    600  0
+	   0 380    600  0
+	   0 381    600  0
+	   0 382    600  0
+	   0 383    600  0
+	   0 384    600  0
+	   0 385    600  0
+	   0 386    600  0
+	   0 387    600  0
+	   0 388    600  0
+	   0 389    600  0
+	   0 390    600  0
+	   0 391    600  0
+	   0 392    600  0
+	   0 393    600  0
+	   0 394    600  0
+	   0 395    600  0
+	   0 396    600  0
+	   0 397    600  0
+	   0 398    600  0
+	   0 399    600  0
+	   0 400    600  0
+	   0 401    600  0
+	   0 402    600  0
+	   0 403    600  0
+	   0 404    600  0
+	   0 405    600  0
+	   0 406    600  0
+	   0 407    600  0
+	   0 408    600  0
+	   0 409    600  0
+	   0 410    600  0
+	   0 411    600  0
+	   0 412    600  0
+	   0 413    600  0
+	   0 414    600  0
+	   0 415    600  0
+	   0 416    600  0
+	   0 417    600  0
+	   0 418    600  0
+	   0 419    600  0
+	   0 420    600  0
+	   0 421    600  0
+	   0 422    600  0
+	   0 423    600  0
+	   0 424    600  0
+	   0 425    600  0
+	   0 426    600  0
+	   0 427    600  0
+	   0 428    600  0
+	   0 429    600  0
+	   0 430    600  0
+	   0 431    600  0
+	   0 432    600  0
+	   0 433    600  0
+	   0 434    600  0
+	   0 435    600  0
+	   0 436    600  0
+	   0 437    600  0
+	   0 438    600  0
+	   0 439    600  0
+	   0 440    600  0
+	   0 441    600  0
+	   0 442    600  0
+	   0 443    600  0
+	   0 444    600  0
+	   0 445    600  0
+	   0 446    600  0
+	   0 447    600  0
+	   0 448    600  0
+	   0 449    600  0
+	   0 450    600  0
+	   0 451    600  0
+	   0 452    600  0
+	   0 453    600  0
+	   0 454    600  0
+	   0 455    600  0
+	   0 456    600  0
+	   0 457    600  0
+	   0 458    600  0
+	   0 459    600  0
+	   0 460    600  0
+	   0 461    600  0
+	   0 462    600  0
+	   0 463    600  0
+	   0 464    600  0
+	   0 465    600  0
+	   0 466    600  0
+	   0 467    600  0
+	   0 468    600  0
+	   0 469    600  0
+	   0 470    600  0
+	   0 471    600  0
+	   0 472    600  0
+	   0 473    600  0
+	   0 474    600  0
+	   0 475    600  0
+	   0 476    600  0
+	   0 477    600  0
+	   0 478    600  0
+	   0 479    600  0
+	   0 480    600  0
+	   0 481    600  0
+	   0 482    600  0
+	   0 483    600  0
+	   0 484    600  0
+	   0 485    600  0
+	   0 486    600  0
+	   0 487    600  0
+	   0 488    600  0
+	   0 489    600  0
+	   0 490    600  0
+	   0 491    600  0
+	   0 492    600  0
+	   0 493    600  0
+	   0 494    600  0
+	   0 495    600  0
+	   0 496    600  0
+	   0 497    600  0
+	   0 498    600  0
+	   0 499    600  0
+}
+
+# ODOR END
+
+
+ORGANIC {
+}
+
+ORGANISM 1  0 1 0   0 0  0 100000 0
+  {  # program
+	"main:"
+	"{"
+	"      11  call "
+	"}"
+	""
+	"row1:"
+	"{"
+	"     "
+	"}"
+	""
+	"row2:"
+	"{"
+	"     "
+	"}"
+	""
+	"row3:"
+	"{"
+	"     "
+	"}"
+	""
+	"row4:"
+	"{"
+	"      KEY-PRESS  32  <>  ?exit  GPS  swap  pop  MOUSE-POS  swap  pop  -  abs  5  <"
+	"      5  if "
+	"}"
+	""
+	"row5:"
+	"{"
+	"      R0  negate  R0!  R1  negate  R1! "
+	"}"
+	""
+	"row6:"
+	"{"
+	"     "
+	"}"
+	""
+	"row7:"
+	"{"
+	"     "
+	"}"
+	""
+	"row8:"
+	"{"
+	"     "
+	"}"
+	""
+	"row9:"
+	"{"
+	"     "
+	"}"
+	""
+	"row10:"
+	"{"
+	"     "
+	"}"
+	""
+	"row11:"
+	"{"
+	"      ENERGY  4  /  R2!  RND  R0!  RND  R1!  R0  R1  R2  MAKE-SPORE  pop  R0  R1"
+	"      0  MAKE-SPORE  pop  RND  R0!  RND  R1!  12  call  1  ?loop "
+	"}"
+	""
+	"row12:"
+	"{"
+	"      R0  R1  OMOVE  ?loop "
+	"}"
+  }
+
+CELL 1   238 282
+	0 0
+	0 0 0
+	{ 0 0 0 0 0
+	  0 0 0 0 0 }
+	{
+	}
+	{
+	}
+
+
+CELL_LIST {
+	238 282
+}
+
