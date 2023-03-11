@@ -188,7 +188,7 @@ STRAIN_OPTIONS {
 	# Strain 0
 	1        # enabled
 	"DumSim"        # strain name these settings were based on
-	1        # LOOK mode
+	0        # LOOK mode
 	640        # EAT mode
 	0        # MAKE-SPORE mode
 	100        # MAKE-SPORE energy
