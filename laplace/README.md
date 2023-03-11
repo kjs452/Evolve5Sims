@@ -22,6 +22,8 @@ The creatures
 	bigbang.txt			same as statue_maxwell.txt, except i got all the blocks clumped together
 						by the creative use of space key.
 
+	spell.txt			little universe that will spell "HELLO" when space key pressed
+
 Press SPACE key to trigger the gate keeper
 
 Just load the files and run them.
