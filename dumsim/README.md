@@ -7,7 +7,8 @@ Description: dumsim
 		No interrupts are being used. Lots of energy. High population.
 		The organisms begin with the standard seed program seed.kf.
 
-	dumsim0.txt			very beginning before any steps executed.
+	dumsim0.txt				very beginning before any steps executed., start march 11, 2023
+	dumsim0_mar11.txt.Z		after several hours. Compressed. march 11.
 
 I will upload a new simulation daily, until the sim gets boring.
 
