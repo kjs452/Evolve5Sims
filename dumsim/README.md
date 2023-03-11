@@ -5,6 +5,7 @@ Description: dumsim
 	The simulation is: 800x800, oval with hand drawn barriers.
 		One Strain based off of 'Default'. Non-agressive eat mode.
 		No interrupts are being used. Lots of energy. High population.
+		The organisms begin with the standard seed program seed.kf.
 
 	dumsim0.txt			very beginning before any steps executed.
 
