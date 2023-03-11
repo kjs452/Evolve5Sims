@@ -8,7 +8,7 @@ Description: dumsim
 		The organisms begin with the standard seed program seed.kf.
 
 	dumsim0.txt				very beginning before any steps executed., start march 11, 2023
-	dumsim0_mar11.txt.Z		after several hours. Compressed. march 11.
+	dumsim_mar11.txt.Z		after several hours. Compressed. march 11.
 
 I will upload a new simulation daily, until the sim gets boring.
 
