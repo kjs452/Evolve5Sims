@@ -1,0 +1,97 @@
+;
+; spell a message when space key pressed
+;
+;
+; R0 - x dir
+; R1 - y dir
+; R2 - energy
+; R3 - 
+; R4 - x dir if space pressed
+; R5 - y dir if space pressed
+; R6 - home x
+; R7 - home y
+; R8 - 
+; R9 - 
+;
+; I think there is a bug, lots of cells head toward the side
+;
+main:
+{
+	pick_home_location call
+	R7! R6!
+
+	live_life call
+}
+
+dim: { 600 500 }		; dimensions of universe (width,height)
+
+; ( -- home_x home_y)
+;
+; pick a ranodm grid coordinte which corresponds
+; to a random spell location which is enabled.
+;
+pick_home_location:
+{
+	spell spell_len 1-  CHOOSE		; ccb
+	dup	CBLEN						; ccb ccblen
+	0 swap CHOOSE					; ccb cpc
+	2dup NUMBER						; ccb cpc spellv
+	{ 0 } { 2pop 1 } ifelse
+	?loop
+
+							; cb pc
+	over CBLEN				; cb pc cblen
+	dim 0 NUMBER swap /		; cb pc width/cblen
+
+	dup rot					; cb width/cblen width/cblen pc
+	*						; cb width/cblen x0
+	dup rot					; cb x0 x0 width/cblen
+	+						; cb x0 x1
+	rot						; x0 x1 cb
+
+	spell_len swap -		; x0 x1 sy
+
+	dim 1 NUMBER			; x0 x1 sy height
+	spell_len call /		; x0 x1 sy height/spell_len
+	dup						; x0 x1 sy height/spell_len height/spell_len
+	rot						; x0 x1 height/spell_len height/spell_len sy
+	*						; x0 x1 height/spell_len y0
+	dup rot					; x0 x1 y0 y0 height/spell_len
+	+						; x0 x1 y0 y1
+
+							; x0 x1 y0 y1
+	CHOOSE -rot CHOOSE swap	; rnd(x0,x1) rnd(y0,y1)
+}
+
+live_life:
+{
+	ENERGY 4 / R2!
+	RND R0! RND R1!
+	R0 R1 R2 MAKE-SPORE pop
+	R0 R1 0 MAKE-SPORE pop
+
+	RND R0! RND R1!
+	{
+		GPS R7 swap - R5!		; y dir to home location
+		R6 swap - R4!			; x dir to home location
+ 		KEY-PRESS 32 <> { R0 R1 OMOVE } { R4 R5 OMOVE } ifelse
+		?loop
+	} call
+
+	1 ?loop
+}
+
+spell:
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 1 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 1 1 1 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 1 1 0 0 1 1 1 1 0 0 1 1 1 1 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+spell_len: { spell_len spell - }

@@ -7,6 +7,7 @@ Description: laplace
 The creatures
 	brownian.kf			move randomly
 	brownian2i.kf		move randomly respond to interrupts
+	brownian_spell.kf	move randomly respond, when space key pressed spell a word
 	gatekeeper.kf		SAY's a message downard when space key pressed.
 
 	maxwell.kf			Moves around randomly. When space key pressed converges to a specific point
