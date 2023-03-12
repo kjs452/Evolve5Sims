@@ -1,0 +1,36 @@
+;
+; Nibbler
+;	Nibbler - make it 'uneatable', 'unseeable'
+;		make it eat by terminating the cell
+;		make it eat cell energy/1
+;
+;
+main:
+{
+	POPULATION.S 100 < {
+		ENERGY 4 / R2!
+		RND R0! RND R1!
+		R0 R1 R2 MAKE-SPORE pop
+		R0 R1 0 MAKE-SPORE pop
+	} if
+
+	RND R0! RND R1!
+	{
+		R0 R1 OMOVE
+		?loop
+
+		R0 R1 EAT pop
+		R0 R1 OMOVE
+		?loop
+	} call
+
+	7 NEAREST EAT pop
+
+	; send 1/10 of my total energy to the farthest cell/spore
+	ENERGY 2 > {
+		ENERGY 10 /
+		7 FARTHEST SEND-ENERGY pop
+	} if
+
+	1 ?loop
+}

@@ -10,6 +10,11 @@ Description: dumsim
 	dumsim0.txt				very beginning before any steps executed., start march 11, 2023
 	dumsim_mar11.txt.Z		after several hours. Compressed. march 11.
 
+	dumsim_mar12.txt.Z		march 12, it got boring so i added a nibbler strain.
+
+	super_nibbler.kf		seed program to implement a nibbler that radiates
+							energy to the farthest thing.
+
 I will upload a new simulation daily, until the sim gets boring.
 
 Given the big universe and high population, it makes sense to
