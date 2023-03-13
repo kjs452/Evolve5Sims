@@ -12,6 +12,9 @@ Description: dumsim
 
 	dumsim_mar12.txt.Z		march 12, it got boring so i added a nibbler strain.
 
+	dumsim_mar13.txt.Z		march 13, not boring anymore, nibllers made things interesting
+	dumsim_mar13_transplants.txt.Z		small simulation. transplant of 1 creature from the mar 13 simulation.
+
 	super_nibbler.kf		seed program to implement a nibbler that radiates
 							energy to the farthest thing.
 

@@ -1,0 +1,391 @@
+; Strain 0: ETANK
+; Protected Code Blocks: 46
+; Protected Instructions: CMOVE OMOVE ROTATE EAT MAKE-SPORE 
+;    MAKE-ORGANIC MAKE-BARRIER GROW GROW.CB CSHIFT SPAWN 
+; Instruction Modes: EAM=512 MSE=10 ROM=1 SPM=45 
+; MaxApply=10 MaxCB=50 StrandLen=4 
+main:
+{
+      18  call  19  +  call  2negate  2dup  OMOVE
+      pop  2dup  OMOVE  pop  OMOVE  pop  0  17
+      0  NUMBER!  2  18  0  NUMBER!  27  call 
+}
+
+row1:
+{
+     
+}
+
+row2:
+{
+      18  call  19  +  call 
+}
+
+row3:
+{
+      CSLEN  63  <=  ?exit  17  call 
+}
+
+row4:
+{
+      0  0  OMOVE 
+}
+
+row5:
+{
+      R9  34  <>  ?exit  DSLEN  60  >=  ?exit
+      CSLEN  60  >=  ?exit  18  call  19  +  call
+      2negate  rot  MAKE-SPORE 
+}
+
+row6:
+{
+      DSLEN  1  <  ?exit  sign  17  0  NUMBER!
+      10  call 
+}
+
+row7:
+{
+      R9  43  <>  ?exit  DSLEN  60  >=  ?exit
+      CSLEN  60  >=  ?exit  18  call  19  +  call
+      1  5  44  SPAWN  pop 
+}
+
+row8:
+{
+      DSLEN  60  >  ?exit  CSLEN  60  >  ?exit
+      DSLEN  1  <  ?exit  11  call 
+}
+
+row9:
+{
+      R9  43  <>  ?exit  EAT 
+}
+
+row10:
+{
+      18  0  NUMBER  19  +  call  17  call  swap
+      over  *  -rot  *  swap  4  1  NUMBER!  4
+      0  NUMBER! 
+}
+
+row11:
+{
+      sign  dup  ROTATE  12  16  ifelse 
+}
+
+row12:
+{
+      18  0  NUMBER  +  dup  0  <  13  14  ifelse
+      18  0  NUMBER!  10  call  1 
+}
+
+row13:
+{
+      pop  7 
+}
+
+row14:
+{
+      dup  7  >  15  if 
+}
+
+row15:
+{
+      pop  0 
+}
+
+row16:
+{
+      0 
+}
+
+row17:
+{
+      0 
+}
+
+row18:
+{
+      4 
+}
+
+row19:
+{
+      0  1 
+}
+
+row20:
+{
+      1  1 
+}
+
+row21:
+{
+      1  0 
+}
+
+row22:
+{
+      1  -1 
+}
+
+row23:
+{
+      0  -1 
+}
+
+row24:
+{
+      -1  -1 
+}
+
+row25:
+{
+      -1  0 
+}
+
+row26:
+{
+      -1  1 
+}
+
+row27:
+{
+      28  call  46  call 
+}
+
+row28:
+{
+      0  -1  1  30  GROW.CB  not  +  0  1  32
+      GROW.CB  not  +  1  1  33  GROW.CB  not
+      +  -1  0  34  GROW.CB  not  +  1  0  35
+      GROW.CB  not  +  -1  -1  37  GROW.CB  not
+      +  0  -1  39  GROW.CB  not  +  1  -1  40
+      GROW.CB  not  +  29  if 
+}
+
+row29:
+{
+      HALT 
+}
+
+row30:
+{
+      CB  R9!  -1  0  41  GROW.CB  not  31  if
+      47  call 
+}
+
+row31:
+{
+      HALT 
+}
+
+row32:
+{
+      CB  R9!  48  call 
+}
+
+row33:
+{
+      CB  R9!  49  call 
+}
+
+row34:
+{
+      CB  R9!  50  call 
+}
+
+row35:
+{
+      CB  R9!  1  0  43  GROW.CB  not  36  if
+      51  call 
+}
+
+row36:
+{
+      HALT 
+}
+
+row37:
+{
+      CB  R9!  -1  0  42  GROW.CB  not  38  if
+      52  call 
+}
+
+row38:
+{
+      HALT 
+}
+
+row39:
+{
+      CB  R9!  53  call 
+}
+
+row40:
+{
+      CB  R9!  54  call 
+}
+
+row41:
+{
+      CB  R9!  55  call 
+}
+
+row42:
+{
+      CB  R9!  56  call 
+}
+
+row43:
+{
+      CB  R9!  57  call 
+}
+
+row44:
+{
+      18  call  19  +  call  2dup  45  call  2dup
+      EAT  pop  HALT 
+}
+
+row45:
+{
+      2dup  OMOVE  ?loop 
+}
+
+row46:
+{
+      1  1  ?loop 
+}
+
+row47:
+{
+      58  call 
+}
+
+row48:
+{
+      1  ?loop 
+}
+
+row49:
+{
+      1  ?loop 
+}
+
+row50:
+{
+      69  call 
+}
+
+row51:
+{
+      62  call 
+}
+
+row52:
+{
+      67  call 
+}
+
+row53:
+{
+      1  TRAP7 
+}
+
+row54:
+{
+      1  ?loop 
+}
+
+row55:
+{
+      1  ?loop 
+}
+
+row56:
+{
+      TRAP4  pop  1  ?loop 
+}
+
+row57:
+{
+      67  call 
+}
+
+row58:
+{
+      1  10  CHOOSE  dup  1  =  59  if  dup  2
+      =  60  if  3  =  61  if  1  ?loop 
+}
+
+row59:
+{
+      1  dup 
+}
+
+row60:
+{
+      -1  TRAP6 
+}
+
+row61:
+{
+      0  TRAP6 
+}
+
+row62:
+{
+      1  10  CHOOSE  dup  1  =  63  if  2  =  64
+      if  50  66  1  ?loop 
+}
+
+row63:
+{
+      -1  TRAP8  pop  65  call 
+}
+
+row64:
+{
+      1  TRAP8  pop  65  call 
+}
+
+row65:
+{
+      50  66  call  pop 
+}
+
+row66:
+{
+      1-  TRAP6  ?loop 
+}
+
+row67:
+{
+      1  100  CHOOSE  dup  1  =  68  if  7  NEAREST
+      TRAP9  pop  1  ?loop 
+}
+
+row68:
+{
+      ?loop 
+}
+
+row69:
+{
+      1  100  CHOOSE  1  =  70  if  1  ?loop  1
+      ?loop 
+}
+
+row70:
+{
+      ENERGY  5  /  TRAP5  TRAP5  pop  10  71
+      call 
+}
+
+row71:
+{
+      TRAP4  pop  1-  dup  ?loop 
+}
+
