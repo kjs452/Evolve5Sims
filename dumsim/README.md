@@ -16,6 +16,7 @@ Description: dumsim
 	dumsim_mar13_transplants.txt.Z		small simulation. transplant of 1 creature from the mar 13 simulation.
 
 	dumsim_mar14.txt.Z		march 14, its getting boring
+	dumsim_mar14_transplants.txt.Z		small simulation. transplant of 1 creature from the mar 14 simulation.
 
 	super_nibbler.kf		seed program to implement a nibbler that radiates
 							energy to the farthest thing.
