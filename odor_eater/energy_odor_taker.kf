@@ -1,0 +1,247 @@
+;
+; ODOR EATER
+; Just a weird simulation idea:
+;
+; The instruction TRAP9, allows the creature to take energy
+; from a cell whose odor value is closest to the number that this cell guessed.
+; The amount of energy taken is proportional to how close the number
+; guessed was to the odor value.
+;
+; To implement, we use:
+;	* SAY instruction:			this send the guess value to a cell
+;	* SAY Interrupt Handler		this sends energy back in opposite direction
+;
+; This creature responds to SAY interrupts.
+; It decodes the MESSAGE recieved into a direction (0-8) and a value 0-99.
+; If the odor of (0,0) mod 100 is equal to the guess, give 99 units of energy.
+; subtract one unit of energy for every point different between quess and odor.
+;
+main:
+{
+	evolve call
+}
+
+_trap1: { }
+_trap2: { }
+_trap3: { }
+
+;
+; SAY interrupt handler
+;
+_trap4: {
+	DSLEN 60 > ?exit
+
+	0 0 SMELL			; odor
+	RECV unpack2		; odor dir value
+	rot					; dir value odor
+	100 mod abs			; dir value ABS(odor%100) 
+	- abs				; dir ABS(value-ABS(odor%100))
+	99 swap -			; dir 99-ABS(value-ABS(odor%100))
+
+	swap				; energy dir
+	rev swap NUMBER		; energy revdir
+	dirs + call			; energy x y
+
+	SEND-ENERGY			; rc
+	pop					;
+}
+
+_trap5: { }
+_trap6: { }
+_trap7: { }
+_trap8: { }
+
+;
+; odor-energy-take-instruction
+;
+; (guess x y -- rc)
+;
+; Send encoded value based on 'guess' and direction to (x,y).
+; The sent value is two fields combined using PACK2. The first field
+; is the directionn (a number between 0-8). The second field
+; is a value between 0 and 99 ('guess' mod 100).
+;
+; RULE: Notify cell at (x,y) to send energy to me.
+; The amount of energy sent is equal to 99 units of energy,
+; if the correct odor value was guessed. Subtract one unit
+; of energy for every point of difference between 'guess' and 'odor'.
+;
+; returns the return code of the final SAY instruction.
+;
+_trap9:
+{
+	DSLEN 58 > ?exit
+	DSLEN 3 < ?exit
+
+	rot					; x y v
+	100 mod abs			; x y abs(v%100)
+	-rot				; abs(v%100) x y
+	2dup				; abs(v%100) x y x y
+	get_dir call		; abs(v%100) x y dir
+	-4 PEEK				; abs(v%100) x y dir abs(v%100)
+	pack2				; abs(v%100) x y pack_value
+	-3 POKE				; pack_value x y 
+	SAY	
+}
+
+;
+; (x y -- dir)
+; Convert an (x,y) vector into a direction number (0-8).
+;
+get_dir:
+{
+	sign swap sign swap			; x y -- n(x) n(y)
+
+	0							; -- x y n
+	{
+		dup  dirs + call		; -- x y n xt yt
+		-5 peek					; -- x y n xt yt x
+		-5 peek					; -- x y n xt yt x y
+		dir_equals call			; -- x y n b
+		?exit					; -- x y n
+		1+						; -- x y n+1
+		1 ?loop
+	} call
+	-rot						; x y n -- n x y
+	2pop						; -- n
+}
+
+;
+; compare two coordinates for equality
+; (x0 y0 x1 y1 -- 0|1)
+;
+dir_equals:
+{
+	rot		; x0 y0 x1 y1 -- x0 x1 y1 y0
+	=		; x0 x1 y1 y0 -- x0 x1 ye
+	-rot	; x0 x1 ye -- ye x0 x1
+	=		; ye x0 x1 -- ye xe
+	and		; ye xe -- b
+}
+
+; reverse mapping of direction numbers
+rev: { 0 5 6 7 8 1 2 3 4 }
+
+; direction number to vector mapping
+dirs:
+	{ 0  0 }	; dir 0
+	{ 0  1 }	; dir 1
+	{ 1  1 }	; dir 2
+	{ 1  0 }	; dir 3
+	{ 1 -1 }	; dir 4
+	{ 0 -1 }	; dir 5
+	{ -1 -1 }	; dir 6
+	{ -1 0 }	; dir 7
+	{ -1 1 }	; dir 8
+
+; ================== protected / unprotected =========
+
+;
+; standard seed program
+;
+; a good seed organism
+;
+; BEHAVIOR:
+; This creature forever moves in various directions until
+; its forward movement is blocked. As it moves it eats.
+; Before moving in a new direction it will try to reproduce.
+;
+
+evolve:
+{
+	123 1 1 trap9 pop		; test the trap9
+
+	reproduce call
+	reproduce call
+
+	;
+	; go SOUTH-EAST until blocked (eat along the way)
+	;
+	{ 1 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go WEST until blocked (eat along the way)
+	;
+	{ -1 0 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go SOUTH-WEST until blocked (eat along the way)
+	;
+	{ -1 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go EAST until blocked (eat along the way)
+	;
+	{ 1 0 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH-EAST until blocked (eat along the way)
+	;
+	{ 1 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go SOUTH until blocked (eat along the way)
+	;
+	{ 0 1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH until blocked (eat along the way)
+	;
+	{ 0 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; go NORTH-WEST until blocked (eat along the way)
+	;
+	{ -1 -1 2dup eat pop omove ?loop } call
+
+	reproduce call
+
+	;
+	; do it all over again
+	;
+	1 ?loop
+}
+
+reproduce:
+{
+	;
+	; compute 1/4 of our energy, and store in R0
+	;
+	energy 4 / R0!
+
+	;
+	; Make 1st spore to the square on our left.
+	;
+	-1 0 R0 make-spore pop
+
+	;
+	; Put 2nd spore at the same spot (fertilizing it)
+	;
+	-1 0 R0 make-spore pop
+
+	;
+	; get the hell out of the way so we don't eat our own
+	; babies, or they don't eat us.
+	;
+	1 1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+	0 -1 omove pop
+}
+
