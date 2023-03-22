@@ -12,6 +12,8 @@ Description: uni
 		trap7 shout
 
 	Each trap handler started out empty.
+	The initial seed program was seed_interrupt.kf which is the standard
+	seed program with empty slots for the interrupt traps.
 
 		uni.txt.gz					simulation start day 0, march 19, 2023
 		uni321.txt.gz				snapshot on mar 21
