@@ -1,0 +1,118 @@
+; Strain 0: BasicInt2
+; Protected Code Blocks: 0
+; Protected Instructions: MAKE-BARRIER SPAWN 
+; Instruction Modes: EAM=1664 MSE=100 GE=10 GS=10 ROM=1 
+;    SHM=112 BM=2 SAM=160 SEM=432 SNDM=4 
+; MaxApply=10 MaxCB=50 StrandLen=4 
+main:
+{
+      10  call  1 
+}
+
+row1:
+{
+      EAT  17  NEAREST  2dup  EAT  ?loop 
+}
+
+row2:
+{
+      -2  FARTHEST  >=  17  78 
+}
+
+row3:
+{
+     
+}
+
+row4:
+{
+      -1  97 
+}
+
+row5:
+{
+      ENERGY  4  -74  -66  --R0  -43  17  SMELL
+      19  call  R0!  -80  R0  MAKE-SPORE  pop
+      2  -4  ?exit  MAKE-SPORE  pop  0  -1  0
+      -54  unpack2  -42  swap  48  <=  EAT  ?loop
+      pop  0  -1  OMOVE  pop  0  19  81  pop  >> 
+}
+
+row6:
+{
+     
+}
+
+row7:
+{
+     
+}
+
+row8:
+{
+      1 
+}
+
+row9:
+{
+      2  87  -45  nop  2dup 
+}
+
+row10:
+{
+      -15  -19  93  /  11  call  19  12  call
+      -19  call  13  call  19  call  14  R1++
+      18  call  R9  15  call  -82  55  NUMBER
+      8  19  call  -24  negate  SIZE  28  16  call
+      19  -76  -57  call  17  call  19  call  19
+      call  1  ?loop 
+}
+
+row11:
+{
+      72  sqrt  GROW  --R3  R5  GROW  58  OMOVE 
+}
+
+row12:
+{
+      -10  -6  3  GROW.CB  27 
+}
+
+row13:
+{
+      2dup  EAT  ?loop  SHOUT  GROW  SHOUT  ?loop
+      2+  ?loop  ?loop 
+}
+
+row14:
+{
+      -2  R5!  SAY  -49  --R2  EAT  --R5 
+}
+
+row15:
+{
+      ENERGY  4  -  R0!  -1  0  R0  MAKE-SPORE
+      MAKE-SPORE  pop  1  R0!  R5++  1  -1  OMOVE
+      pop  0  --R6  54  2-  MIN_INT  -1  OMOVE
+      10  --R7  -1  OMOVE  OMOVE  pop  0  dup
+      0  R4++  rot  67  OMOVE  pop 
+}
+
+row16:
+{
+      0  -3  2dup  AGE  OMOVE  ?loop  OPCODE' 
+}
+
+row17:
+{
+      2dup  EAT  ?loop  -76  min  0  1  call  72
+      or  58  -47  60  23  -1  2dup  EAT  ?loop
+      OMOVE  ?loop  -64  7  GROW  --R4  G0  *
+      -84 
+}
+
+row18:
+{
+      -59  2+  NUMBER 
+}
+
