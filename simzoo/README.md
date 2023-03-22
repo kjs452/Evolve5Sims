@@ -6,4 +6,8 @@ Description: simzoo
 								- interrupt enabled strain and seed program
 								- non-agressive eating
 
+	smile_uni8.txt.gz			- 8 strains configured with the same organism
+								- small energy
+								- barriers seperate each strain, except in middle
+								- transplant from the 'uni' simulation, march 22.
 ```
