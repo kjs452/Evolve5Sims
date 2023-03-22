@@ -13,7 +13,7 @@ Description: uni
 
 	Each trap handler started out empty.
 
-		uni.txt						simulation start day 0, march 19
+		uni.txt.gz					simulation start day 0, march 19, 2023
 		uni321.txt.gz				snapshot on mar 21
 		uni322.txt.gz				snapshot on mar 22
 		uni_strain8.txt.gz			transplants into 8 seperate strains on new universe (from mar 22)
