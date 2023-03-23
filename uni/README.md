@@ -18,6 +18,9 @@ Description: uni
 		uni.txt.gz					simulation start day 0, march 19, 2023
 		uni321.txt.gz				snapshot on mar 21
 		uni322.txt.gz				snapshot on mar 22
+		uni323.txt.gz				snapshot on mar 23, something changed! population finally spread out.
+									no massive clumps of population.
+		uni323_transplant.txt.gz	small transplant from the march 23 simulation.
 		uni_strain8.txt.gz			transplants into 8 seperate strains on new universe (from mar 22)
 		dna_uni1.kf					the dna sample used to seed 'uni_strain8.txt'
 ```
