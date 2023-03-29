@@ -30,8 +30,11 @@ Description: uni
 
 		uni328.txt.gz				snapshot on mar 28, behavior slighly changed
 
-		uni328_transplant.txt.gz	small transplant from the march 28 simulation, perlin terrain,
+		transplant_mar328.txt.gz	small transplant from the march 28 simulation, perlin terrain,
 									nice sim, preditor/prey behavior evident.
+
+		transplant_mar329.txt.gz	small transplant from the march 29 simulation.
+									Just oval barrier. 1 strain. some pred/prey behaviors
 
 		uni_strain8.txt.gz			transplants into 8 seperate strains on new universe (from mar 22)
 		dna_uni1.kf					the dna sample used to seed 'uni_strain8.txt'
