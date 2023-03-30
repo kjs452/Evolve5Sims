@@ -7,6 +7,6 @@ Description: utank
 
 	utank_mar330.txt.gz			- Starting simulation consisting of one user tank.
 										strain 0: uni creature x 30,000 units of energy.
-										strain 1: tank creature (shout disabled)	
-										strain 2: bullet strain (shout disabled)
+										strain 3: tank creature (shout disabled)
+										strain 5: bullet strain (shout disabled)
 ```
