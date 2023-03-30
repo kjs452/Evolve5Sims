@@ -1,0 +1,109 @@
+; Strain 0: BasicInt2
+; Protected Code Blocks: 0
+; Protected Instructions: MAKE-BARRIER SPAWN 
+; Instruction Modes: EAM=1664 MSE=100 GE=10 GS=10 ROM=1 
+;    SHM=112 BM=2 SAM=160 SEM=432 SNDM=4 
+; MaxApply=10 MaxCB=50 StrandLen=4 
+main:
+{
+      10  call  -17  -90 
+}
+
+row1:
+{
+      EAT  17  NEAREST  2dup  EAT  ?loop  ?loop
+      <<  -76  OMOVE  ?loop  and  PEEK  -4 
+}
+
+row2:
+{
+      -71 
+}
+
+row3:
+{
+      POPULATION 
+}
+
+row4:
+{
+     
+}
+
+row5:
+{
+      NEIGHBORS  R3  OMOVE  ?loop  OPCODE' 
+}
+
+row6:
+{
+      2dup  R2!  -5  -7 
+}
+
+row7:
+{
+     
+}
+
+row8:
+{
+      -17  RND  S0!  --R1  -54  abs  2negate  R2++
+      43  49  dup 
+}
+
+row9:
+{
+      1  POPULATION  1  -9  -69  -46  95  1  KEY-PRESS
+      -30  74  -88  0 
+}
+
+row10:
+{
+      -15  --R3  R5  GROW  -19  93  /  11  call
+      19  12  call  -19  call  13  call  19  call
+      14  call  19  call  R9  15  call  pop  -82
+      55  NUMBER  8  16  call  19  call  1 
+}
+
+row11:
+{
+      75  TRAP4  GROW  10  -17  -90 
+}
+
+row12:
+{
+      -6  10  call  -93  R1  max  50  OMOVE  4 
+}
+
+row13:
+{
+      SHOUT  ?loop  97 
+}
+
+row14:
+{
+      --R2  -85  0  OMOVE  10  --R7  3  R5  -85
+      2+  --R5 
+}
+
+row15:
+{
+      ENERGY  31  -  R0!  -1  0  R0  MAKE-SPORE
+      MAKE-SPORE  pop  1  1  OMOVE  pop  10  call
+      -90  0  50  OMOVE  CB  --R3  2dup  RECV
+      -84  ifelse  33  MAKE-SPORE  pop  2-  46
+      59  OMOVE  OMOVE  -24  -30  ?NUMBER!  --R8
+      -7  -59  43  72  CHOOSE  R3!  66  57  <
+      OMOVE  pop 
+}
+
+row16:
+{
+      if  53  R3++  R0!  87  -1  -70  50  0  OPCODE' 
+}
+
+row17:
+{
+     
+}
+

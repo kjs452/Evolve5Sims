@@ -9,4 +9,8 @@ Description: utank
 										strain 0: uni creature x 30,000 units of energy.
 										strain 3: tank creature (shout disabled)
 										strain 5: bullet strain (shout disabled)
+
+	dna_mar330.kf			the strain 0 organism starting seed program.
+	utank.kf				the tank organism, put in slot 3.
+	nullseed.kf				the bullet starting seed program, put in slot 5.
 ```
