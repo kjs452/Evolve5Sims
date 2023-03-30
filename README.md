@@ -14,6 +14,7 @@ If the filename is dna_XXXXX.kf it indicates a saved, evolved DNA program, this 
 comment includes the exact simulation properties used.
 
 ```
+biomprhs		The biomporphs activity simulation ready to go.
 dumsim          Just a standard simulation with normal 'Default' properties
 first           Demonstrates a "bullet with energy radiating backward toward the shooter"
 hanoi           a pre-built simulation file with the towers of hanoi simulation ready to go.
