@@ -43,6 +43,7 @@ Description: uni
 
         uni331.txt.gz               snapshot on mar 31 no change
         uni401.txt.gz               snapshot on apr 1 no change
+        uni402.txt.gz               snapshot on apr 2. slightly more population, higher birth rate
 
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
