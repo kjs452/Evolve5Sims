@@ -44,11 +44,15 @@ Description: uni
         uni331.txt.gz               snapshot on mar 31 no change
         uni401.txt.gz               snapshot on apr 1 no change
         uni402.txt.gz               snapshot on apr 2. slightly more population, higher birth rate
-        uni404.txt.gz               snapshot on apr 4. no change. boring
-        uni405.txt.gz               snapshot on apr 5. population dropping. slightly interesting again..
 
         transplant_uni402.txt.gz    small transplant from the april 2 simulation.
                                     Just oval barrier. multiple creatures copied. 60,000 energy
+
+        uni404.txt.gz               snapshot on apr 4. no change. boring
+        uni405.txt.gz               snapshot on apr 5. population dropping. slightly interesting again..
+
+        transplant_uni405.txt.gz    small transplant from the april 5 simulation.
+                                    Just oval barrier. 500x500, 1 strain. 40,000 units of energy.
 
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
