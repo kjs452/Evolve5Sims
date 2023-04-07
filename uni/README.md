@@ -54,6 +54,9 @@ Description: uni
         transplant_uni405.txt.gz    small transplant from the april 5 simulation.
                                     Just oval barrier. 500x500, 1 strain. 40,000 units of energy.
 
+        uni406.txt.gz               snapshot on apr 6. boring
+        uni407.txt.gz               snapshot on apr 7. population increased again. same
+
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
 ```
