@@ -75,6 +75,9 @@ Description: uni
         transplant_uni415.txt.gz    small transplant from the april 15 simulation. 5 different organisms.
                                     80,000 units of energy.
 
+        uni416.txt.gz               snapshot on apr 16.
+        uni417.txt.gz               snapshot on apr 17. interesting shapes and behaviors, more motion in center
+
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
 ```
