@@ -81,6 +81,8 @@ Description: uni
         uni419.txt.gz               snapshot on apr 19. same
         transplant_uni419.txt.gz    small transplant from the april 19 simulation. 10 or so different organisms.
                                     VERY NICE preditor/prey behaviors evident. 30,000 units of energy.
+        uni420.txt.gz               snapshot on apr 20. same
+        uni424.txt.gz               snapshot on apr 24. more non-moving blobs
 
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
