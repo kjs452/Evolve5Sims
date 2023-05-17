@@ -91,7 +91,10 @@ Description: uni
         uni504.txt.gz               snapshot on may 4. same, boring
         uni505.txt.gz               snapshot on may 5. same, boring
         transplant_uni505.txt.gz    small transplant from the may 5 simulation. 10 or so different organisms.
-									50,000 units of energy. good prey/predation behaviors.
+                                    50,000 units of energy. good prey/predation behaviors.
+        uni512.txt.gz               snapshot on may 12. same
+        uni515.txt.gz               snapshot on may 15. same
+        uni517.txt.gz               snapshot on may 17. something changed, more creatures.
 
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
