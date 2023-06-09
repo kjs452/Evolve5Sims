@@ -95,6 +95,14 @@ Description: uni
         uni512.txt.gz               snapshot on may 12. same
         uni515.txt.gz               snapshot on may 15. same
         uni517.txt.gz               snapshot on may 17. something changed, more creatures.
+        uni602.txt.gz               snapshot on june 2. same boooooring
+        transplant_uni602.txt.gz    small transplant from the june 2 simulation.
+
+        ----- the simulation got super boring, i changed the simuluation properties here ------
+
+        uni609.txt.gz               snapshot on june 9. after a day with the new aggressive eat mode.
+                                    also the grow size increased from 10 to 25. more fun to watch!
+                                    way more reproduction and behaviors now.
 
         uni_strain8.txt.gz          transplants into 8 seperate strains on new universe (from mar 22)
         dna_uni1.kf                 the dna sample used to seed 'uni_strain8.txt'
