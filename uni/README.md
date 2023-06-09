@@ -98,8 +98,9 @@ Description: uni
         uni602.txt.gz               snapshot on june 2. same boooooring
         transplant_uni602.txt.gz    small transplant from the june 2 simulation.
 
-        ----- the simulation got super boring, i changed the simuluation properties here ------
+        uni608.txt.gz               snapshot on june 8. right before the modes were changed.
 
+        ----- the simulation got super boring, i changed the simuluation properties here ------
         uni609.txt.gz               snapshot on june 9. after a day with the new aggressive eat mode.
                                     also the grow size increased from 10 to 25. more fun to watch!
                                     way more reproduction and behaviors now.
